@@ -123,35 +123,42 @@ class CustomerLoginPage extends JFrame {
         passwordField.setText("");
     }
 
-    private void handleLogin(ActionEvent e) {
-        String username = usernameField.getText();
-        String password = new String(passwordField.getPassword());
-		
-		ImageIcon okImg = new ImageIcon("okImg.png");
-        ImageIcon wrongImg = new ImageIcon("wrongimg2.png");
+  private void handleLogin(ActionEvent e) {
+    String username = usernameField.getText();
+    String password = new String(passwordField.getPassword());
 
-        try (Scanner scanner = new Scanner(new File("users.txt"))) {
-            boolean loginSuccessful = false;
-            while (scanner.hasNextLine()) {
-                String[] checkInfo = scanner.nextLine().split(",");
-                if (checkInfo[0].equals(username) && checkInfo[1].equals(password)) {
-                    loginSuccessful = true;
-                    break;
-                }
-            }
+    ImageIcon okImg = new ImageIcon("okImg.png");
+    ImageIcon wrongImg = new ImageIcon("wrongimg2.png");
 
-            if (loginSuccessful) {
-            JOptionPane.showMessageDialog(this, "Login Successful ", "Success", JOptionPane.INFORMATION_MESSAGE, okImg);
-            } else {
-                String errorMessage = "<html><div style='text-align: center;'><b>Incorrect Username or Password!</b><br>Please try again.</div></html>";
-            JOptionPane.showMessageDialog(this, errorMessage, "Error", JOptionPane.ERROR_MESSAGE, wrongImg);
+    try (Scanner scanner = new Scanner(new File("users.txt"))) {
+        boolean loginSuccessful = false;
+        while (scanner.hasNextLine()) {
+            String[] checkInfo = scanner.nextLine().split(",");
+            if (checkInfo[0].equals(username) && checkInfo[1].equals(password)) {
+                loginSuccessful = true;
+                break;
             }
-        } catch (FileNotFoundException ex) {
-            
-			String errorMessage = "<html><div style='text-align: center;'><b>Incorrect Username or Password!</b><br>Please try again.</div></html>";
+        }
+
+        if (loginSuccessful) {
+            JOptionPane.showMessageDialog(this, "Login Successful", "Success", JOptionPane.INFORMATION_MESSAGE, okImg);
+            CustomerFoodService page = new CustomerFoodService();
+            page.setTitle("Customer Food Service");
+            page.setSize(900, 600);
+            page.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            page.setLocationRelativeTo(null);
+            page.setVisible(true);
+            this.dispose();
+        } else {
+            String errorMessage = "<html><div style='text-align: center;'><b>Incorrect Username or Password!</b><br>Please try again.</div></html>";
             JOptionPane.showMessageDialog(this, errorMessage, "Error", JOptionPane.ERROR_MESSAGE, wrongImg);
         }
+    } catch (FileNotFoundException ex) {
+        String errorMessage = "<html><div style='text-align: center;'><b>Incorrect Username or Password!</b><br>Please try again.</div></html>";
+        JOptionPane.showMessageDialog(this, errorMessage, "Error", JOptionPane.ERROR_MESSAGE, wrongImg);
     }
+}
+
 
 
     private void togglePasswordVisibility(ActionEvent e) {
@@ -345,7 +352,6 @@ class CreateAccountPage extends JFrame {
             confirmPasswordField.setEchoChar('*');  
         }
     }
-
 private void handleCreateAccount(ActionEvent e) {
     String username = usernameField.getText();
     String phone = phoneField.getText();
@@ -359,53 +365,33 @@ private void handleCreateAccount(ActionEvent e) {
 
     if (username.isEmpty() || phone.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
         JOptionPane.showMessageDialog(this, "All fields must be filled!", "Error", JOptionPane.INFORMATION_MESSAGE, BlankImg);
-    }
-    
-    else if (phone.length() != 11 || !phone.matches("01[0-9]{9}")) {
+    } else if (phone.length() != 11 || !phone.matches("01[0-9]{9}")) {
         JOptionPane.showMessageDialog(this, "Phone number must start with '01' and be exactly 11 digits long!", "Error", JOptionPane.ERROR_MESSAGE, wrongImg);
-    }
-    
-    else if (!email.matches("^[A-Za-z]+[A-Za-z0-9]*@gmail.com$")) {
+    } else if (!email.matches("^[A-Za-z]+[A-Za-z0-9]*@gmail.com$")) {
         JOptionPane.showMessageDialog(this, "Email must contain at least one letter before @gmail.com, and may contain numbers.", "Error", JOptionPane.ERROR_MESSAGE, wrongImg);
-    }
-   
-    else if (password.length() < 5 || password.length() > 16) {
+    } else if (password.length() < 5 || password.length() > 16) {
         JOptionPane.showMessageDialog(this, "Password must be between 5 and 16 characters", "Error", JOptionPane.ERROR_MESSAGE, wrongImg);
-    }
-	
-    else if (!password.equals(confirmPassword)) {
+    } else if (!password.equals(confirmPassword)) {
         JOptionPane.showMessageDialog(this, "Passwords do not match!", "Error", JOptionPane.ERROR_MESSAGE, wrongImg);
-    }
-    else {
+    } else {
         boolean userExists = false;
         BufferedReader reader = null;
-        
-        
+
         try {
             File file = new File("users.txt");
             if (!file.exists()) {
                 file.createNewFile();
             }
-            
+
             reader = new BufferedReader(new FileReader(file));
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] userDetails = line.split(",");
                 String existingUsername = userDetails[0];
-                String existingPhone = userDetails[2];
-                String existingEmail = userDetails[3];
 
                 if (existingUsername.equals(username)) {
                     userExists = true;
-                    JOptionPane.showMessageDialog(this, "Username is already taken!", "Error", JOptionPane.ERROR_MESSAGE, wrongImg);
-                    break;
-                } else if (existingPhone.equals(phone)) {
-                    userExists = true;
-                    JOptionPane.showMessageDialog(this, "Phone number is already registered!", "Error", JOptionPane.ERROR_MESSAGE, wrongImg);
-                    break;
-                } else if (existingEmail.equals(email)) {
-                    userExists = true;
-                    JOptionPane.showMessageDialog(this, "Email is already registered!", "Error", JOptionPane.ERROR_MESSAGE, wrongImg);
+                    JOptionPane.showMessageDialog(this, "Username is already taken! Please choose a different one.", "Error", JOptionPane.ERROR_MESSAGE, wrongImg);
                     break;
                 }
             }
@@ -414,32 +400,45 @@ private void handleCreateAccount(ActionEvent e) {
         } finally {
             try {
                 if (reader != null) {
-                    reader.close(); 
+                    reader.close();
                 }
             } catch (IOException ez) {
-               
             }
         }
-
 
         if (!userExists) {
             try (PrintWriter writer = new PrintWriter(new FileWriter("users.txt", true))) {
                 writer.println(username + "," + password + "," + phone + "," + email);
+
+                File userFile = new File(username + ".txt");
+                if (!userFile.exists()) {
+                    userFile.createNewFile();
+                }
+
+                try (PrintWriter userWriter = new PrintWriter(new FileWriter(userFile))) {
+                    userWriter.println("Username: " + username);
+                    userWriter.println("Phone: " + phone);
+                    userWriter.println("Email: " + email);
+                    userWriter.println("Password: " + password);
+                }
+
                 JOptionPane.showMessageDialog(this, "Account Created Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE, okImg);
                 this.setVisible(false);
+
                 CustomerLoginPage loginPage = new CustomerLoginPage();
                 loginPage.setTitle("Customer Login");
                 loginPage.setSize(900, 600);
                 loginPage.setLocationRelativeTo(null);
                 loginPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 loginPage.setVisible(true);
-				loginPage.setResizable(false);
+                loginPage.setResizable(false);
             } catch (IOException ex) {
                 JOptionPane.showMessageDialog(this, "Error saving data!", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
     }
 }
+
 
 }
 
