@@ -10,4 +10,5 @@ public class FoodDeliverySystem {
         mainPage.setVisible(true);
         mainPage.setResizable(false);
     }
+    //FUCK YOU
 }
