@@ -31,6 +31,7 @@ class ProjectMainPage extends JFrame {
         customersLoginButton.addActionListener(e -> handleCustomersButtonClick("Customer Login"));
 	
         foodReviewsButton = createButton("Food Reviews", 500, 260);
+		foodReviewsButton.addActionListener(e -> handleFoodReviewButtonClick("Food Reviews"));
 		
         riderLoginButton = createButton("Rider Login", 500, 330);
 		riderLoginButton.addActionListener(e -> handleRiderLoginButtonClick("Rider Login"));
@@ -107,6 +108,23 @@ class ProjectMainPage extends JFrame {
         } else {
             System.out.println(buttonName + " button clicked.");
         }
-    }	
+    }
 	
+	private void handleFoodReviewButtonClick(String buttonName) {
+        if (buttonName.equals("Food Reviews")) {
+			
+			ReviewsFoodPage foodReviewsPage = new ReviewsFoodPage();
+			foodReviewsPage.setTitle("Food Reviews Page");
+			foodReviewsPage.setSize(900, 600);
+			foodReviewsPage.setLocationRelativeTo(null);
+			foodReviewsPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			foodReviewsPage.setVisible(true);
+			foodReviewsPage.setResizable(false);
+		
+			this.setVisible(false);
+			} else {
+            System.out.println(buttonName + " button clicked.");
+			}
+			       
+    }	
 }
