@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 class CustomerFoodServiceOptionsPage extends JFrame {
-    private JLabel welcomeLabel, footerLabel;
+    private JLabel welcomeLabel, footerLabel,imageLabel;
 	private JButton backButton;
 
     CustomerFoodServiceOptionsPage() {
@@ -81,11 +81,15 @@ class CustomerFoodServiceOptionsPage extends JFrame {
 		
 
         JScrollPane scrollPane = new JScrollPane(scrollablePanel, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        scrollPane.setBounds(200, 130, 500, 410);
+        scrollPane.setBounds(350, 120, 500, 410);
         container.add(scrollPane);
+		
+		imageLabel = new JLabel(new ImageIcon("FirstPage.png"));
+        imageLabel.setBounds(50, 60, 250, 400);
+        container.add(imageLabel);
 
         footerLabel = new JLabel("Food Ordering System", JLabel.CENTER);
-        footerLabel.setBounds(380, 500, 250, 30);
+        footerLabel.setBounds(40, 420, 250, 30);
         footerLabel.setFont(boldFont);
         footerLabel.setForeground(Color.BLACK);
         footerLabel.setOpaque(true);
@@ -144,28 +148,34 @@ class CustomerFoodServiceOptionsPage extends JFrame {
             
     }
 
+   
     private void handleButtonAction(int buttonIndex) {
         switch (buttonIndex) {
             case 1:
-                JOptionPane.showMessageDialog(this, "Food Item 1 selected");
+			
+			JOptionPane.showMessageDialog(this, "page are under construction .- IT Department", "Error", JOptionPane.ERROR_MESSAGE);
+  
                 break;
             case 2:
-                JOptionPane.showMessageDialog(this, "Food Item 2 selected");
+			
+			JOptionPane.showMessageDialog(this, "page are under construction .- IT Department", "Error", JOptionPane.ERROR_MESSAGE);
+
                 break;
             case 3:
-                JOptionPane.showMessageDialog(this, "Food Item 3 selected");
+			
+			JOptionPane.showMessageDialog(this, "page are under construction .- IT Department", "Error", JOptionPane.ERROR_MESSAGE);
+				
                 break;
             case 4:
-                JOptionPane.showMessageDialog(this, "Food Item 4 selected");
+			
+                JOptionPane.showMessageDialog(this, "page are under construction .- IT Department", "Error", JOptionPane.ERROR_MESSAGE);
+				
                 break;
-            case 10:
-                JOptionPane.showMessageDialog(this, "Special action for Food Item 10!");
-                break;
+           
             default:
-                JOptionPane.showMessageDialog(this, "Food Item " + buttonIndex + " selected");
+                JOptionPane.showMessageDialog(this, "page are under construction .- IT Department", "Error", JOptionPane.ERROR_MESSAGE);
                 break;
         }
     }
-
-    
+		
 }
