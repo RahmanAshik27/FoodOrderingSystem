@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 class CustomerFoodService extends JFrame {
     private Container container;
     private JLabel welcomeLabel, categoryLabel, foodNameLabel1, foodNameLabel2, foodNameLabel3, foodNameLabel4, orderInfoLabel;
-    private JButton button1, button2, button3, button4;
+    private JButton button1, button2, button3, button4,backButton;
 
     CustomerFoodService() {
         setupCustomerFoodServicePage();
@@ -112,6 +112,16 @@ class CustomerFoodService extends JFrame {
         button4.setFocusPainted(false);
         button4.addActionListener(this::orderRamen);
         container.add(button4);
+		
+		backButton = new JButton("Back");
+        backButton.setBounds(20, 20, 80, 30);
+        backButton.setFont(boldFont);
+        backButton.setBackground(new Color(255, 99, 71));
+        backButton.setForeground(Color.WHITE);
+        backButton.setCursor(cursor);
+        backButton.addActionListener(this::goBack);
+        container.add(backButton);	
+		
 
         foodNameLabel4 = new JLabel("Ramen", JLabel.CENTER);
         foodNameLabel4.setBounds(645, 380, 130, 30);
@@ -128,6 +138,8 @@ class CustomerFoodService extends JFrame {
         orderInfoLabel.setOpaque(true);
         orderInfoLabel.setBackground(new Color(0, 0, 0, 150));
         container.add(orderInfoLabel);
+		
+		
 
         JLabel backgroundLabel = new JLabel(new ImageIcon("Mainpage.png"));
         backgroundLabel.setBounds(0, 0, 900, 600);
@@ -135,8 +147,30 @@ class CustomerFoodService extends JFrame {
     }
 	
 	private void performSearch(ActionEvent e) {
-    JOptionPane.showMessageDialog(this, "Search button clicked!", "Search", JOptionPane.INFORMATION_MESSAGE);
+  
+        CustomerFoodServiceOptionsPage customerFoodServiceOptionsPage = new CustomerFoodServiceOptionsPage();
+        customerFoodServiceOptionsPage.setTitle("Food Delivery System");
+        customerFoodServiceOptionsPage.setSize(900, 600);
+        customerFoodServiceOptionsPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        customerFoodServiceOptionsPage.setLocationRelativeTo(null);
+        customerFoodServiceOptionsPage.setVisible(true);
+        customerFoodServiceOptionsPage.setResizable(false);
+    this.dispose();
+	
 	}
+	
+	 private void goBack(ActionEvent e) {
+		
+		this.setVisible(false);
+            CustomerLoginPage loginPage = new CustomerLoginPage();
+            loginPage.setTitle("Customer Login");
+            loginPage.setSize(900, 600);
+            loginPage.setLocationRelativeTo(null);
+            loginPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            loginPage.setVisible(true);
+			loginPage.setResizable(false);
+    }
+
 	
 	private void orderChickenBiriyani(ActionEvent e) {
         JOptionPane.showMessageDialog(this, "Chicken Biriyani ordered!", "Order", JOptionPane.INFORMATION_MESSAGE);
