@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.io.File;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -99,14 +100,13 @@ class ReviewsFoodPage extends JFrame {
         
 		this.setVisible(false);
 		 
-        ReviewShowPage reviewShowPage = new ReviewShowPage();
-        reviewShowPage.setTitle("Food Delivery System");
-        reviewShowPage.setSize(900, 600);
-        reviewShowPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        reviewShowPage.setLocationRelativeTo(null);
-        reviewShowPage.setVisible(true);
-        reviewShowPage.setResizable(false);
-		
+		 
+		ShowReviewService page = new ShowReviewService();
+        page.setTitle("Customer Food Service");
+        page.setSize(900, 600);
+        page.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        page.setLocationRelativeTo(null);
+        page.setVisible(true);	
     }
 	
     private void openReviewLoginPage(ActionEvent e) {
@@ -257,33 +257,37 @@ class ReviewLoginPage extends JFrame {
         container.add(imageLabel);
     }
 
-    private void handleLogin(ActionEvent e) {
+private void handleLogin(ActionEvent e) {
     String username = usernameField.getText();
     String password = new String(passwordField.getPassword());
 
     ImageIcon wrongImg = new ImageIcon("wrongimg2.png");
     ImageIcon okImg = new ImageIcon("okImg.png");
     String result = checkCredentials(username, password);
+
     if (result.equals("SUCCESS")) {
         JOptionPane.showMessageDialog(this, "Login Successful!", "Success", JOptionPane.INFORMATION_MESSAGE, okImg);
-		
-		this.setVisible(false);
-		ReviewGivenPage reviewGivenPage = new ReviewGivenPage();
-        reviewGivenPage.setTitle("Food Delivery System");
-        reviewGivenPage.setSize(900, 600);
-        reviewGivenPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        reviewGivenPage.setLocationRelativeTo(null);
-        reviewGivenPage.setVisible(true);
-        reviewGivenPage.setResizable(false);
-		
+
+        this.setVisible(false);
+        GiveReviewService page = new GiveReviewService(username);
+        page.setTitle("Food Ordering System");
+        page.setSize(900, 600);
+        page.setLocationRelativeTo(null);
+        page.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        page.setVisible(true);
+        page.setResizable(false);
     } else if (result.equals("INCORRECT_PASSWORD")) {
         String errorMessage = "<html><div style='text-align: center;'><b>Incorrect Password!</b><br>Please try again.</div></html>";
         JOptionPane.showMessageDialog(this, errorMessage, "Error", JOptionPane.ERROR_MESSAGE, wrongImg);
     } else {
-        String errorMessage = "you do not have an account in our food service.";
+        String errorMessage = "You do not have an account in our food service.";
         JOptionPane.showMessageDialog(this, errorMessage, "Error", JOptionPane.ERROR_MESSAGE, wrongImg);
     }
 }
+
+
+
+
 
 private String checkCredentials(String username, String password) {
     try (BufferedReader reader = new BufferedReader(new FileReader("users.txt"))) {

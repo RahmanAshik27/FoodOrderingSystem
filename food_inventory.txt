@@ -1,4 +1,4 @@
-Chikhen Dum Biriyani,50,350
+Chikhen Dum Biriyani,49,350
 pizza,50,400
 Beef Burger,50,270
 Creammy Pasta,50,310

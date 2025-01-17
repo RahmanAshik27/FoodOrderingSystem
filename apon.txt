@@ -1,0 +1,7 @@
+Username: apon
+Phone: 01400833979
+Email: apon2005@gmail.com
+Password: 12345
+Login Successful: apon
+Login Successful: apon
+Food Item: Chikhen Dum Biriyani, Quantity: 1, Price: 350.0, Total Price: 350.0

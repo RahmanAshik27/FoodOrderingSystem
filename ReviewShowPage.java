@@ -7,7 +7,7 @@ import java.nio.file.*;
 
 class ReviewShowPage extends JFrame {
     private JLabel welcomeLabel, messageLabel,imageLabel,backgroundImageLabel;
-	private JButton backButton;
+	private JButton backButton, buttonOne,buttonTwo,buttonThree,buttonFour;
 	
     ReviewShowPage() {
         setUpFoodServiceOptionsPage();
@@ -26,6 +26,7 @@ class ReviewShowPage extends JFrame {
         Font welcomeFont = new Font("Arial", Font.BOLD, 30);
         Font boldFont = new Font("Arial", Font.BOLD, 18);
 		Font largeLabelFont = new Font("Arial", Font.BOLD, 20);
+		Font buttonFont= new Font("Arial", Font.BOLD, 16);
 		
 		Cursor cursor = new Cursor(Cursor.HAND_CURSOR);
 
@@ -59,20 +60,52 @@ class ReviewShowPage extends JFrame {
 
         String buttonMessage = "<html><div style='text-align: center;'><b>Show</b><br>Reviews</div></html>";
 
-		createFoodItemButton(scrollablePanel, 1, buttonMessage, 60,new Color(255, 99, 71));
-        createFoodLabel(scrollablePanel, "Chicken Dum Biriyani", 60);
-        createFoodImageLabel(scrollablePanel, "Food Image 1", "chikenbiriyani.png", 60);
-
-        createFoodItemButton(scrollablePanel, 2, buttonMessage, 180,new Color(60, 179, 113));
-        createFoodLabel(scrollablePanel, "Beef Burger", 180);
+		buttonOne = new JButton(buttonMessage);
+		buttonOne.setBounds(370, 72, 100, 75);
+		buttonOne.setFont(buttonFont);
+		buttonOne.setBackground(new Color(255, 99, 71));
+		buttonOne.setForeground(Color.WHITE);
+		buttonOne.setBorder(BorderFactory.createLineBorder(new Color(34, 45, 50), 2));
+		buttonOne.setCursor(cursor);
+		buttonOne.addActionListener(this::orderChickenBiriyani);
+		scrollablePanel.add(buttonOne);	
+		createFoodLabel(scrollablePanel, "Chicken Dum Biriyani", 60);
+		createFoodImageLabel(scrollablePanel, "Food Image 1", "chikenbiriyani.png", 60);
+		
+		buttonTwo = new JButton(buttonMessage);
+		buttonTwo.setBounds(370, 192, 100, 75);
+		buttonTwo.setFont(buttonFont);
+		buttonTwo.setBackground(new Color(60, 179, 113));
+		buttonTwo.setForeground(Color.WHITE);
+		buttonTwo.setBorder(BorderFactory.createLineBorder(new Color(34, 45, 50), 2));
+		buttonTwo.setCursor(cursor);
+		buttonTwo.addActionListener(this::orderBeefBurger);
+		scrollablePanel.add(buttonTwo);	
+		createFoodLabel(scrollablePanel, "Beef Burger", 180);
         createFoodImageLabel(scrollablePanel, "beef burger", "beef burger.png", 180);
-
-        createFoodItemButton(scrollablePanel, 3, buttonMessage, 300,new Color(50, 150, 255));
-        createFoodLabel(scrollablePanel, "Creammy Pasta ", 300);
+      		
+		buttonThree = new JButton(buttonMessage);
+		buttonThree.setBounds(370, 312, 100, 75);
+		buttonThree.setFont(buttonFont);
+		buttonThree.setBackground(new Color(50, 150, 255));
+		buttonThree.setForeground(Color.WHITE);
+		buttonThree.setBorder(BorderFactory.createLineBorder(new Color(34, 45, 50), 2));
+		buttonThree.setCursor(cursor);
+		buttonThree.addActionListener(this::orderCreamyPasta);
+		scrollablePanel.add(buttonThree);	
+		createFoodLabel(scrollablePanel, "Creammy Pasta ", 300);
         createFoodImageLabel(scrollablePanel, "Food Image 3", "pasta.png", 300);
-
-        createFoodItemButton(scrollablePanel, 4, buttonMessage, 470,new Color(255, 99, 71));
-        createFoodLabel(scrollablePanel, "Japaness Ramen", 470);
+       
+		buttonFour = new JButton(buttonMessage);
+		buttonFour.setBounds(370, 482, 100, 75);
+		buttonFour.setFont(buttonFont);
+		buttonFour.setBackground(new Color(255, 99, 71));
+		buttonFour.setForeground(Color.WHITE);
+		buttonFour.setBorder(BorderFactory.createLineBorder(new Color(34, 45, 50), 2));
+		buttonFour.setCursor(cursor);
+		buttonFour.addActionListener(this::orderRamen);
+		scrollablePanel.add(buttonFour);	
+		createFoodLabel(scrollablePanel, "Japaness Ramen", 470);
         createFoodImageLabel(scrollablePanel, "Food Image 4", "rammen.png", 470);
 
         JScrollPane scrollPane = new JScrollPane(scrollablePanel, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
@@ -105,16 +138,7 @@ class ReviewShowPage extends JFrame {
         container.add(backgroundImageLabel);
     }
 
-    private void createFoodItemButton(JPanel panel, int buttonIndex, String label, int yPosition, Color backgroundColor) {
-    JButton button = new JButton(label);
-    button.setBounds(370, yPosition + 12, 100, 75);
-    button.setFont(new Font("Arial", Font.BOLD, 16));
-    button.setBackground(backgroundColor); // Use the custom background color
-    button.setForeground(Color.WHITE);
-    button.setBorder(BorderFactory.createLineBorder(new Color(34, 45, 50), 2));
-    button.addActionListener(e -> handleButtonAction(buttonIndex));
-    panel.add(button);
-}
+
 
     private void createFoodLabel(JPanel panel, String labelText, int yPosition) {
         JLabel label = new JLabel(labelText, JLabel.CENTER);
@@ -134,47 +158,36 @@ class ReviewShowPage extends JFrame {
         panel.add(imageLabel);
     }
 
-    private void handleButtonAction(int buttonIndex) {
-        switch (buttonIndex) {
-            case 1:
-			
-			JOptionPane.showMessageDialog(this, "page are under construction .- IT Department", "Error", JOptionPane.ERROR_MESSAGE);
-  
-                break;
-            case 2:
-			
-			JOptionPane.showMessageDialog(this, "page are under construction .- IT Department", "Error", JOptionPane.ERROR_MESSAGE);
+	
+private void orderChickenBiriyani(ActionEvent e) {
+   JOptionPane.showMessageDialog(this, "page are under construction .- IT Department", "Error", JOptionPane.ERROR_MESSAGE);
+}
 
-                break;
-            case 3:
-			
-			JOptionPane.showMessageDialog(this, "page are under construction .- IT Department", "Error", JOptionPane.ERROR_MESSAGE);
-				
-                break;
-            case 4:
-			
-                JOptionPane.showMessageDialog(this, "page are under construction .- IT Department", "Error", JOptionPane.ERROR_MESSAGE);
-				
-                break;
-           
-            default:
-                JOptionPane.showMessageDialog(this, "Food Item " + buttonIndex + " selected");
-                break;
-        }
+    private void orderBeefBurger(ActionEvent e) {
+        JOptionPane.showMessageDialog(this, "page are under construction .- IT Department", "Error", JOptionPane.ERROR_MESSAGE);
+		}
+
+    private void orderCreamyPasta(ActionEvent e) {
+       JOptionPane.showMessageDialog(this, "page are under construction .- IT Department", "Error", JOptionPane.ERROR_MESSAGE);
     }
+
+    private void orderRamen(ActionEvent e) {
+        JOptionPane.showMessageDialog(this, "page are under construction .- IT Department", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+	   
 		
-		 private void goBack(ActionEvent e) {
-			
-			this.setVisible(false);
-			ReviewsFoodPage foodReviewsPage = new ReviewsFoodPage();
-			foodReviewsPage.setTitle("Food Reviews Page");
-			foodReviewsPage.setSize(900, 600);
-			foodReviewsPage.setLocationRelativeTo(null);
-			foodReviewsPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			foodReviewsPage.setVisible(true);
-			foodReviewsPage.setResizable(false);       
-			foodReviewsPage.setResizable(false);       
-			
+		 private void goBack(ActionEvent e) {   
+
+			this.setVisible(false); 
+			 
+			ShowReviewService page = new ShowReviewService();
+			page.setTitle("Customer Food Service");
+			page.setSize(900, 600);
+			page.setLocationRelativeTo(null);
+			page.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			page.setVisible(true);
+			page.setResizable(false);
+				
 		}
 		
 		
