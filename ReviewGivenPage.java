@@ -170,6 +170,16 @@ private void orderChickenBiriyani(ActionEvent e) {
 	
     if (isFoodOrderedByUser(foodItem)) {
         JOptionPane.showMessageDialog(this, "You can give a review for " + foodItem, "Review", JOptionPane.INFORMATION_MESSAGE,okImg);
+		
+		this.setVisible(false);
+		ReviewForChikhenDumBiriyani frame = new ReviewForChikhenDumBiriyani(username);
+        frame.setTitle("Food Ordering sysytem");
+        frame.setSize(900, 600);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+		frame.setResizable(false);
+		
     } else {
         JOptionPane.showMessageDialog(this, "Sorry, you have not ordered " + foodItem + " yet. You are not eligible to review it.", "Error", JOptionPane.ERROR_MESSAGE,BlankImg);
     }
@@ -183,6 +193,16 @@ private void orderChickenBiriyani(ActionEvent e) {
 	
 		if (isFoodOrderedByUser(foodItem)) {
 			JOptionPane.showMessageDialog(this, "You can give a review for " + foodItem, "Review", JOptionPane.INFORMATION_MESSAGE,okImg);
+			
+			this.setVisible(false);
+			ReviewForBeefBurger frame = new ReviewForBeefBurger(username);
+			frame.setTitle("Food Ordering sysytem");
+			frame.setSize(900, 600);
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			frame.setLocationRelativeTo(null);
+			frame.setVisible(true);
+			frame.setResizable(false);
+			
 		} else {
 			JOptionPane.showMessageDialog(this, "Sorry, you have not ordered " + foodItem + " yet. You are not eligible to review it.", "Error", JOptionPane.ERROR_MESSAGE,BlankImg);
 		}
@@ -196,6 +216,16 @@ private void orderChickenBiriyani(ActionEvent e) {
 	
 		if (isFoodOrderedByUser(foodItem)) {
 			JOptionPane.showMessageDialog(this, "You can give a review for " + foodItem, "Review", JOptionPane.INFORMATION_MESSAGE,okImg);
+			
+			this.setVisible(false);
+			ReviewForCreammyPasta frame = new ReviewForCreammyPasta(username);
+			frame.setTitle("Food Ordering sysytem");
+			frame.setSize(900, 600);
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			frame.setLocationRelativeTo(null);
+			frame.setVisible(true);
+			frame.setResizable(false);
+			
 		} else {
 			JOptionPane.showMessageDialog(this, "Sorry, you have not ordered " + foodItem + " yet. You are not eligible to review it.", "Error", JOptionPane.ERROR_MESSAGE,BlankImg);
 		}
@@ -209,6 +239,16 @@ private void orderChickenBiriyani(ActionEvent e) {
 	
 		if (isFoodOrderedByUser(foodItem)) {
 			JOptionPane.showMessageDialog(this, "You can give a review for " + foodItem, "Review", JOptionPane.INFORMATION_MESSAGE,okImg);
+			
+			this.setVisible(false);
+			ReviewForJapanessRamen frame = new ReviewForJapanessRamen(username);
+			frame.setTitle("Food Ordering sysytem");
+			frame.setSize(900, 600);
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			frame.setLocationRelativeTo(null);
+			frame.setVisible(true);
+			frame.setResizable(false);
+						
 		} else {
 			JOptionPane.showMessageDialog(this, "Sorry, you have not ordered " + foodItem + " yet. You are not eligible to review it.", "Error", JOptionPane.ERROR_MESSAGE,BlankImg);
 		}
