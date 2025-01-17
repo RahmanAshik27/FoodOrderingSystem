@@ -50,6 +50,7 @@ class ReviewsFoodPage extends JFrame {
         showReviewsButton.setBackground(new Color(34, 139, 34));
         showReviewsButton.setForeground(Color.WHITE);
         showReviewsButton.setCursor(cursor);
+		showReviewsButton.addActionListener(this::showReviewLoginPage);
         container.add(showReviewsButton);
 
         showLabel = new JLabel("Click to see user reviews", JLabel.CENTER);
@@ -93,7 +94,21 @@ class ReviewsFoodPage extends JFrame {
         backgroundImageLabel.setBounds(0, 0, 900, 600);
         container.add(backgroundImageLabel);
     }
-
+	
+	private void showReviewLoginPage(ActionEvent e) {
+        
+		this.setVisible(false);
+		 
+        ReviewShowPage reviewShowPage = new ReviewShowPage();
+        reviewShowPage.setTitle("Food Delivery System");
+        reviewShowPage.setSize(900, 600);
+        reviewShowPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        reviewShowPage.setLocationRelativeTo(null);
+        reviewShowPage.setVisible(true);
+        reviewShowPage.setResizable(false);
+		
+    }
+	
     private void openReviewLoginPage(ActionEvent e) {
         this.setVisible(false);
 
@@ -251,6 +266,16 @@ class ReviewLoginPage extends JFrame {
     String result = checkCredentials(username, password);
     if (result.equals("SUCCESS")) {
         JOptionPane.showMessageDialog(this, "Login Successful!", "Success", JOptionPane.INFORMATION_MESSAGE, okImg);
+		
+		this.setVisible(false);
+		ReviewGivenPage reviewGivenPage = new ReviewGivenPage();
+        reviewGivenPage.setTitle("Food Delivery System");
+        reviewGivenPage.setSize(900, 600);
+        reviewGivenPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        reviewGivenPage.setLocationRelativeTo(null);
+        reviewGivenPage.setVisible(true);
+        reviewGivenPage.setResizable(false);
+		
     } else if (result.equals("INCORRECT_PASSWORD")) {
         String errorMessage = "<html><div style='text-align: center;'><b>Incorrect Password!</b><br>Please try again.</div></html>";
         JOptionPane.showMessageDialog(this, errorMessage, "Error", JOptionPane.ERROR_MESSAGE, wrongImg);
@@ -305,7 +330,7 @@ private String checkCredentials(String username, String password) {
 
     private void goBack(ActionEvent e) {
         this.setVisible(false);
-         ReviewsFoodPage foodReviewsPage = new ReviewsFoodPage();
+        ReviewsFoodPage foodReviewsPage = new ReviewsFoodPage();
         foodReviewsPage.setTitle("Food Reviews Page");
         foodReviewsPage.setSize(900, 600);
         foodReviewsPage.setLocationRelativeTo(null);
