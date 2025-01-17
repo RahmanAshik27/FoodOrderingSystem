@@ -6,8 +6,10 @@ class CustomerFoodService extends JFrame {
     private Container container;
     private JLabel welcomeLabel, categoryLabel, foodNameLabel1, foodNameLabel2, foodNameLabel3, foodNameLabel4, orderInfoLabel;
     private JButton button1, button2, button3, button4,backButton;
+	private String username;
 
-    CustomerFoodService() {
+    CustomerFoodService(String username) {
+		this.username=username;
         setupCustomerFoodServicePage();
     }
 
@@ -148,7 +150,7 @@ class CustomerFoodService extends JFrame {
 	
 	private void performSearch(ActionEvent e) {
   
-        CustomerFoodServiceOptionsPage customerFoodServiceOptionsPage = new CustomerFoodServiceOptionsPage();
+        CustomerFoodServiceOptionsPage customerFoodServiceOptionsPage = new CustomerFoodServiceOptionsPage(username);
         customerFoodServiceOptionsPage.setTitle("Food Delivery System");
         customerFoodServiceOptionsPage.setSize(900, 600);
         customerFoodServiceOptionsPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

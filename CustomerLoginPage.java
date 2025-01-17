@@ -140,16 +140,26 @@ class CustomerLoginPage extends JFrame {
             }
         }
 
-        if (loginSuccessful) {
-            JOptionPane.showMessageDialog(this, "Login Successful", "Success", JOptionPane.INFORMATION_MESSAGE, okImg);
-            CustomerFoodService page = new CustomerFoodService();
-            page.setTitle("Customer Food Service");
-            page.setSize(900, 600);
-            page.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            page.setLocationRelativeTo(null);
-            page.setVisible(true);
-            this.dispose();
-        } else {
+		if (loginSuccessful) {
+			
+			String filename = username + ".txt";
+			
+		try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename, true))) {
+        writer.write("Login Successful: " + username + "\n");
+		} catch (IOException b) {
+			b.printStackTrace();
+		}
+
+		JOptionPane.showMessageDialog(this, "Login Successful", "Success", JOptionPane.INFORMATION_MESSAGE, okImg);
+		CustomerFoodService page = new CustomerFoodService(username);
+		page.setTitle("Customer Food Service");
+		page.setSize(900, 600);
+		page.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		page.setLocationRelativeTo(null);
+		page.setVisible(true);
+		this.dispose();
+	
+	}else {
             String errorMessage = "<html><div style='text-align: center;'><b>Incorrect Username or Password!</b><br>Please try again.</div></html>";
             JOptionPane.showMessageDialog(this, errorMessage, "Error", JOptionPane.ERROR_MESSAGE, wrongImg);
         }
