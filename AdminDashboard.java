@@ -73,8 +73,8 @@ class AdminDashboard extends JFrame {
 		container.add(foodReviewsButton);
 
 
-		itDepartmentButton = new JButton("Management Department");
-		itDepartmentButton.setBounds(550, 408, 250, 50);
+		itDepartmentButton = new JButton("Managemnet Department");
+		itDepartmentButton.setBounds(525, 408, 300, 50);
 		itDepartmentButton.setFont(buttonFont);
 		itDepartmentButton.setBackground(new Color(178, 34, 34)); 
 		itDepartmentButton.setForeground(Color.WHITE);
@@ -135,7 +135,15 @@ class AdminDashboard extends JFrame {
     }
 
     private void handleITDepartment(ActionEvent e) {
-        JOptionPane.showMessageDialog(this, "IT Department page are under construction .- IT Department");
+        
+		ManagementDepartment managementDepartmentPage = new ManagementDepartment ();
+        managementDepartmentPage.setTitle("Food Reviews Page");
+        managementDepartmentPage.setSize(900, 600);
+        managementDepartmentPage.setLocationRelativeTo(null);
+        managementDepartmentPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        managementDepartmentPage.setVisible(true);
+        managementDepartmentPage.setResizable(false);
+		this.setVisible(false);
     }
 	
 	private void goBack(ActionEvent e) {
