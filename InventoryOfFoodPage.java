@@ -271,7 +271,15 @@ class InventoryOfFoodPage extends JFrame {
 		
     }
     private void goBack(ActionEvent e) {
-        JOptionPane.showMessageDialog(this, "Page is under construction. - IT Department", "Error", JOptionPane.ERROR_MESSAGE);
+			
+			AdminDashboard dashboard = new AdminDashboard();
+			dashboard.setTitle("Admin Dashboard");
+			dashboard.setSize(900, 600);
+			dashboard.setLocationRelativeTo(null);
+			dashboard.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			dashboard.setResizable(false);
+			dashboard.setVisible(true);
+			this.setVisible(false); 
     }
 
 }
@@ -386,14 +394,15 @@ class AddChikhenDumBiriyani extends JFrame {
     }
 
     private void goBack(ActionEvent e) {
-        InventoryOfFoodPage inventoryPage = new InventoryOfFoodPage();
+			
+		InventoryOfFoodPage inventoryPage = new InventoryOfFoodPage();
         inventoryPage.setTitle("Food Delivery System");
         inventoryPage.setSize(900, 600);
         inventoryPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         inventoryPage.setLocationRelativeTo(null);
         inventoryPage.setVisible(true);
         inventoryPage.setResizable(false);
-		 this.setVisible(false);
+		 this.setVisible(false); 
     }
 
     
