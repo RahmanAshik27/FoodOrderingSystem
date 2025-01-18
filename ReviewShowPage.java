@@ -159,20 +159,49 @@ class ReviewShowPage extends JFrame {
     }
 
 	
-private void orderChickenBiriyani(ActionEvent e) {
-   JOptionPane.showMessageDialog(this, "page are under construction .- IT Department", "Error", JOptionPane.ERROR_MESSAGE);
-}
+	private void orderChickenBiriyani(ActionEvent e) {
+		
+		ShowReviewForChikhenDumBiriyani frame = new ShowReviewForChikhenDumBiriyani();
+        frame.setTitle("Food Ordering sysytem");
+        frame.setSize(900, 600);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+		frame.setResizable(false);
+	}
 
     private void orderBeefBurger(ActionEvent e) {
-        JOptionPane.showMessageDialog(this, "page are under construction .- IT Department", "Error", JOptionPane.ERROR_MESSAGE);
+        
+		ShowReviewForBeefBurger frame = new ShowReviewForBeefBurger();
+        frame.setTitle("Food Ordering sysytem");
+        frame.setSize(900, 600);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+		frame.setResizable(false);
+		
 		}
 
     private void orderCreamyPasta(ActionEvent e) {
-       JOptionPane.showMessageDialog(this, "page are under construction .- IT Department", "Error", JOptionPane.ERROR_MESSAGE);
+       
+	   ShowReviewForCreamyPasta frame = new ShowReviewForCreamyPasta();
+        frame.setTitle("Food Ordering sysytem");
+        frame.setSize(900, 600);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+		frame.setResizable(false);
     }
 
     private void orderRamen(ActionEvent e) {
-        JOptionPane.showMessageDialog(this, "page are under construction .- IT Department", "Error", JOptionPane.ERROR_MESSAGE);
+		
+        ShowReviewForJapanessRamen frame = new ShowReviewForJapanessRamen();
+        frame.setTitle("Food Ordering sysytem");
+        frame.setSize(900, 600);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+		frame.setResizable(false);
     }
 	   
 		
