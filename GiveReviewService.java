@@ -531,6 +531,7 @@ class ReviewForChikhenDumBiriyani extends JFrame {
                 
                 saveReviewToFile(username, fixedRating, review);
                 JOptionPane.showMessageDialog(this, "Review posted successfully!", "Success", JOptionPane.INFORMATION_MESSAGE,okImg);
+				 reviewTextArea.setText("");
             } else {
                 JOptionPane.showMessageDialog(this, "You can edit your review.", "Edit Review", JOptionPane.INFORMATION_MESSAGE,okImg);
             }
@@ -541,7 +542,7 @@ class ReviewForChikhenDumBiriyani extends JFrame {
         File file = new File("CustomersReviewsForChikhenDumBiriyani.txt");
         ImageIcon BlankImg = new ImageIcon("FillAllbox.png");
 		try (FileWriter writer = new FileWriter(file, true)) { 
-            writer.write("Username: " + username);
+            writer.write(username);
 			  writer.write(" : " + review );
             writer.write(" - Rating: " + rating + "\n");
           
@@ -837,6 +838,7 @@ class ReviewForBeefBurger extends JFrame {
                 
                 saveReviewToFile(username, fixedRating, review);
                 JOptionPane.showMessageDialog(this, "Review posted successfully!", "Success", JOptionPane.INFORMATION_MESSAGE,okImg);
+				 reviewTextArea.setText("");
             } else {
                 JOptionPane.showMessageDialog(this, "You can edit your review.", "Edit Review", JOptionPane.INFORMATION_MESSAGE,okImg);
             }
@@ -847,7 +849,7 @@ class ReviewForBeefBurger extends JFrame {
         File file = new File("CustomersReviewsForBeefBurger.txt");
         ImageIcon BlankImg = new ImageIcon("FillAllbox.png");
 		try (FileWriter writer = new FileWriter(file, true)) { 
-            writer.write("Username: " + username);
+            writer.write(username);
 			  writer.write(" : " + review );
             writer.write(" - Rating: " + rating + "\n");
           
@@ -1143,6 +1145,7 @@ class ReviewForCreammyPasta extends JFrame {
                 
                 saveReviewToFile(username, fixedRating, review);
                 JOptionPane.showMessageDialog(this, "Review posted successfully!", "Success", JOptionPane.INFORMATION_MESSAGE,okImg);
+				 reviewTextArea.setText("");
             } else {
                 JOptionPane.showMessageDialog(this, "You can edit your review.", "Edit Review", JOptionPane.INFORMATION_MESSAGE,okImg);
             }
@@ -1153,7 +1156,7 @@ class ReviewForCreammyPasta extends JFrame {
         File file = new File("CustomersReviewsForCreamyPasta.txt");
         ImageIcon BlankImg = new ImageIcon("FillAllbox.png");
 		try (FileWriter writer = new FileWriter(file, true)) { 
-            writer.write("Username: " + username);
+            writer.write(username);
 			  writer.write(" : " + review );
             writer.write(" - Rating: " + rating + "\n");
           
@@ -1449,6 +1452,7 @@ class ReviewForJapanessRamen extends JFrame {
             if (choice == JOptionPane.YES_OPTION) {
                 
                 saveReviewToFile(username, fixedRating, review);
+				
                 JOptionPane.showMessageDialog(this, "Review posted successfully!", "Success", JOptionPane.INFORMATION_MESSAGE,okImg);
             } else {
                 JOptionPane.showMessageDialog(this, "You can edit your review.", "Edit Review", JOptionPane.INFORMATION_MESSAGE,okImg);
@@ -1460,10 +1464,10 @@ class ReviewForJapanessRamen extends JFrame {
         File file = new File("CustomersReviewsForJapaneseRamen.txt");
         ImageIcon BlankImg = new ImageIcon("FillAllbox.png");
 		try (FileWriter writer = new FileWriter(file, true)) { 
-            writer.write("Username: " + username);
+            writer.write(username);
 			  writer.write(" : " + review );
             writer.write(" - Rating: " + rating + "\n");
-          
+			 reviewTextArea.setText("");
             writer.write("----------------------------------------\n"); 
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(this, "An error occurred while saving the review.", "Error", JOptionPane.ERROR_MESSAGE,BlankImg);

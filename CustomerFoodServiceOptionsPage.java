@@ -252,6 +252,7 @@ class ChikenDumBiriyaniOrderDetails extends JFrame {
         availableQuantity = 10; 
     }
 }
+
 private void saveFoodInventoryToFile() {
     try {
         StringBuilder updatedContent = new StringBuilder();
@@ -457,40 +458,28 @@ private void saveFoodInventoryToFile() {
         backgroundImageLabel.setBounds(0, 0, 900, 600);
         container.add(backgroundImageLabel);
     }
-	
-	
-private void readCustomerReviews() {
-    try {
-        File file = new File("CustomersReviewsForChikhenDumBiriyani.txt");  
-        BufferedReader br = new BufferedReader(new FileReader(file));
-        String line;
-        while ((line = br.readLine()) != null) {
-            
-            String[] parts = line.split(",", 3);
-            if (parts.length == 3) {
-                String username = parts[1].trim();  
-                String comment = parts[2].trim();  
-                String starRating = parts[0].trim();  
-                
-                int rating = 0;
-                try {
-                    rating = Integer.parseInt(starRating); 
-                } catch (NumberFormatException e) {
-            
-                    rating = 0;
-                    System.out.println("Invalid rating in review: " + starRating);
-                }	
-			
-                String review = username + " - " + comment + " - " + starRating + " star \n";
-                reviewArea.append(review);
+	private void readCustomerReviews() {
+		File reviewFile = new File("CustomersReviewsForChikhenDumBiriyani.txt");
+			if (!reviewFile.exists()) {
+				JOptionPane.showMessageDialog(this, "Review file not found!", "Error", JOptionPane.ERROR_MESSAGE);
+				return;
+			}
+
+        StringBuilder reviewsBuilder = new StringBuilder();
+
+        try (BufferedReader br = new BufferedReader(new FileReader(reviewFile))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                reviewsBuilder.append(line).append("\n");
             }
+        } catch (IOException | NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Error reading reviews file: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            return;
         }
-        br.close();
-    } catch (IOException e) {
-        e.printStackTrace();
-        reviewArea.append("Error reading customer reviews.\n");
-    }
-}
+        reviewArea.setText(reviewsBuilder.toString());
+	}
+
+
     private void addItemAction(ActionEvent e) {
         if (itemCount < availableQuantity) {
             itemCount++; 
@@ -847,39 +836,28 @@ private void saveFoodInventoryToFile() {
         container.add(backgroundImageLabel);
     }
 	
-	
 private void readCustomerReviews() {
-    try {
-        File file = new File("CustomersReviewsForBeefBurger.txt");  
-        BufferedReader br = new BufferedReader(new FileReader(file));
-        String line;
-        while ((line = br.readLine()) != null) {
-            
-            String[] parts = line.split(",", 3);
-            if (parts.length == 3) {
-                String username = parts[1].trim();  
-                String comment = parts[2].trim();  
-                String starRating = parts[0].trim();  
-                
-                int rating = 0;
-                try {
-                    rating = Integer.parseInt(starRating); 
-                } catch (NumberFormatException e) {
-            
-                    rating = 0;
-                    System.out.println("Invalid rating in review: " + starRating);
-                }	
-			
-                String review = username + " - " + comment + " - " + starRating + " star \n";
-                reviewArea.append(review);
+		File reviewFile = new File("CustomersReviewsForBeefBurger.txt");
+			if (!reviewFile.exists()) {
+				JOptionPane.showMessageDialog(this, "Review file not found!", "Error", JOptionPane.ERROR_MESSAGE);
+				return;
+			}
+
+        StringBuilder reviewsBuilder = new StringBuilder();
+
+        try (BufferedReader br = new BufferedReader(new FileReader(reviewFile))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                reviewsBuilder.append(line).append("\n");
             }
+        } catch (IOException | NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Error reading reviews file: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            return;
         }
-        br.close();
-    } catch (IOException e) {
-        e.printStackTrace();
-        reviewArea.append("Error reading customer reviews.\n");
-    }
-}
+        reviewArea.setText(reviewsBuilder.toString());
+	}
+	
+	
     private void addItemAction(ActionEvent e) {
         if (itemCount < availableQuantity) {
             itemCount++; 
@@ -1242,39 +1220,30 @@ private void saveFoodInventoryToFile() {
         container.add(backgroundImageLabel);
     }
 	
-	
 private void readCustomerReviews() {
-    try {
-        File file = new File("CustomersReviewsForCreamyPasta.txt");  
-        BufferedReader br = new BufferedReader(new FileReader(file));
-        String line;
-        while ((line = br.readLine()) != null) {
-            
-            String[] parts = line.split(",", 3);
-            if (parts.length == 3) {
-                String username = parts[1].trim();  
-                String comment = parts[2].trim();  
-                String starRating = parts[0].trim();  
-                
-                int rating = 0;
-                try {
-                    rating = Integer.parseInt(starRating); 
-                } catch (NumberFormatException e) {
-            
-                    rating = 0;
-                    System.out.println("Invalid rating in review: " + starRating);
-                }	
-			
-                String review = username + " - " + comment + " - " + starRating + " star \n";
-                reviewArea.append(review);
+		File reviewFile = new File("CustomersReviewsForCreamyPasta.txt");
+			if (!reviewFile.exists()) {
+				JOptionPane.showMessageDialog(this, "Review file not found!", "Error", JOptionPane.ERROR_MESSAGE);
+				return;
+			}
+
+        StringBuilder reviewsBuilder = new StringBuilder();
+
+        try (BufferedReader br = new BufferedReader(new FileReader(reviewFile))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                reviewsBuilder.append(line).append("\n");
             }
+        } catch (IOException | NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Error reading reviews file: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            return;
         }
-        br.close();
-    } catch (IOException e) {
-        e.printStackTrace();
-        reviewArea.append("Error reading customer reviews.\n");
-    }
-}
+        reviewArea.setText(reviewsBuilder.toString());
+	}
+	
+	
+	
+	
     private void addItemAction(ActionEvent e) {
         if (itemCount < availableQuantity) {
             itemCount++; 
@@ -1637,37 +1606,27 @@ private void saveFoodInventoryToFile() {
 	
 	
 private void readCustomerReviews() {
-    try {
-        File file = new File("CustomersReviewsForJapaneseRamen.txt");  
-        BufferedReader br = new BufferedReader(new FileReader(file));
-        String line;
-        while ((line = br.readLine()) != null) {
-            
-            String[] parts = line.split(",", 3);
-            if (parts.length == 3) {
-                String username = parts[1].trim();  
-                String comment = parts[2].trim();  
-                String starRating = parts[0].trim();  
-                
-                int rating = 0;
-                try {
-                    rating = Integer.parseInt(starRating); 
-                } catch (NumberFormatException e) {
-            
-                    rating = 0;
-                    System.out.println("Invalid rating in review: " + starRating);
-                }	
-			
-                String review = username + " - " + comment + " - " + starRating + " star \n";
-                reviewArea.append(review);
+		File reviewFile = new File("CustomersReviewsForJapaneseRamen.txt");
+			if (!reviewFile.exists()) {
+				JOptionPane.showMessageDialog(this, "Review file not found!", "Error", JOptionPane.ERROR_MESSAGE);
+				return;
+			}
+
+        StringBuilder reviewsBuilder = new StringBuilder();
+
+        try (BufferedReader br = new BufferedReader(new FileReader(reviewFile))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                reviewsBuilder.append(line).append("\n");
             }
+        } catch (IOException | NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Error reading reviews file: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            return;
         }
-        br.close();
-    } catch (IOException e) {
-        e.printStackTrace();
-        reviewArea.append("Error reading customer reviews.\n");
-    }
-}
+        reviewArea.setText(reviewsBuilder.toString());
+	}
+	
+	
     private void addItemAction(ActionEvent e) {
         if (itemCount < availableQuantity) {
             itemCount++; 

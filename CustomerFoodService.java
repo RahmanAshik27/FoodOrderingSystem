@@ -1,6 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.*;
+import java.nio.file.*;
 
 class CustomerFoodService extends JFrame {
     private Container container;
@@ -157,7 +160,7 @@ class CustomerFoodService extends JFrame {
         customerFoodServiceOptionsPage.setLocationRelativeTo(null);
         customerFoodServiceOptionsPage.setVisible(true);
         customerFoodServiceOptionsPage.setResizable(false);
-    this.dispose();
+        this.dispose();
 	
 	}
 	
@@ -175,19 +178,53 @@ class CustomerFoodService extends JFrame {
 
 	
 	private void orderChickenBiriyani(ActionEvent e) {
-        JOptionPane.showMessageDialog(this, "Chicken Biriyani ordered!", "Order", JOptionPane.INFORMATION_MESSAGE);
+        ChikenDumBiriyaniOrderDetails chikenDumBiriyani = new ChikenDumBiriyaniOrderDetails(username);
+			chikenDumBiriyani.setTitle("Food Order Details");
+			chikenDumBiriyani.setSize(900, 600);
+			chikenDumBiriyani.setLocationRelativeTo(null);
+			chikenDumBiriyani.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			chikenDumBiriyani.setVisible(true);
+			chikenDumBiriyani.setResizable(false);
+			
+			this.setVisible(false); 
     }
 
     private void orderBeefBurger(ActionEvent e) {
-        JOptionPane.showMessageDialog(this, "Beef Burger ordered!", "Order", JOptionPane.INFORMATION_MESSAGE);
+        BeefBurgerOrderDetails beefBurger = new BeefBurgerOrderDetails(username);
+				beefBurger.setTitle("Food Order Details");
+				beefBurger.setSize(900, 600);
+				beefBurger.setLocationRelativeTo(null);
+				beefBurger.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				beefBurger.setVisible(true);
+				beefBurger.setResizable(false);
+                
+				this.setVisible(false); 
+               
     }
 
     private void orderCreamyPasta(ActionEvent e) {
-        JOptionPane.showMessageDialog(this, "Creamy Pasta ordered!", "Order", JOptionPane.INFORMATION_MESSAGE);
+				CreammyPastaDetails creammyPasta = new CreammyPastaDetails(username);
+				creammyPasta.setTitle("Food Order Details");
+				creammyPasta.setSize(900, 600);
+				creammyPasta.setLocationRelativeTo(null);
+				creammyPasta.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				creammyPasta.setVisible(true);
+				creammyPasta.setResizable(false);
+                
+				this.setVisible(false); 
     }
 
     private void orderRamen(ActionEvent e) {
-        JOptionPane.showMessageDialog(this, "Ramen ordered!", "Order", JOptionPane.INFORMATION_MESSAGE);
+				JapanessRamenDetails japanessRamen = new JapanessRamenDetails(username);
+				japanessRamen.setTitle("Food Order Details");
+				japanessRamen.setSize(900, 600);
+				japanessRamen.setLocationRelativeTo(null);
+				japanessRamen.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				japanessRamen.setVisible(true);
+				japanessRamen.setResizable(false);
+                
+				this.setVisible(false); 
     }
 
 }
+
