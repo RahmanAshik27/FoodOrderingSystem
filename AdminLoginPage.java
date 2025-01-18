@@ -106,6 +106,8 @@ import java.awt.event.ActionEvent;
         footerLabel.setOpaque(true);
         footerLabel.setBackground(new Color(255, 255, 255, 150));
         container.add(footerLabel);
+		
+		
 
         imageLabel = new JLabel(new ImageIcon("FirstPage.png"));
         imageLabel.setBounds(100, 60, 250, 400);
@@ -148,9 +150,18 @@ import java.awt.event.ActionEvent;
 			
 			}
 			
-        if ("admin".equals(username) && "password".equals(password)) {
+        if ("admin".equals(username) && "CGPA-4.00".equals(password)) {
             String successMessage = "<html><div style='text-align: center;'><b>Login Successful!</b><br>Please proceed to the Admin page.</div></html>";
             JOptionPane.showMessageDialog(this, successMessage, "Success", JOptionPane.INFORMATION_MESSAGE, okImg);
+			
+			AdminDashboard dashboard = new AdminDashboard();
+			dashboard.setTitle("Admin Dashboard");
+			dashboard.setSize(900, 600);
+			dashboard.setLocationRelativeTo(null);
+			dashboard.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			dashboard.setResizable(false);
+			dashboard.setVisible(true);
+			this.setVisible(false); 
         } else {
             String errorMessage = "<html><div style='text-align: center;'><b>Incorrect Username or Password!</b><br>Please try again.</div></html>";
             JOptionPane.showMessageDialog(this, errorMessage, "Error", JOptionPane.ERROR_MESSAGE, wrongImg);
