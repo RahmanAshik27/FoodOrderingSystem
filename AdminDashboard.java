@@ -73,7 +73,7 @@ class AdminDashboard extends JFrame {
 		container.add(foodReviewsButton);
 
 
-		itDepartmentButton = new JButton("IT Department");
+		itDepartmentButton = new JButton("Management Department");
 		itDepartmentButton.setBounds(550, 408, 250, 50);
 		itDepartmentButton.setFont(buttonFont);
 		itDepartmentButton.setBackground(new Color(178, 34, 34)); 
@@ -116,7 +116,14 @@ class AdminDashboard extends JFrame {
     }
 
     private void handleInventory(ActionEvent e) {
-        JOptionPane.showMessageDialog(this, "Inventory page are under construction .- IT Department");
+        InventoryOfFoodPage inventoryPage = new InventoryOfFoodPage();
+        inventoryPage.setTitle("Food Delivery System");
+        inventoryPage.setSize(900, 600);
+        inventoryPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        inventoryPage.setLocationRelativeTo(null);
+        inventoryPage.setVisible(true);
+        inventoryPage.setResizable(false);
+		this.setVisible(false);
     }
 
     private void handleRidersDetails(ActionEvent e) {
