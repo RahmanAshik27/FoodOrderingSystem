@@ -1,9 +1,0 @@
-Username: Ashik
-Phone: 01626318822
-Email: ashiku@gmail.com
-Password: 12345
-Login Successful: ashik
-Food Item: Beef Burger, Quantity: 5, Price: 270.0, Total Price: 1350.0
-Login Successful: ashik
-Food Item: Creammy Pasta, Quantity: 4, Price: 310.0, Total Price: 1240.0
-Login Successful: ashik
