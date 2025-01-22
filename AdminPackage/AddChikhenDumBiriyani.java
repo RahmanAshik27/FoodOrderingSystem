@@ -99,28 +99,65 @@ public AddChikhenDumBiriyani() {
         textField.setText(String.valueOf(quantity));
 		
     }
+	
+	private void onConfirmButtonClick(ActionEvent e) {
+    String foodName = "Chikhen Dum Biriyani";
+    String quantity = textField.getText();
 
-    private void onConfirmButtonClick(ActionEvent e) {
-        String foodName = "Chikhen Dum Biriyani";
-        String quantity = textField.getText();
-
-        if (quantity.isEmpty()) {
-			ImageIcon BlankImg = new ImageIcon("FillAllbox.png");
-            JOptionPane.showMessageDialog(this, "Please add a quantity before confirming.", "Error", JOptionPane.ERROR_MESSAGE,BlankImg);
-            return;
-        }
-
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("AdminPackage/addRequest.txt", true))) {
-            writer.write(foodName + " - Quantity: " + quantity);
-            writer.newLine();
-			ImageIcon okImg = new ImageIcon("okImg.png");
-            JOptionPane.showMessageDialog(this, "Inventory update massage goes to Management Department", "we will update it soon ", JOptionPane.INFORMATION_MESSAGE,okImg);
-			textField.setText("");
-        } catch (IOException ex) {
-			ImageIcon BlankImg = new ImageIcon("FillAllbox.png");
-            JOptionPane.showMessageDialog(this, "Error writing to file: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE,BlankImg);
-        }
+    if (quantity.isEmpty()) {
+        ImageIcon BlankImg = new ImageIcon("FillAllbox.png");
+        JOptionPane.showMessageDialog(this, "Please add a quantity before confirming.", "Error", JOptionPane.ERROR_MESSAGE, BlankImg);
+        return;
     }
+
+    try {
+        File file = new File("AdminPackage/addRequest.txt");
+        StringBuilder fileContent = new StringBuilder();
+        boolean foodFound = false;
+        int totalQuantity = 0;
+
+        
+        if (file.exists()) {
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                if (line.contains(foodName)) {
+                   
+                    String[] parts = line.split(" - Quantity: ");
+                    if (parts.length == 2) {
+                        totalQuantity = Integer.parseInt(parts[1]) + Integer.parseInt(quantity);
+                    }
+                    foodFound = true;
+                   
+                    line = foodName + " - Quantity: " + totalQuantity;
+                }
+               
+                fileContent.append(line).append("\n");
+            }
+            reader.close();
+        } else {
+            System.out.println("File does not exist. Creating a new file.");
+        }
+
+        if (!foodFound) {
+            fileContent.append(foodName + " - Quantity: " + quantity + "\n");
+        }
+
+        BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+        writer.write(fileContent.toString());
+        writer.close();
+
+        ImageIcon okImg = new ImageIcon("okImg.png");
+        JOptionPane.showMessageDialog(this, "Inventory update message sent to Management Department", "We will update it soon", JOptionPane.INFORMATION_MESSAGE, okImg);
+
+        this.setVisible(false);
+
+    } catch (IOException ex) {
+        ImageIcon BlankImg = new ImageIcon("FillAllbox.png");
+        JOptionPane.showMessageDialog(this, "Error writing to file: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE, BlankImg);
+    }
+}
 
     private void goBack(ActionEvent e) {
 			

@@ -105,8 +105,15 @@ public class ManagementDepartment extends JFrame {
     }
 	
 	private void openManagemnetDepartment(ActionEvent e) {
-         JOptionPane.showMessageDialog(this, "Management page are under construction .- IT Department");
-		
+        
+		ManagementDepartmentOfFoodPage managementDepartmentOfFoodPage = new ManagementDepartmentOfFoodPage();
+        managementDepartmentOfFoodPage.setTitle("Food Delivery System");
+        managementDepartmentOfFoodPage.setSize(900, 600);
+        managementDepartmentOfFoodPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        managementDepartmentOfFoodPage.setLocationRelativeTo(null);
+        managementDepartmentOfFoodPage.setVisible(true);
+        managementDepartmentOfFoodPage.setResizable(false);
+		this.setVisible(false);
     }
 
 	

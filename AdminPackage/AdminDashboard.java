@@ -138,7 +138,14 @@ public AdminDashboard() {
     }
 
     private void handleFoodReviews(ActionEvent e) {
-        JOptionPane.showMessageDialog(this, "Food Reviews page are under construction .- IT Department");
+		
+        this.setVisible(false);
+		ShowReviewService page = new ShowReviewService();
+        page.setTitle("Customer Food Service");
+        page.setSize(900, 600);
+        page.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        page.setLocationRelativeTo(null);
+        page.setVisible(true);
     }
 
     private void handleITDepartment(ActionEvent e) {

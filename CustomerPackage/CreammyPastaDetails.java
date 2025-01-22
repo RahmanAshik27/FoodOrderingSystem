@@ -28,7 +28,7 @@ public class CreammyPastaDetails extends JFrame {
     private JTextArea reviewArea;
     private JScrollPane scrollPane;
 
-    private static final String FILE_PATH = "food_inventory.txt"; 
+    private static final String FILE_PATH = "AdminPackage/food_inventory.txt"; 
 
 public  CreammyPastaDetails(String username) {
 		
@@ -265,7 +265,7 @@ private void saveFoodInventoryToFile() {
     }
 	
 private void readCustomerReviews() {
-		File reviewFile = new File("CustomersReviewsForCreamyPasta.txt");
+		File reviewFile = new File("ReviewPackage/CustomersReviewsForCreamyPasta.txt");
 			if (!reviewFile.exists()) {
 				JOptionPane.showMessageDialog(this, "Review file not found!", "Error", JOptionPane.ERROR_MESSAGE);
 				return;
@@ -369,7 +369,7 @@ private void readCustomerReviews() {
 	
 	private void writeOrderDetails(String foodItem, int quantity, double price) {
     
-	String filename = username + ".txt"; 
+	String filename = "AdminPackage/" + username + ".txt"; 
     double totalPrice = quantity * price; 
 
     try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename, true))) {
