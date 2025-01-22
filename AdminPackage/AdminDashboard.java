@@ -134,7 +134,14 @@ public AdminDashboard() {
     }
 
     private void handleRidersDetails(ActionEvent e) {
-        JOptionPane.showMessageDialog(this, "Riders Details page are under construction .- IT Department");
+       
+	    this.setVisible(false);
+  	    RiderPageDetails riderPage = new RiderPageDetails();
+        riderPage.setTitle("Rider Login Page");
+        riderPage.setSize(900, 600);
+        riderPage.setLocationRelativeTo(null);
+        riderPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        riderPage.setVisible(true);
     }
 
     private void handleFoodReviews(ActionEvent e) {
