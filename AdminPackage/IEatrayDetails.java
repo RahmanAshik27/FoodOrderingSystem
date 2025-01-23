@@ -55,6 +55,7 @@ public class IEatrayDetails extends JFrame {
         loginButton.setFont(new Font("Arial", Font.BOLD, 24));
         loginButton.setBackground(new Color(255, 99, 71));
         loginButton.setForeground(Color.WHITE);
+		loginButton.addActionListener(this::openShowIEatrayRiderDetails);
         loginButton.setCursor(cursor);
         container.add(loginButton);
 
@@ -103,5 +104,16 @@ public class IEatrayDetails extends JFrame {
         createAccountForIEatrayPage.setLocationRelativeTo(null);
         createAccountForIEatrayPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         createAccountForIEatrayPage.setVisible(true);
+    }
+	
+	private void openShowIEatrayRiderDetails(ActionEvent e) {
+        this.setVisible(false);
+        
+		ShowIEatrayDetails frame = new ShowIEatrayDetails();
+        frame.setVisible(true);
+        frame.setTitle("FoodiBd Rider Details");
+        frame.setSize(900, 600);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
     }
 }

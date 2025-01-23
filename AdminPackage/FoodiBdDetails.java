@@ -55,6 +55,7 @@ public class FoodiBdDetails extends JFrame {
         loginButton.setFont(new Font("Arial", Font.BOLD, 24));
         loginButton.setBackground(new Color(255, 99, 71));
         loginButton.setForeground(Color.WHITE);
+		loginButton.addActionListener(this::openShowFoodiBdRiderDetails);
         loginButton.setCursor(cursor);
         container.add(loginButton);
 
@@ -103,5 +104,16 @@ public class FoodiBdDetails extends JFrame {
         createAccountForFoodiBdPage.setLocationRelativeTo(null);
         createAccountForFoodiBdPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         createAccountForFoodiBdPage.setVisible(true);
+    }
+	
+	private void openShowFoodiBdRiderDetails(ActionEvent e) {
+        this.setVisible(false);
+        
+		ShowFoodiBdDetails frame = new ShowFoodiBdDetails();
+        frame.setVisible(true);
+        frame.setTitle("FoodiBd Rider Details");
+        frame.setSize(900, 600);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
     }
 }

@@ -54,6 +54,7 @@ public class JhinkuFoodBdDetails extends JFrame {
         loginButton.setBounds(100, 200, 400, 60);
         loginButton.setFont(new Font("Arial", Font.BOLD, 24));
         loginButton.setBackground(new Color(255, 99, 71));
+		loginButton.addActionListener(this::openShowJhinkuFoodBdRiderDetails);
         loginButton.setForeground(Color.WHITE);
         loginButton.setCursor(cursor);
         container.add(loginButton);
@@ -103,5 +104,16 @@ public class JhinkuFoodBdDetails extends JFrame {
         createAccountForJhinkuFoodBdPage.setLocationRelativeTo(null);
         createAccountForJhinkuFoodBdPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         createAccountForJhinkuFoodBdPage.setVisible(true);
+    }
+	
+	private void openShowJhinkuFoodBdRiderDetails(ActionEvent e) {
+        this.setVisible(false);
+        
+		ShowJhinkuFoodBdDetails frame = new ShowJhinkuFoodBdDetails();
+        frame.setVisible(true);
+        frame.setTitle("FoodiBd Rider Details");
+        frame.setSize(900, 600);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
     }
 }

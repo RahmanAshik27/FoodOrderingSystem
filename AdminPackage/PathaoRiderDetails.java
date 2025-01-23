@@ -54,6 +54,7 @@ public class PathaoRiderDetails extends JFrame {
         loginButton.setFont(new Font("Arial", Font.BOLD, 24));
         loginButton.setBackground(new Color(255, 99, 71));
         loginButton.setForeground(Color.WHITE);
+		loginButton.addActionListener(this::openShowPathaoRiderDetails);
         loginButton.setCursor(cursor);
         container.add(loginButton);
 
@@ -72,11 +73,11 @@ public class PathaoRiderDetails extends JFrame {
         footerLabel.setBounds(600, 520, 280, 40);
         footerLabel.setFont(new Font("Arial", Font.BOLD, 20));
         footerLabel.setForeground(Color.BLACK);
-		 footerLabel.setOpaque(true);
+		footerLabel.setOpaque(true);
         footerLabel.setBackground(new Color(255, 255, 255, 150));
         container.add(footerLabel);
 		
-		 imageLabel = new JLabel(new ImageIcon("RiderLogin.png"));
+		imageLabel = new JLabel(new ImageIcon("RiderLogin.png"));
         imageLabel.setBounds(0, 0, 900, 600);
         container.add(imageLabel);
     }
@@ -103,4 +104,17 @@ public class PathaoRiderDetails extends JFrame {
         createAccountForPathaoPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         createAccountForPathaoPage.setVisible(true);
     }
+	
+	
+	 private void openShowPathaoRiderDetails(ActionEvent e) {
+        this.setVisible(false);
+        
+		ShowPathaoRiderDetails frame = new ShowPathaoRiderDetails();
+        frame.setVisible(true);
+        frame.setTitle("Pathao Rider Details");
+        frame.setSize(900, 600);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
+    }
+	
 }

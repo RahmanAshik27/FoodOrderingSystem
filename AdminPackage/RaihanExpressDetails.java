@@ -50,10 +50,11 @@ public class RaihanExpressDetails extends JFrame {
 		backButton.addActionListener(this::goBack);
         container.add(backButton);
 
-        loginButton = new JButton("Jhinku FoodBd Rider Details");
+        loginButton = new JButton("Raihan Express Rider Details");
         loginButton.setBounds(100, 200, 400, 60);
         loginButton.setFont(new Font("Arial", Font.BOLD, 24));
         loginButton.setBackground(new Color(255, 99, 71));
+		loginButton.addActionListener(this::openShowRaihanExpressRiderDetails);
         loginButton.setForeground(Color.WHITE);
         loginButton.setCursor(cursor);
         container.add(loginButton);
@@ -103,5 +104,17 @@ public class RaihanExpressDetails extends JFrame {
         createAccountForRaihanExpressPage.setLocationRelativeTo(null);
         createAccountForRaihanExpressPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         createAccountForRaihanExpressPage.setVisible(true);
+    }
+	
+	private void openShowRaihanExpressRiderDetails(ActionEvent e) {
+        
+		this.setVisible(false);
+        
+		ShowRaihanExpressBdDetails frame = new ShowRaihanExpressBdDetails();
+        frame.setVisible(true);
+        frame.setTitle("Raihan Express Bd Rider Details");
+        frame.setSize(900, 600);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
     }
 }
