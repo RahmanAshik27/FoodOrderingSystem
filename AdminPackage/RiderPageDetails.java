@@ -85,24 +85,56 @@ public class RiderPageDetails extends JFrame {
 
     private void handleButtonClick(String buttonName) {
         if (buttonName.equals("Pathao")) {
-
-			JOptionPane.showMessageDialog(this, "IT Department page are under construction .- IT Department");
+			
+			this.setVisible(false); 
+			PathaoRiderDetails pathaoRiderDetails = new PathaoRiderDetails();
+			pathaoRiderDetails.setTitle("Customer Login");
+			pathaoRiderDetails.setSize(900, 600);
+			pathaoRiderDetails.setLocationRelativeTo(null);
+			pathaoRiderDetails.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			pathaoRiderDetails.setVisible(true);
 			 
         } else if (buttonName.equals("FoodiBd")) {
 
-			JOptionPane.showMessageDialog(this, "IT Department page are under construction .- IT Department");
+			this.setVisible(false); 
+			FoodiBdDetails foodiBdDetails = new FoodiBdDetails();
+			foodiBdDetails.setTitle("Customer Login");
+			foodiBdDetails.setSize(900, 600);
+			foodiBdDetails.setLocationRelativeTo(null);
+			foodiBdDetails.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			foodiBdDetails.setVisible(true);
 		 
         } else if (buttonName.equals("IEatray")) {
-		
-			JOptionPane.showMessageDialog(this, "IT Department page are under construction .- IT Department");
+			
+			this.setVisible(false);
+			IEatrayDetails iEatrayDetails = new IEatrayDetails();
+			iEatrayDetails.setTitle("Customer Login");
+			iEatrayDetails.setSize(900, 600);
+			iEatrayDetails.setLocationRelativeTo(null);
+			iEatrayDetails.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			iEatrayDetails.setVisible(true);
 		
         } else if (buttonName.equals("Jhinku Food Bd")) {
-		
-			JOptionPane.showMessageDialog(this, "IT Department page are under construction .- IT Department");
+			
+			this.setVisible(false);
+			JhinkuFoodBdDetails jhinkuFoodBdRiderDetails = new JhinkuFoodBdDetails();
+			jhinkuFoodBdRiderDetails.setTitle("JhinkuFoodBd Rider Details");
+			jhinkuFoodBdRiderDetails.setSize(900, 600);
+			jhinkuFoodBdRiderDetails.setLocationRelativeTo(null);
+			jhinkuFoodBdRiderDetails.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			jhinkuFoodBdRiderDetails.setVisible(true);
 
         } else if (buttonName.equals("Raihan Express")) {
 
-			JOptionPane.showMessageDialog(this, "IT Department page are under construction .- IT Department");		
+			
+			this.setVisible(false);
+            
+			RaihanExpressDetails raihanExpressBdRiderDetails = new RaihanExpressDetails();
+			raihanExpressBdRiderDetails.setTitle("RaihanExpressBd Rider Details");
+			raihanExpressBdRiderDetails.setSize(900, 600);
+			raihanExpressBdRiderDetails.setLocationRelativeTo(null);
+			raihanExpressBdRiderDetails.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			raihanExpressBdRiderDetails.setVisible(true);	
 		
         }
     }
