@@ -7,3 +7,4 @@ apon,12345,01400833979,apon2005@gmail.com
 arafat,12345,01765365648,arafat@gmail.com
 Jhinku Bro,12345,01999999999,JhinkuBro420@gmail.com
 testMan,12345,01700000000,testMan@gmail.com
+MeuMikiKitchen,12345,01626315555,MeuMikiKitchen@gmail.com

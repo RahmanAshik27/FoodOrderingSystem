@@ -30,20 +30,20 @@ public class ProjectMainPage extends JFrame {
         welcomeLabel.setBackground(new Color(0, 0, 0, 150));
         container.add(welcomeLabel);
 
-        adminLoginButton = createButton("Admin Login", 500, 120);
+        adminLoginButton = createButton("Admin Login", 500, 120,new Color(255, 87, 34));
         adminLoginButton.addActionListener(e -> handleButtonClick("Admin Login"));
 
-        customersLoginButton = createButton("Customer Login", 500, 190);
+        customersLoginButton = createButton("Customer Login", 500, 190, new Color(34, 193, 195));
         customersLoginButton.addActionListener(e -> handleCustomersButtonClick("Customer Login"));
 	
-        foodReviewsButton = createButton("Food Reviews", 500, 260);
+        foodReviewsButton = createButton("Food Reviews", 500, 260, new Color(252, 140, 3));
 		foodReviewsButton.addActionListener(e -> handleFoodReviewButtonClick("Food Reviews"));
 		
-        riderLoginButton = createButton("Rider Login", 500, 330);
+        riderLoginButton = createButton("Rider Login", 500, 330, new Color(83, 109, 254));
 		riderLoginButton.addActionListener(e -> handleRiderLoginButtonClick("Rider Login"));
 		
 		
-        foodPolicyButton = createButton("Food Policy", 30, 480);
+        foodPolicyButton = createButton("Food Policy", 30, 480, new Color(255, 82, 82));
 
         container.add(adminLoginButton);
         container.add(customersLoginButton);
@@ -60,10 +60,13 @@ public class ProjectMainPage extends JFrame {
         container.add(imageLabel);
     }
 
-    private JButton createButton(String text, int x, int y) {
+    private JButton createButton(String text, int x, int y, Color buttonColor) {
         JButton button = new JButton(text);
         button.setFont(new Font("Arial", Font.BOLD, 20));
         button.setBounds(x, y, 250, 50);
+		button.setBackground(buttonColor);
+        button.setForeground(Color.WHITE);
+        button.setBorder(BorderFactory.createLineBorder(buttonColor, 2));
         button.setCursor(new Cursor(Cursor.HAND_CURSOR));
         return button;
     }

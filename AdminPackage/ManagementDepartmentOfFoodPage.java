@@ -205,9 +205,13 @@ public class ManagementDepartmentOfFoodPage extends JFrame {
 	
 	private void onRequestBoardButtonClicked(ActionEvent e) {
     File file = new File("src/AdminPackage/addRequest.txt");
-
+	
+	ImageIcon blankImg = new ImageIcon("FillAllbox.png");
+	ImageIcon wrongImg = new ImageIcon("wrongimg2.png");
+	ImageIcon okImg = new ImageIcon("okImg.png");
     
     if (file.exists()) {
+		
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
             StringBuilder content = new StringBuilder();
@@ -319,10 +323,15 @@ private void loadFoodInventory(ActionEvent e) {
 
 private void addChickenDumBiriyaniInventory(ActionEvent e) {
     try {
+		ImageIcon blankImg = new ImageIcon("FillAllbox.png");
+		ImageIcon wrongImg = new ImageIcon("wrongimg2.png");
+		ImageIcon okImg = new ImageIcon("okImg.png");
+		
         int currentQuantity = Integer.parseInt(ChikhenDumBiriyani.getText());
 
         if (currentQuantity == 0) {
-            JOptionPane.showMessageDialog(this, "No requested inventory update for Chicken Dum Biriyani.");
+           
+			JOptionPane.showMessageDialog(this, "No requested inventory update for Chicken Dum Biriyani.", "Warning", JOptionPane.WARNING_MESSAGE,blankImg);
             return; 
         }
 
@@ -346,9 +355,10 @@ private void addChickenDumBiriyaniInventory(ActionEvent e) {
         if (updated) {
             ChikhenDumBiriyani.setText("0");
 			  Files.write(path, lines);
-            JOptionPane.showMessageDialog(this, "Inventory updated successfully for Chicken Dum Biriyani!");
+			JOptionPane.showMessageDialog(this,"Inventory updated successfully for Chicken Dum Biriyani!", "Congratulation ", JOptionPane.WARNING_MESSAGE,okImg);
         } else {
-            JOptionPane.showMessageDialog(this, "No requested inventory update.");
+			JOptionPane.showMessageDialog(this,"No requested inventory update.", "Warning", JOptionPane.WARNING_MESSAGE,blankImg);
+            
         }
 
     } catch (IOException ex) {
@@ -358,10 +368,15 @@ private void addChickenDumBiriyaniInventory(ActionEvent e) {
 
 private void addBeefBurgerInventory(ActionEvent e) {
     try {
+		ImageIcon blankImg = new ImageIcon("FillAllbox.png");
+		ImageIcon wrongImg = new ImageIcon("wrongimg2.png");
+		ImageIcon okImg = new ImageIcon("okImg.png");
+		
         int currentQuantity = Integer.parseInt(BeefBurger.getText());
 
         if (currentQuantity == 0) {
-            JOptionPane.showMessageDialog(this, "No requested inventory update for Beef Burger.");
+			JOptionPane.showMessageDialog(this, "No requested inventory update for Beef Burger.", "Warning", JOptionPane.WARNING_MESSAGE,blankImg);
+
             return; 
         }
 
@@ -385,9 +400,10 @@ private void addBeefBurgerInventory(ActionEvent e) {
         if (updated) {
             BeefBurger.setText("0");
 			  Files.write(path, lines);
-            JOptionPane.showMessageDialog(this, "Inventory updated successfully for Beef Burger!");
+			 JOptionPane.showMessageDialog(this,"Inventory updated successfully for Beef Burger!", "Congratulation ", JOptionPane.WARNING_MESSAGE,okImg); 
+
         } else {
-            JOptionPane.showMessageDialog(this, "No requested inventory update.");
+			JOptionPane.showMessageDialog(this,"No requested inventory update.", "Warning", JOptionPane.WARNING_MESSAGE,blankImg);
         }
 
     } catch (IOException ex) {
@@ -397,11 +413,16 @@ private void addBeefBurgerInventory(ActionEvent e) {
 
 private void addCreammyPastaInventory(ActionEvent e) {
     try {
+		ImageIcon blankImg = new ImageIcon("FillAllbox.png");
+		ImageIcon wrongImg = new ImageIcon("wrongimg2.png");
+		ImageIcon okImg = new ImageIcon("okImg.png");
+		
         int currentQuantity = Integer.parseInt(CreammyPasta.getText());
 
         
         if (currentQuantity == 0) {
-            JOptionPane.showMessageDialog(this, "No requested inventory update for Creammy Pasta.");
+            JOptionPane.showMessageDialog(this,  "No requested inventory update for Creammy Pasta.", "Warning", JOptionPane.WARNING_MESSAGE,blankImg);
+		
             return; 
         }
 
@@ -426,9 +447,10 @@ private void addCreammyPastaInventory(ActionEvent e) {
         if (updated) {
             CreammyPasta.setText("0");
 			  Files.write(path, lines);
-            JOptionPane.showMessageDialog(this, "Inventory updated successfully for Creammy Pasta!");
+			JOptionPane.showMessageDialog(this,"Inventory updated successfully for Creammy Pasta!", "Congratulation ", JOptionPane.WARNING_MESSAGE,okImg);   
+           
         } else {
-            JOptionPane.showMessageDialog(this, "No requested inventory update.");
+            JOptionPane.showMessageDialog(this,"No requested inventory update.", "Warning", JOptionPane.WARNING_MESSAGE,blankImg);
         }
 
     } catch (IOException ex) {
@@ -438,11 +460,17 @@ private void addCreammyPastaInventory(ActionEvent e) {
 
 private void addJapanessRamenInventory(ActionEvent e) {
     try {
+		
+		ImageIcon blankImg = new ImageIcon("FillAllbox.png");
+		ImageIcon wrongImg = new ImageIcon("wrongimg2.png");
+		ImageIcon okImg = new ImageIcon("okImg.png");
+		
         int currentQuantity = Integer.parseInt(JapanessRamen.getText());
 
         
         if (currentQuantity == 0) {
-            JOptionPane.showMessageDialog(this, "No requested inventory update for Japanese Ramen.");
+            JOptionPane.showMessageDialog(this,  "No requested inventory update for Japanese Ramen.", "Warning", JOptionPane.WARNING_MESSAGE,blankImg);
+
             return; 
         }
 
@@ -466,9 +494,10 @@ private void addJapanessRamenInventory(ActionEvent e) {
         if (updated) {
             JapanessRamen.setText("0");
 			  Files.write(path, lines);
-            JOptionPane.showMessageDialog(this, "Inventory updated successfully for Japanese Ramen!");
+			JOptionPane.showMessageDialog(this,"Inventory updated successfully for Japanese Ramen!", "Congratulation ", JOptionPane.WARNING_MESSAGE,okImg);  
+
         } else {
-            JOptionPane.showMessageDialog(this, "No requested inventory update.");
+            JOptionPane.showMessageDialog(this,"No requested inventory update.", "Warning", JOptionPane.WARNING_MESSAGE,blankImg);
         }
 
     } catch (IOException ex) {
