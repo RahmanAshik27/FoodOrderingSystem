@@ -1,0 +1,9 @@
+Username: sumon
+Phone: 01558079662
+Email: sumon@gmail.com
+Password: 12345
+Login Successful: sumon
+Food Item: Chikhen Dum Biriyani, Quantity: 2, Price: 350.0, Total Price: 700.0
+Food Item: Beef Burger, Quantity: 1, Price: 270.0, Total Price: 270.0
+Food Item: Creammy Pasta, Quantity: 1, Price: 310.0, Total Price: 310.0
+Food Item: Japaness Ramen, Quantity: 2, Price: 410.0, Total Price: 820.0

@@ -173,7 +173,7 @@ public class CreateAccountForRaihanExpressBdPage extends JFrame {
 		}
 
 	   
-		try (BufferedReader reader = new BufferedReader(new FileReader("AdminPackage/RaihanExpressBdRiderDetails.txt"))) {
+		try (BufferedReader reader = new BufferedReader(new FileReader("src/AdminPackage/RaihanExpressBdRiderDetails.txt"))) {
 			String line;
 			while ((line = reader.readLine()) != null) {
 				String[] details = line.split(",");
@@ -202,7 +202,7 @@ public class CreateAccountForRaihanExpressBdPage extends JFrame {
 		}
 
 
-		try (PrintWriter writer = new PrintWriter(new FileWriter("AdminPackage/RaihanExpressBdRiderDetails.txt", true))) {
+		try (PrintWriter writer = new PrintWriter(new FileWriter("src/AdminPackage/RaihanExpressBdRiderDetails.txt", true))) {
 			writer.println(username + "," + password + "," + phone + "," + email);
 			JOptionPane.showMessageDialog(this, "Account Created Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE, okImg);
 

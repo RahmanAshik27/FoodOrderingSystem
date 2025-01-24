@@ -19,7 +19,7 @@ public class ShowFoodiBdDetails extends JFrame {
     private JButton showDetailsButton, terminateButton, searchButton,backButton;
     private JTextField searchField;
 	private JScrollPane scrollPane;
-    private final String filePath = "AdminPackage/FoodiBdRiderDetails.txt";
+    private final String filePath = "src/AdminPackage/FoodiBdRiderDetails.txt";
 
     public ShowFoodiBdDetails() {
         Container container = getContentPane();

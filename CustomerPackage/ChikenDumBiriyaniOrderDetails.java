@@ -27,7 +27,7 @@ public class ChikenDumBiriyaniOrderDetails extends JFrame {
     private JTextArea reviewArea;
     private JScrollPane scrollPane;
 
-    private static final String FILE_PATH = "AdminPackage/food_inventory.txt"; 
+    private static final String FILE_PATH = "src/AdminPackage/food_inventory.txt"; 
 
 public ChikenDumBiriyaniOrderDetails(String username) {
 		
@@ -365,7 +365,7 @@ private void saveFoodInventoryToFile() {
 	
 	private void writeOrderDetails(String foodItem, int quantity, double price) {
     
-	String filename = "AdminPackage/"+username + ".txt"; 
+	String filename = "src/AdminPackage/"+username + ".txt"; 
     double totalPrice = quantity * price; 
 
     try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename, true))) {

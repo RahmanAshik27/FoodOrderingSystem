@@ -166,7 +166,7 @@ private void handleLogin(ActionEvent e) {
 
 
 private String checkCredentials(String username, String password) {
-    try (BufferedReader reader = new BufferedReader(new FileReader("AdminPackage/users.txt"))) {
+    try (BufferedReader reader = new BufferedReader(new FileReader("src/AdminPackage/users.txt"))) {
         String line;
         boolean userFound = false;
         while ((line = reader.readLine()) != null) {

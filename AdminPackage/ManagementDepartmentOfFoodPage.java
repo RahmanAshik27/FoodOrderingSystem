@@ -204,7 +204,7 @@ public class ManagementDepartmentOfFoodPage extends JFrame {
     }
 	
 	private void onRequestBoardButtonClicked(ActionEvent e) {
-    File file = new File("AdminPackage/addRequest.txt");
+    File file = new File("src/AdminPackage/addRequest.txt");
 
     
     if (file.exists()) {
@@ -235,7 +235,7 @@ public class ManagementDepartmentOfFoodPage extends JFrame {
 
 private void loadFoodInventory(ActionEvent e) {
     try {
-        Path path = Paths.get("AdminPackage/addRequest.txt");  
+        Path path = Paths.get("src/AdminPackage/addRequest.txt");  
         BufferedReader reader = Files.newBufferedReader(path);
         String line;
         int lineIndex = 0;
@@ -326,7 +326,7 @@ private void addChickenDumBiriyaniInventory(ActionEvent e) {
             return; 
         }
 
-        Path path = Paths.get("AdminPackage/food_inventory.txt");
+        Path path = Paths.get("src/AdminPackage/food_inventory.txt");
         List<String> lines = Files.readAllLines(path);
 
         boolean updated = false;
@@ -365,7 +365,7 @@ private void addBeefBurgerInventory(ActionEvent e) {
             return; 
         }
 
-        Path path = Paths.get("AdminPackage/food_inventory.txt");
+        Path path = Paths.get("src/AdminPackage/food_inventory.txt");
         List<String> lines = Files.readAllLines(path);
 
         boolean updated = false;
@@ -405,7 +405,7 @@ private void addCreammyPastaInventory(ActionEvent e) {
             return; 
         }
 
-        Path path = Paths.get("AdminPackage/food_inventory.txt");
+        Path path = Paths.get("src/AdminPackage/food_inventory.txt");
         List<String> lines = Files.readAllLines(path);
 
         boolean updated = false;
@@ -446,7 +446,7 @@ private void addJapanessRamenInventory(ActionEvent e) {
             return; 
         }
 
-        Path path = Paths.get("AdminPackage/food_inventory.txt");
+        Path path = Paths.get("Asrc/AdminPackage/food_inventory.txt");
         List<String> lines = Files.readAllLines(path);
 
         boolean updated = false;

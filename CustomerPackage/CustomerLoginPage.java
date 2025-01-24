@@ -137,7 +137,7 @@ public CustomerLoginPage() {
     ImageIcon okImg = new ImageIcon("okImg.png");
     ImageIcon wrongImg = new ImageIcon("wrongimg2.png");
 
-    try (Scanner scanner = new Scanner(new File("AdminPackage/users.txt"))) {
+    try (Scanner scanner = new Scanner(new File("src/AdminPackage/users.txt"))) {
         boolean loginSuccessful = false;
         while (scanner.hasNextLine()) {
             String[] checkInfo = scanner.nextLine().split(",");
@@ -149,7 +149,7 @@ public CustomerLoginPage() {
 
 		if (loginSuccessful) {
 			
-			String filename = "AdminPackage/"+username + ".txt";
+			String filename = "src/AdminPackage/"+username + ".txt";
 			
 		try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename, true))) {
         writer.write("Login Successful: " + username + "\n");

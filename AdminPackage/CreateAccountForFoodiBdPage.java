@@ -173,7 +173,7 @@ public class CreateAccountForFoodiBdPage extends JFrame {
 		}
 
 	   
-		try (BufferedReader reader = new BufferedReader(new FileReader("AdminPackage/FoodiBdRiderDetails.txt"))) {
+		try (BufferedReader reader = new BufferedReader(new FileReader("src/AdminPackage/FoodiBdRiderDetails.txt"))) {
 			String line;
 			while ((line = reader.readLine()) != null) {
 				String[] details = line.split(",");
@@ -202,7 +202,7 @@ public class CreateAccountForFoodiBdPage extends JFrame {
 		}
 
 
-		try (PrintWriter writer = new PrintWriter(new FileWriter("AdminPackage/FoodiBdRiderDetails.txt", true))) {
+		try (PrintWriter writer = new PrintWriter(new FileWriter("src/AdminPackage/FoodiBdRiderDetails.txt", true))) {
 			writer.println(username + "," + password + "," + phone + "," + email);
 			JOptionPane.showMessageDialog(this, "Account Created Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE, okImg);
 

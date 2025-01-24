@@ -1,0 +1,6 @@
+Username: testMan
+Phone: 01700000000
+Email: testMan@gmail.com
+Password: 12345
+Login Successful: testMan
+Food Item: Chikhen Dum Biriyani, Quantity: 11, Price: 350.0, Total Price: 3850.0

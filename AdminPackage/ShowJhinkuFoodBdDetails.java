@@ -19,7 +19,7 @@ public class ShowJhinkuFoodBdDetails extends JFrame {
     private JButton showDetailsButton, terminateButton, searchButton,backButton;
     private JTextField searchField;
 	private JScrollPane scrollPane;
-    private final String filePath = "AdminPackage/JhinkuFoodBdRiderDetails.txt";
+    private final String filePath = "src/AdminPackage/JhinkuFoodBdRiderDetails.txt";
 
     public ShowJhinkuFoodBdDetails() {
         Container container = getContentPane();

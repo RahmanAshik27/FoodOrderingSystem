@@ -203,7 +203,7 @@ public InventoryOfFoodPage() {
    private void loadFoodInventory() {
     try {
         
-        Path path = Paths.get("AdminPackage/food_inventory.txt");
+        Path path = Paths.get("src/AdminPackage/food_inventory.txt");
 		BufferedReader reader = Files.newBufferedReader(path);
 
         String line;

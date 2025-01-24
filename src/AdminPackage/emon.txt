@@ -1,0 +1,8 @@
+Username: emon
+Phone: 01558079662
+Email: emon@gmail.com
+Password: 12345
+Login Successful: emon
+Login Successful: emon
+Food Item: Chikhen Dum Biriyani, Quantity: 3, Price: 350.0, Total Price: 1050.0
+Login Successful: emon

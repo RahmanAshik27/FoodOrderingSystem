@@ -121,7 +121,7 @@ public class ReviewForBeefBurger extends JFrame {
 
 		scrollPane = new JScrollPane(reviewTextArea);
 		scrollPane.setBounds(30, 275, 500, 180);
-		scrollPane.setBorder(BorderFactory.createLineBorder(new Color(192, 192, 192), 2)); // Border for the scroll pane
+		scrollPane.setBorder(BorderFactory.createLineBorder(new Color(192, 192, 192), 2)); 
 		container.add(scrollPane);
 
 		

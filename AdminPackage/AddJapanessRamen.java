@@ -110,7 +110,7 @@ public AddJapanessRamen() {
     }
 
     try {
-        File file = new File("AdminPackage/addRequest.txt");
+        File file = new File("src/AdminPackage/addRequest.txt");
         StringBuilder fileContent = new StringBuilder();
         boolean foodFound = false;
         int totalQuantity = 0;

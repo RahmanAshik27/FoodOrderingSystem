@@ -171,7 +171,7 @@ public class GiveReviewService extends JFrame {
 	
 private boolean isFoodOrderedByUser(String foodItem) {
    
-    File file = new File("AdminPackage/"+username + ".txt");
+    File file = new File("src/AdminPackage/"+username + ".txt");
     String line;
 
     try (BufferedReader br = new BufferedReader(new FileReader(file))) {

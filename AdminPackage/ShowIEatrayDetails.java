@@ -19,7 +19,7 @@ public class ShowIEatrayDetails extends JFrame {
     private JButton showDetailsButton, terminateButton, searchButton,backButton;
     private JTextField searchField;
 	private JScrollPane scrollPane;
-    private final String filePath = "AdminPackage/IEatrayRiderDetails.txt";
+    private final String filePath = "src/AdminPackage/IEatrayRiderDetails.txt";
 
     public ShowIEatrayDetails() {
         Container container = getContentPane();

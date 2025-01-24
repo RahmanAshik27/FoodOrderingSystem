@@ -194,10 +194,14 @@ private void handleCreateAccount(ActionEvent e) {
         BufferedReader reader = null;
 
         try {
-            File file = new File("users.txt");
-            if (!file.exists()) {
-                file.createNewFile();
-            }
+              File file = new File("src/AdminPackage/users.txt");
+				if (!file.getParentFile().exists()) {
+				file.getParentFile().mkdirs(); // Ensure parent directory exists
+			}
+			if (!file.exists()) {
+				file.createNewFile(); // Create the file if it doesn't exist
+			}
+
 
             reader = new BufferedReader(new FileReader(file));
             String line;
@@ -212,6 +216,7 @@ private void handleCreateAccount(ActionEvent e) {
                 }
             }
         } catch (IOException ex) {
+			 ex.printStackTrace();
             JOptionPane.showMessageDialog(this, "Error reading user data!", "Error", JOptionPane.ERROR_MESSAGE);
         } finally {
             try {
@@ -223,10 +228,10 @@ private void handleCreateAccount(ActionEvent e) {
         }
 
         if (!userExists) {
-            try (PrintWriter writer = new PrintWriter(new FileWriter("users.txt", true))) {
+            try (PrintWriter writer = new PrintWriter(new FileWriter("src/AdminPackage/users.txt", true))) {
                 writer.println(username + "," + password + "," + phone + "," + email);
 
-                File userFile = new File(username + ".txt");
+                File userFile = new File("src/AdminPackage/"+username + ".txt");
                 if (!userFile.exists()) {
                     userFile.createNewFile();
                 }

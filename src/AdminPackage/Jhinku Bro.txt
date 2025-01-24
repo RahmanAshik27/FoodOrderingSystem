@@ -1,0 +1,9 @@
+Username: Jhinku Bro
+Phone: 01999999999
+Email: JhinkuBro420@gmail.com
+Password: 12345
+Login Successful: Jhinku Bro
+Food Item: Chikhen Dum Biriyani, Quantity: 6, Price: 350.0, Total Price: 2100.0
+Food Item: Beef Burger, Quantity: 5, Price: 270.0, Total Price: 1350.0
+Food Item: Creammy Pasta, Quantity: 5, Price: 310.0, Total Price: 1550.0
+Food Item: Japaness Ramen, Quantity: 6, Price: 410.0, Total Price: 2460.0

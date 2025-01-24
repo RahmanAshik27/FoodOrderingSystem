@@ -52,7 +52,7 @@ public class ReviewsFoodPage extends JFrame {
         container.add(instructionLabel);
 
         showReviewsButton = new JButton("View Reviews");
-        showReviewsButton.setBounds(420, 200, 200, 60);  // Aligned to the left
+        showReviewsButton.setBounds(420, 200, 200, 60);  
         showReviewsButton.setFont(buttonFont);
         showReviewsButton.setBackground(new Color(34, 139, 34));
         showReviewsButton.setForeground(Color.WHITE);

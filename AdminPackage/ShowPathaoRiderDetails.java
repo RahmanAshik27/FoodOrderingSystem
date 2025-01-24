@@ -19,7 +19,7 @@ public class ShowPathaoRiderDetails extends JFrame {
     private JButton showDetailsButton, terminateButton, searchButton,backButton;
     private JTextField searchField;
 	private JScrollPane scrollPane;
-    private final String filePath = "AdminPackage/PathaoRiderDetails.txt";
+    private final String filePath = "src/AdminPackage/PathaoRiderDetails.txt";
 
     public ShowPathaoRiderDetails() {
         Container container = getContentPane();
