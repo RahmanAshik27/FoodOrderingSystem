@@ -28,6 +28,7 @@ public class ChikenDumBiriyaniOrderDetails extends JFrame {
     private JScrollPane scrollPane;
 
     private static final String FILE_PATH = "src/AdminPackage/food_inventory.txt"; 
+		private String orderConfirm;
 
 public ChikenDumBiriyaniOrderDetails(String username) {
 		
@@ -319,7 +320,20 @@ private void saveFoodInventoryToFile() {
     }
 	
 	private void proccedToMemoAction(ActionEvent e) {
-            JOptionPane.showMessageDialog(this, "page are under construction .- IT Department", "Error", JOptionPane.ERROR_MESSAGE);
+             
+			 ImageIcon BlankImg = new ImageIcon("FillAllbox.png");
+		if(orderConfirm==null){
+			JOptionPane.showMessageDialog(this, "Please Confirm Your Order.", "Error", JOptionPane.WARNING_MESSAGE, BlankImg);
+		}else{
+			CashMemoPage cashMemoPage = new CashMemoPage(username);
+			cashMemoPage.setTitle("Cash Memo Page");
+			cashMemoPage.setSize(900, 600);
+			cashMemoPage.setLocationRelativeTo(null);
+			cashMemoPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			cashMemoPage.setVisible(true);
+			cashMemoPage.setResizable(false);
+			this.dispose();
+		}
     }
 
     private void addQuantityAction(ActionEvent e) {
@@ -360,6 +374,7 @@ private void saveFoodInventoryToFile() {
         ImageIcon BlankImg = new ImageIcon("FillAllbox.png");
         JOptionPane.showMessageDialog(this, "Please add items to your order.", "Error", JOptionPane.ERROR_MESSAGE, BlankImg);
     }
+	orderConfirm="done";
 }
 
 	
