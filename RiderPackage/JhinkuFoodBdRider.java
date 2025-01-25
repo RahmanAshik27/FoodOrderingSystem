@@ -8,6 +8,7 @@ import DashboardPackage.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.io.*;
 
 public class JhinkuFoodBdRider extends JFrame {
     private Container container;
@@ -125,27 +126,64 @@ public JhinkuFoodBdRider() {
         passwordField.setText("");
     }
 
-    private void handleLogin(ActionEvent e) {
+    
+
+private void handleLogin(ActionEvent e) {
     String username = textField.getText();
     String password = new String(passwordField.getPassword());
 
     ImageIcon okImg = new ImageIcon("okImg.png");
     ImageIcon wrongImg = new ImageIcon("wrongimg2.png");
-    ImageIcon blankImg = new ImageIcon("FillAllbox.png"); 
+    ImageIcon blankImg = new ImageIcon("FillAllbox.png");
 
-   
     if (username.isEmpty() || password.isEmpty()) {
         JOptionPane.showMessageDialog(this, 
             "All fields must be filled!", 
             "Error", 
             JOptionPane.INFORMATION_MESSAGE, 
             blankImg);
-        return; // 
+        return;
     }
 
-    if ("rider".equals(username) && "riderpassword".equals(password)) {
-        String successMessage = "<html><div style='text-align: center;'><b>Login Successful!</b><br>Please proceed to the Rider page.</div></html>";
+    boolean isLoginSuccessful = false;
+
+    
+    try (BufferedReader reader = new BufferedReader(new FileReader("src/AdminPackage/JhinkuFoodBdRiderDetails.txt"))) {
+        String line;
+        while ((line = reader.readLine()) != null) {
+           
+            String[] details = line.split(",");
+            if (details.length >= 2) { 
+                String fileUsername = details[0].trim();
+                String filePassword = details[1].trim();
+
+                if (username.equals(fileUsername) && password.equals(filePassword)) {
+                    isLoginSuccessful = true;
+                    break;
+                }
+            }
+        }
+    } catch (IOException ex) {
+        JOptionPane.showMessageDialog(this, 
+            "Error reading login details. Please contact support.", 
+            "File Error", 
+            JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    if (isLoginSuccessful) {
+        String successMessage = "<html><div style='text-align: center;'><b>Login Successful!</b><br>Welcome to Jhinku Food Bd Rider Dashboard.</div></html>";
         JOptionPane.showMessageDialog(this, successMessage, "Success", JOptionPane.INFORMATION_MESSAGE, okImg);
+		
+		 JhinkuFoodBdRiderDeliveryPage jhinkuFoodBdRiderDeliveryPage = new JhinkuFoodBdRiderDeliveryPage();
+        jhinkuFoodBdRiderDeliveryPage.setTitle("Jhinku Food Bd Rider Food Delivery Page");
+        jhinkuFoodBdRiderDeliveryPage.setSize(900, 600);
+        jhinkuFoodBdRiderDeliveryPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jhinkuFoodBdRiderDeliveryPage.setLocationRelativeTo(null);
+        jhinkuFoodBdRiderDeliveryPage.setVisible(true);
+        jhinkuFoodBdRiderDeliveryPage.setResizable(false);
+		this.dispose();
+		
     } else {
         String errorMessage = "<html><div style='text-align: center;'><b>Incorrect Username or Password!</b><br>Please try again.</div></html>";
         JOptionPane.showMessageDialog(this, errorMessage, "Error", JOptionPane.ERROR_MESSAGE, wrongImg);

@@ -12,3 +12,13 @@ Food Item: Chikhen Dum Biriyani, Quantity: 3, Price: 350.0, Total Price: 1050.0
 Login Successful: ashik
 Login Successful: ashik
 Login Successful: ashik
+Login Successful: ashik
+Food Item: Chikhen Dum Biriyani, Quantity: 7, Price: 350.0, Total Price: 2450.0
+Food Item: Beef Burger, Quantity: 7, Price: 270.0, Total Price: 1890.0
+Food Item: Creammy Pasta, Quantity: 7, Price: 310.0, Total Price: 2170.0
+Food Item: Japaness Ramen, Quantity: 7, Price: 410.0, Total Price: 2870.0
+Login Successful: ashik
+Food Item: Chikhen Dum Biriyani, Quantity: 7, Price: 350.0, Total Price: 2450.0
+Food Item: Beef Burger, Quantity: 5, Price: 270.0, Total Price: 1350.0
+Food Item: Creammy Pasta, Quantity: 3, Price: 310.0, Total Price: 930.0
+Food Item: Japaness Ramen, Quantity: 1, Price: 410.0, Total Price: 410.0

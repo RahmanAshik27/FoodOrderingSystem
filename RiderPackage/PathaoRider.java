@@ -8,6 +8,7 @@ import DashboardPackage.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.io.*;
 
 public class PathaoRider extends JFrame {
     private Container container;
@@ -133,7 +134,6 @@ public class PathaoRider extends JFrame {
     ImageIcon wrongImg = new ImageIcon("wrongimg2.png");
     ImageIcon blankImg = new ImageIcon("FillAllbox.png"); 
 
-  
     if (username.isEmpty() || password.isEmpty()) {
         JOptionPane.showMessageDialog(this, 
             "All fields must be filled!", 
@@ -142,15 +142,48 @@ public class PathaoRider extends JFrame {
             blankImg);
         return; 
     }
+	
+		boolean isLoginSuccessful = false;
+		try (BufferedReader reader = new BufferedReader(new FileReader("src/AdminPackage/PathaoRiderDetails.txt"))) {
+			String line;
+			while ((line = reader.readLine()) != null) {
+				String[] details = line.split(",");
+				if (details.length >= 2) { 
+					String fileUsername = details[0].trim();
+					String filePassword = details[1].trim();
+					if (username.equals(fileUsername) && password.equals(filePassword)) {
+						isLoginSuccessful = true;
+						break;
+					}
+				}
+			}
+		} catch (IOException ex) {
+			JOptionPane.showMessageDialog(this, 
+				"Error reading login details. Please try again later.", 
+				"File Error", 
+				JOptionPane.ERROR_MESSAGE);
+			return;
+		}
 
-    if ("rider".equals(username) && "riderpassword".equals(password)) {
-        String successMessage = "<html><div style='text-align: center;'><b>Login Successful!</b><br>Please proceed to the Rider page.</div></html>";
-        JOptionPane.showMessageDialog(this, successMessage, "Success", JOptionPane.INFORMATION_MESSAGE, okImg);
-    } else {
-        String errorMessage = "<html><div style='text-align: center;'><b>Incorrect Username or Password!</b><br>Please try again.</div></html>";
-        JOptionPane.showMessageDialog(this, errorMessage, "Error", JOptionPane.ERROR_MESSAGE, wrongImg);
-    }
-}
+		if (isLoginSuccessful) {
+			String successMessage = "<html><div style='text-align: center;'><b>Login Successful!</b><br>Please proceed to the Rider page.</div></html>";
+			JOptionPane.showMessageDialog(this, successMessage, "Success", JOptionPane.INFORMATION_MESSAGE, okImg);
+			
+			PathaoRiderFoodDeliveryPage pathaoRiderFoodDeliveryPage = new PathaoRiderFoodDeliveryPage();
+			pathaoRiderFoodDeliveryPage.setTitle("pathao Rider Food Delivery Page");
+			pathaoRiderFoodDeliveryPage.setSize(900, 600);
+			pathaoRiderFoodDeliveryPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			pathaoRiderFoodDeliveryPage.setLocationRelativeTo(null);
+			pathaoRiderFoodDeliveryPage.setVisible(true);
+			pathaoRiderFoodDeliveryPage.setResizable(false);
+			this.dispose();
+			
+		} else {
+			String errorMessage = "<html><div style='text-align: center;'><b>Incorrect Username or Password!</b><br>Please try again.</div></html>";
+			JOptionPane.showMessageDialog(this, errorMessage, "Error", JOptionPane.ERROR_MESSAGE, wrongImg);
+		}
+	}
+
 
 
     private void goBack(ActionEvent e) {
