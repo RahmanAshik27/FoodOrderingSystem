@@ -119,7 +119,15 @@ public AdminDashboard() {
 
     
     private void handleIncomeStatement(ActionEvent e) {
-        JOptionPane.showMessageDialog(this, "Income Statement Page is under construction.");
+        
+		IncomeStatementDepartmentOfFoodPage incomeStatementDepartmentOfFoodPage = new IncomeStatementDepartmentOfFoodPage();
+        incomeStatementDepartmentOfFoodPage.setTitle("Income Statement Department Of FoodPage");
+        incomeStatementDepartmentOfFoodPage.setSize(900, 600);
+        incomeStatementDepartmentOfFoodPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        incomeStatementDepartmentOfFoodPage.setLocationRelativeTo(null);
+        incomeStatementDepartmentOfFoodPage.setVisible(true);
+        incomeStatementDepartmentOfFoodPage.setResizable(false);
+		this.dispose();
     }
 
     private void handleInventory(ActionEvent e) {
