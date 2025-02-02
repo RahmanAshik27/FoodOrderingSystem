@@ -25,6 +25,7 @@ public class ChikenDumBiriyaniOrderDetails extends JFrame {
 	private int price;
 	
     private JTextArea reviewArea;
+	private JTextField ratingDisplayTextField;
     private JScrollPane scrollPane;
 
     private static final String FILE_PATH = "src/AdminPackage/food_inventory.txt"; 
@@ -236,11 +237,32 @@ private void saveFoodInventoryToFile() {
 
 
 		scrollPane = new JScrollPane(reviewArea);
-		scrollPane.setBounds(50, 435, 400, 100); 
+		scrollPane.setBounds(30, 420, 400, 150); 
 		container.add(scrollPane);
+		
+		
+		String message = "<html><div style='text-align: center;'><b>How much Our Customers</b><br>Rate it?.</div></html>";
+		JLabel ratingLabel2 = new JLabel(message, JLabel.CENTER);
+        ratingLabel2.setBounds(435, 385, 150, 70);
+        ratingLabel2.setFont(ratingLabelFont);
+        ratingLabel2.setForeground(Color.WHITE);
+        ratingLabel2.setOpaque(true);
+        ratingLabel2.setBackground(new Color(0, 0, 0, 150));
+        container.add(ratingLabel2);
+		
+		ratingDisplayTextField = new JTextField();
+        ratingDisplayTextField.setBounds(450, 460, 100, 50);
+        ratingDisplayTextField.setFont(new Font("Arial", Font.BOLD, 20));
+        ratingDisplayTextField.setHorizontalAlignment(JTextField.CENTER);
+        ratingDisplayTextField.setEditable(false);
+        ratingDisplayTextField.setBackground(new Color(220, 240, 255));
+        ratingDisplayTextField.setForeground(Color.RED);
+        ratingDisplayTextField.setBorder(BorderFactory.createLineBorder(new Color(0, 128, 255), 2));
+		loadAverageRating("ReviewPackage/CustomersReviewsForChikhenDumBiriyani.txt");
+        container.add(ratingDisplayTextField);
 
 		JLabel RatingLabel = new JLabel("Customers Review for chicken Dum Biriyani", JLabel.CENTER);
-		RatingLabel.setBounds(50, 400, 400, 30);
+		RatingLabel.setBounds(30, 385, 400, 30);
 		RatingLabel.setFont(ratingLabelFont);
 		RatingLabel.setForeground(Color.WHITE);
 		RatingLabel.setOpaque(true);
@@ -264,6 +286,7 @@ private void saveFoodInventoryToFile() {
         backgroundImageLabel.setBounds(0, 0, 900, 600);
         container.add(backgroundImageLabel);
     }
+	
 	private void readCustomerReviews() {
 		File reviewFile = new File("ReviewPackage/CustomersReviewsForChikhenDumBiriyani.txt");
 			if (!reviewFile.exists()) {
@@ -285,6 +308,40 @@ private void saveFoodInventoryToFile() {
         reviewArea.setText(reviewsBuilder.toString());
 	}
 
+	private void loadAverageRating(String filePath) {
+			File reviewFile = new File(filePath);
+			if (!reviewFile.exists()) {
+				JOptionPane.showMessageDialog(this, "Review file not found!", "Error", JOptionPane.ERROR_MESSAGE);
+				ratingDisplayTextField.setText("N/A");
+				return;
+			}
+
+			int totalRating = 0;
+			int ratingCount = 0;
+
+			try (BufferedReader br = new BufferedReader(new FileReader(reviewFile))) {
+				String line;
+				while ((line = br.readLine()) != null) {
+					if (line.contains("Rating:")) {
+						int ratingIndex = line.lastIndexOf("Rating:") + 8;
+						int rating = Integer.parseInt(line.substring(ratingIndex).trim());
+						totalRating += rating;
+						ratingCount++;
+					}
+				}
+			} catch (IOException | NumberFormatException e) {
+				JOptionPane.showMessageDialog(this, "Error reading rating file: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+				ratingDisplayTextField.setText("N/A");
+				return;
+			}
+
+			if (ratingCount > 0) {
+				double averageRating = (double) totalRating / ratingCount;
+				ratingDisplayTextField.setText(String.format("%.2f", averageRating));
+			} else {
+				ratingDisplayTextField.setText("N/A");
+			}
+		}	
 
     private void addItemAction(ActionEvent e) {
         if (itemCount < availableQuantity) {
