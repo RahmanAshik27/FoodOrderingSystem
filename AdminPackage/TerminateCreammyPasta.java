@@ -139,14 +139,15 @@ public class TerminateCreammyPasta extends JFrame {
 
 
     private void goBack(ActionEvent e) {
-         
-		 IncomeStatementDepartmentOfFoodPage incomeStatementDepartmentOfFoodPage = new IncomeStatementDepartmentOfFoodPage();
+        
+		this.setVisible(false);	
+		IncomeStatementDepartmentOfFoodPage incomeStatementDepartmentOfFoodPage = new IncomeStatementDepartmentOfFoodPage();
         incomeStatementDepartmentOfFoodPage.setTitle("Income Statement Department Of FoodPage");
         incomeStatementDepartmentOfFoodPage.setSize(900, 600);
         incomeStatementDepartmentOfFoodPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         incomeStatementDepartmentOfFoodPage.setLocationRelativeTo(null);
         incomeStatementDepartmentOfFoodPage.setVisible(true);
         incomeStatementDepartmentOfFoodPage.setResizable(false);
-		this.dispose();
+		
     }
 }

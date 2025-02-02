@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class CreateAccountForFoodiBdPage extends JFrame {
     
 	private Container container;
-    private JLabel welcomeLabel,userLabel, phoneLabel, emailLabel, passwordLabel, confirmPasswordLabel,imageLabel, manualLabel;
+    private JLabel welcomeLabel,userLabel, phoneLabel, emailLabel, passwordLabel, confirmPasswordLabel,imageLabel, manualLabel,footerLabel;
     private JTextField usernameField, phoneField, emailField;
     private JPasswordField passwordField, confirmPasswordField;
     private JButton createButton, backButton;
@@ -127,6 +127,15 @@ public class CreateAccountForFoodiBdPage extends JFrame {
 				foodiBdRiderDetails.setVisible(true);
 				
         });
+		
+		Font boldFont = new Font("Arial", Font.BOLD, 18);
+        footerLabel = new JLabel("Food Ordering System", JLabel.CENTER);
+        footerLabel.setBounds(8, 525, 870, 30);
+        footerLabel.setFont(boldFont);
+        footerLabel.setForeground(Color.WHITE);
+        footerLabel.setOpaque(true);
+        footerLabel.setBackground(new Color(0, 0, 0, 150));
+        container.add(footerLabel);
         
 		container.add(backButton);
 		imageLabel = new JLabel(new ImageIcon("RiderLogin.png"));

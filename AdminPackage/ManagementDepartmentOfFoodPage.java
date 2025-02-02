@@ -507,14 +507,14 @@ private void addJapanessRamenInventory(ActionEvent e) {
 
     private void goBack(ActionEvent e) {
        
-	   ManagementDepartment managementDepartmentPage = new ManagementDepartment ();
-        managementDepartmentPage.setTitle("Food Reviews Page");
-        managementDepartmentPage.setSize(900, 600);
-        managementDepartmentPage.setLocationRelativeTo(null);
-        managementDepartmentPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        managementDepartmentPage.setVisible(true);
-        managementDepartmentPage.setResizable(false);
-		this.setVisible(false);
+			AdminDashboard dashboard = new AdminDashboard();
+			dashboard.setTitle("Admin Dashboard");
+			dashboard.setSize(900, 600);
+			dashboard.setLocationRelativeTo(null);
+			dashboard.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			dashboard.setResizable(false);
+			dashboard.setVisible(true);
+			this.setVisible(false); 
     }
 
 }

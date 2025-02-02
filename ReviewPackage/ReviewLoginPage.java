@@ -108,12 +108,12 @@ public class ReviewLoginPage extends JFrame {
         backButton.addActionListener(this::goBack);
         container.add(backButton);
 
-        footerLabel = new JLabel("Food Ordering System", JLabel.CENTER);
-        footerLabel.setBounds(470, 380, 300, 40);
+        JLabel footerLabel = new JLabel("Food Ordering System", JLabel.CENTER);
+        footerLabel.setBounds(8, 525, 870, 30);
         footerLabel.setFont(boldFont);
-        footerLabel.setForeground(Color.BLACK);
+        footerLabel.setForeground(Color.WHITE);
         footerLabel.setOpaque(true);
-        footerLabel.setBackground(new Color(255, 255, 255, 150));
+        footerLabel.setBackground(new Color(0, 0, 0, 150));
         container.add(footerLabel);
 
         messageLabel = new JLabel("Your opinion is valuable to us", JLabel.CENTER);

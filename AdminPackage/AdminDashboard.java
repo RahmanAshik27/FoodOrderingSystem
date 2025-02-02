@@ -41,7 +41,7 @@ public AdminDashboard() {
 
        
 		incomeStatementButton = new JButton("Income Statement");
-		incomeStatementButton.setBounds(550, 105, 250, 50);
+		incomeStatementButton.setBounds(550, 115, 250, 50);
 		incomeStatementButton.setFont(buttonFont);
 		incomeStatementButton.setBackground(new Color(50, 150, 255));
 		incomeStatementButton.setForeground(Color.WHITE);
@@ -51,7 +51,7 @@ public AdminDashboard() {
 
 
 		inventoryButton = new JButton("Inventory");
-		inventoryButton.setBounds(550, 180, 250, 50);
+		inventoryButton.setBounds(550, 190, 250, 50);
 		inventoryButton.setFont(buttonFont);
 		inventoryButton.setBackground(new Color(255, 99, 71)); 
 		inventoryButton.setForeground(Color.WHITE);
@@ -61,7 +61,7 @@ public AdminDashboard() {
 
 
 		ridersDetailsButton = new JButton("Riders Details");
-		ridersDetailsButton.setBounds(550, 255, 250, 50);
+		ridersDetailsButton.setBounds(550, 265, 250, 50);
 		ridersDetailsButton.setFont(buttonFont);
 		ridersDetailsButton.setBackground(new Color(60, 179, 113)); 
 		ridersDetailsButton.setForeground(Color.WHITE);
@@ -71,7 +71,7 @@ public AdminDashboard() {
 
 
 		foodReviewsButton = new JButton("Food Reviews");
-		foodReviewsButton.setBounds(550, 330, 250, 50);
+		foodReviewsButton.setBounds(550, 340, 250, 50);
 		foodReviewsButton.setFont(buttonFont);
 		foodReviewsButton.setBackground(new Color(147, 112, 219)); 
 		foodReviewsButton.setForeground(Color.WHITE);
@@ -81,7 +81,7 @@ public AdminDashboard() {
 
 
 		itDepartmentButton = new JButton("Managemnet Department");
-		itDepartmentButton.setBounds(525, 408, 300, 50);
+		itDepartmentButton.setBounds(525, 415, 300, 50);
 		itDepartmentButton.setFont(buttonFont);
 		itDepartmentButton.setBackground(new Color(178, 34, 34)); 
 		itDepartmentButton.setForeground(Color.WHITE);
@@ -99,13 +99,12 @@ public AdminDashboard() {
         container.add(backButton);
 
         footerLabel = new JLabel("Food Ordering System", JLabel.CENTER);
-        footerLabel.setBounds(10, 520, 880, 30);
+        footerLabel.setBounds(8, 525, 870, 30);
         footerLabel.setFont(boldFont);
         footerLabel.setForeground(Color.WHITE);
         footerLabel.setOpaque(true);
         footerLabel.setBackground(new Color(0, 0, 0, 150));
         container.add(footerLabel);
-
       
         imageLabel = new JLabel(new ImageIcon("FirstPage.png"));
         imageLabel.setBounds(100, 60, 250, 400);
@@ -131,14 +130,16 @@ public AdminDashboard() {
     }
 
     private void handleInventory(ActionEvent e) {
-        InventoryOfFoodPage inventoryPage = new InventoryOfFoodPage();
+        
+		this.setVisible(false);
+		InventoryOfFoodPage inventoryPage = new InventoryOfFoodPage();
         inventoryPage.setTitle("Food Delivery System");
         inventoryPage.setSize(900, 600);
         inventoryPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         inventoryPage.setLocationRelativeTo(null);
         inventoryPage.setVisible(true);
         inventoryPage.setResizable(false);
-		this.setVisible(false);
+		
     }
 
     private void handleRidersDetails(ActionEvent e) {
@@ -165,18 +166,20 @@ public AdminDashboard() {
 
     private void handleITDepartment(ActionEvent e) {
         
-		ManagementDepartment managementDepartmentPage = new ManagementDepartment ();
-        managementDepartmentPage.setTitle("Food Reviews Page");
-        managementDepartmentPage.setSize(900, 600);
-        managementDepartmentPage.setLocationRelativeTo(null);
-        managementDepartmentPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        managementDepartmentPage.setVisible(true);
-        managementDepartmentPage.setResizable(false);
+		ManagementDepartmentOfFoodPage managementDepartmentOfFoodPage = new ManagementDepartmentOfFoodPage();
+        managementDepartmentOfFoodPage.setTitle("Food Delivery System");
+        managementDepartmentOfFoodPage.setSize(900, 600);
+        managementDepartmentOfFoodPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        managementDepartmentOfFoodPage.setLocationRelativeTo(null);
+        managementDepartmentOfFoodPage.setVisible(true);
+        managementDepartmentOfFoodPage.setResizable(false);
 		this.setVisible(false);
+		
     }
 	
 	private void goBack(ActionEvent e) {
 			
+			this.setVisible(false);
 			AdminLoginPage adminPage = new AdminLoginPage();
             adminPage.setTitle("Admin Login Page");
             adminPage.setSize(900, 600); 
@@ -184,7 +187,7 @@ public AdminDashboard() {
             adminPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             adminPage.setVisible(true);
 			adminPage.setResizable(false);
-            this.setVisible(false);
+            
     }
 
     

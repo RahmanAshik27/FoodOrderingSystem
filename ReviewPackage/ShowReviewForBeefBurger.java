@@ -15,7 +15,7 @@ public class ShowReviewForBeefBurger extends JFrame {
     private JTextArea reviewTextArea;
     private JScrollPane scrollPane;
     private JSlider ratingSlider;
-    private JButton postReviewButton, clearReviewButton, moreFoodsButton, homePageButton, backButton;
+    private JButton postReviewButton, clearReviewButton, moreFoodsButton, homePageButton, backButton,orderButton;
     private JTextField ratingDisplayTextField;
 
 public ShowReviewForBeefBurger() {
@@ -43,7 +43,7 @@ public ShowReviewForBeefBurger() {
         container.add(welcomeLabel);
 
         ratingLabel = new JLabel("How much Our Customers like it?", JLabel.CENTER);
-        ratingLabel.setBounds(60, 90, 310, 40);
+        ratingLabel.setBounds(60, 85, 310, 40);
         ratingLabel.setFont(buttonFont);
         ratingLabel.setForeground(Color.RED);
         ratingLabel.setOpaque(true);
@@ -52,20 +52,20 @@ public ShowReviewForBeefBurger() {
         container.add(ratingLabel);
 
         ratingSlider = new JSlider(1, 5, 3);
-        ratingSlider.setBounds(40, 140, 350, 50);
+        ratingSlider.setBounds(40, 130, 350, 40);
         ratingSlider.setMajorTickSpacing(1);
         ratingSlider.setPaintTicks(true);
         ratingSlider.setCursor(cursor);
 		ratingSlider.setEnabled(false);
         ratingSlider.setPaintLabels(true);
         ratingSlider.setLabelTable(ratingSlider.createStandardLabels(1));
-        ratingSlider.setFont(new Font("Arial", Font.BOLD, 18));
+        ratingSlider.setFont(new Font("Arial", Font.BOLD, 15));
         ratingSlider.setBackground(Color.WHITE);
         container.add(ratingSlider);
 
         ratingDisplayTextField = new JTextField();
-        ratingDisplayTextField.setBounds(400, 145, 50, 50);
-        ratingDisplayTextField.setFont(new Font("Arial", Font.BOLD, 22));
+        ratingDisplayTextField.setBounds(400, 130, 50, 40);
+        ratingDisplayTextField.setFont(new Font("Arial", Font.BOLD, 20));
         ratingDisplayTextField.setHorizontalAlignment(JTextField.CENTER);
         ratingDisplayTextField.setEditable(false);
         ratingDisplayTextField.setBackground(new Color(220, 240, 255));
@@ -74,7 +74,7 @@ public ShowReviewForBeefBurger() {
         container.add(ratingDisplayTextField);
 
         reviewLabel = new JLabel("Review From Our Customers ", JLabel.CENTER);
-        reviewLabel.setBounds(120, 220, 300, 30);
+        reviewLabel.setBounds(120, 180, 300, 30);
         reviewLabel.setFont(buttonFont);
         reviewLabel.setForeground(Color.RED);
         reviewLabel.setBackground(new Color(240, 255, 240));
@@ -88,14 +88,14 @@ public ShowReviewForBeefBurger() {
         reviewTextArea.setWrapStyleWord(true);
         reviewTextArea.setBorder(BorderFactory.createCompoundBorder(
             BorderFactory.createLineBorder(new Color(0, 128, 255), 2),
-            BorderFactory.createEmptyBorder(35, 10, 35, 10)
+            BorderFactory.createEmptyBorder(10, 10, 10, 10)
         ));
 
         scrollPane = new JScrollPane(reviewTextArea);
-        scrollPane.setBounds(30, 215, 500, 250);
+        scrollPane.setBounds(30, 220, 500, 230);
         scrollPane.setBorder(BorderFactory.createLineBorder(new Color(192, 192, 192), 2));
         container.add(scrollPane);
-
+		
         moreFoodsButton = new JButton("Review More Foods");
         moreFoodsButton.setBounds(460, 470, 200, 40);
         moreFoodsButton.setFont(buttonFont);
@@ -117,8 +117,8 @@ public ShowReviewForBeefBurger() {
         container.add(homePageButton);
 
         footerLabel = new JLabel("Food Ordering System", JLabel.CENTER);
-        footerLabel.setBounds(0, 520, 900, 40);
-        footerLabel.setFont(new Font("Arial", Font.BOLD, 20));
+        footerLabel.setBounds(8, 525, 870, 30);
+        footerLabel.setFont(buttonFont);
         footerLabel.setForeground(Color.WHITE);
         footerLabel.setOpaque(true);
         footerLabel.setBackground(new Color(0, 0, 0, 150));
@@ -140,6 +140,16 @@ public ShowReviewForBeefBurger() {
         messageLabel.setOpaque(true);
         messageLabel.setBackground(new Color(0, 0, 0, 150));
         container.add(messageLabel);
+		
+		String oderMessage = "<html><div style='text-align: center;'><b>Click here for </b><br>Order Beef burger (^_~) </div></html>";
+		orderButton = new JButton(oderMessage);
+        orderButton.setBounds(60, 462, 300, 60);
+        orderButton.setFont(buttonFont);
+        orderButton.setBackground(new Color(255, 99, 71));
+        orderButton.setForeground(Color.WHITE);
+        orderButton.setCursor(cursor);
+        orderButton.addActionListener(this::ToOrderLogin);
+        container.add(orderButton);
 
         backButton = new JButton("Back");
         backButton.setBounds(20, 20, 80, 30);
@@ -211,7 +221,22 @@ public ShowReviewForBeefBurger() {
 			page.setResizable(false);
 				
     }
-
+	
+	
+	private void ToOrderLogin(ActionEvent e) {
+			
+				this.setVisible(false); 
+				 
+				BeefBurgerCustomerLoginPage page = new BeefBurgerCustomerLoginPage();
+				page.setTitle("Customer Food Service");
+				page.setSize(900, 600);
+				page.setLocationRelativeTo(null);
+				page.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				page.setVisible(true);
+				page.setResizable(false);
+					
+		}
+		
     private void goHomePageButton(ActionEvent e) {
 		
         this.setVisible(false);

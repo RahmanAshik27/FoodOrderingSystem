@@ -123,9 +123,10 @@ public class ShowIEatrayDetails extends JFrame {
 		container.add(terminateButton);
 		
 		
-		footerLabel = new JLabel("Food Ordering System", JLabel.CENTER);
-        footerLabel.setBounds(0, 520, 900, 40);
-        footerLabel.setFont(new Font("Arial", Font.BOLD, 20));
+		Font boldFont = new Font("Arial", Font.BOLD, 18);
+        footerLabel = new JLabel("Food Ordering System", JLabel.CENTER);
+        footerLabel.setBounds(8, 525, 870, 30);
+        footerLabel.setFont(boldFont);
         footerLabel.setForeground(Color.WHITE);
         footerLabel.setOpaque(true);
         footerLabel.setBackground(new Color(0, 0, 0, 150));
@@ -206,111 +207,109 @@ public class ShowIEatrayDetails extends JFrame {
 	
 	
 	private void terminateRider(ActionEvent e) {
-        
-		ImageIcon blankImg = new ImageIcon("FillAllbox.png");
-		ImageIcon wrongImg = new ImageIcon("wrongimg2.png");
-		ImageIcon okImg = new ImageIcon("okImg.png");
+    ImageIcon blankImg = new ImageIcon("FillAllbox.png");
+    ImageIcon wrongImg = new ImageIcon("wrongimg2.png");
+    ImageIcon okImg = new ImageIcon("okImg.png");
 
-        List<String> riders = new ArrayList<>();
+    List<String> riders = new ArrayList<>();
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                String[] details = line.split(",");
-                if (details.length >= 1) {
-                    riders.add(details[0]);
-                }
+    try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+        String line;
+        while ((line = reader.readLine()) != null) {
+            String[] details = line.split(",");
+            if (details.length >= 1) {
+                riders.add(details[0]);
             }
-        } catch (IOException ex) {
-            JOptionPane.showMessageDialog(null, 
-                                          "Error reading rider details!", 
-                                          "Error", 
-                                          JOptionPane.ERROR_MESSAGE, 
-                                          wrongImg);
-            return;
         }
+    } catch (IOException ex) {
+        JOptionPane.showMessageDialog(null, 
+                                      "Error reading rider details!", 
+                                      "Error", 
+                                      JOptionPane.ERROR_MESSAGE, 
+                                      wrongImg);
+        return;
+    }
 
-        
-        if (riders.isEmpty()) {
-            JOptionPane.showMessageDialog(null, 
-                                          "No riders available to terminate.", 
-                                          "Info", 
-                                          JOptionPane.INFORMATION_MESSAGE, 
-                                          wrongImg);
-            return;
-        }
+    if (riders.isEmpty()) {
+        JOptionPane.showMessageDialog(null, 
+                                      "No riders available to terminate.", 
+                                      "Info", 
+                                      JOptionPane.INFORMATION_MESSAGE, 
+                                      wrongImg);
+        return;
+    }
 
-    
-        String username = (String) JOptionPane.showInputDialog(
-                null,
-                "Select a rider to terminate:",
-                "Terminate Rider",
-                JOptionPane.PLAIN_MESSAGE,
-                blankImg,
-                riders.toArray(),
-                riders.get(0)
-        );
-
-        if (username != null) {
+    String username = searchField.getText().trim();
+    if (!username.isEmpty() && riders.contains(username)) {
+        int confirm = JOptionPane.showConfirmDialog(null, 
+                        "Are you sure you want to terminate " + username + "?", 
+                        "Confirm Termination", 
+                        JOptionPane.YES_NO_OPTION, 
+                        JOptionPane.WARNING_MESSAGE, 
+                        blankImg);
+        if (confirm == JOptionPane.YES_OPTION) {
             deleteRider(username);
         }
+    } else {
+        JOptionPane.showMessageDialog(null, 
+                                      "Rider not found!", 
+                                      "Error", 
+                                      JOptionPane.ERROR_MESSAGE, 
+                                      wrongImg);
+    }
+}
+
+private void deleteRider(String username) {
+    List<String> updatedRiders = new ArrayList<>();
+    boolean found = false;
+
+    ImageIcon wrongImg = new ImageIcon("wrongimg2.png");
+    ImageIcon okImg = new ImageIcon("okImg.png");
+
+    try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+        String line;
+        while ((line = reader.readLine()) != null) {
+            String[] details = line.split(",");
+            if (details.length >= 1 && details[0].equals(username)) {
+                found = true;
+                continue; 
+            }
+            updatedRiders.add(line);
+        }
+    } catch (IOException ex) {
+        JOptionPane.showMessageDialog(null, 
+                                      "Error reading rider details!", 
+                                      "Error", 
+                                      JOptionPane.ERROR_MESSAGE, 
+                                      wrongImg);
+        return;
     }
 
-    private void deleteRider(String username) {
-        List<String> updatedRiders = new ArrayList<>();
-        boolean found = false;
-
-        ImageIcon blankImg = new ImageIcon("FillAllbox.png");
-		ImageIcon wrongImg = new ImageIcon("wrongimg2.png");
-		ImageIcon okImg = new ImageIcon("okImg.png");
-
-       
-        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                String[] details = line.split(",");
-                if (details.length >= 1 && details[0].equals(username)) {
-                    found = true;
-                    continue; 
-                }
-                updatedRiders.add(line);
-            }
-        } catch (IOException ex) {
-            JOptionPane.showMessageDialog(null, 
-                                          "Error reading rider details!", 
-                                          "Error", 
-                                          JOptionPane.ERROR_MESSAGE, 
-                                          wrongImg);
-            return;
-        }
-
-      
-        if (!found) {
-            JOptionPane.showMessageDialog(null, 
-                                          "Rider not found!", 
-                                          "Error", 
-                                          JOptionPane.ERROR_MESSAGE, 
-                                          wrongImg);
-            return;
-        }
-
-       
-        try (PrintWriter writer = new PrintWriter(new FileWriter(filePath))) {
-            for (String rider : updatedRiders) {
-                writer.println(rider);
-            }
-            JOptionPane.showMessageDialog(null, 
-                                          "Rider terminated successfully!", 
-                                          "Success", 
-                                          JOptionPane.INFORMATION_MESSAGE, 
-                                          okImg);
-            loadRiderDetails(null);
-        } catch (IOException ex) {
-            JOptionPane.showMessageDialog(null, 
-                                          "Error saving updated rider details!", 
-                                          "Error", 
-                                          JOptionPane.ERROR_MESSAGE, 
-                                          wrongImg);
-        }
+    if (!found) {
+        JOptionPane.showMessageDialog(null, 
+                                      "Rider not found!", 
+                                      "Error", 
+                                      JOptionPane.ERROR_MESSAGE, 
+                                      wrongImg);
+        return;
     }
+
+    try (PrintWriter writer = new PrintWriter(new FileWriter(filePath))) {
+        for (String rider : updatedRiders) {
+            writer.println(rider);
+        }
+        JOptionPane.showMessageDialog(null, 
+                                      "Rider terminated successfully!", 
+                                      "Success", 
+                                      JOptionPane.INFORMATION_MESSAGE, 
+                                      okImg);
+        loadRiderDetails(null);
+    } catch (IOException ex) {
+        JOptionPane.showMessageDialog(null, 
+                                      "Error saving updated rider details!", 
+                                      "Error", 
+                                      JOptionPane.ERROR_MESSAGE, 
+                                      wrongImg);
+    }
+}
 }

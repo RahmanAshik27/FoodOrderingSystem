@@ -11,7 +11,7 @@ import java.awt.*;
 
 public class ProjectMainPage extends JFrame {
     private Container container;
-    private JLabel welcomeLabel, imageLabel;
+    private JLabel welcomeLabel, imageLabel,footerLabel;
     private JButton adminLoginButton, customersLoginButton, foodReviewsButton, riderLoginButton, foodPolicyButton;
 
     public ProjectMainPage() {
@@ -21,35 +21,45 @@ public class ProjectMainPage extends JFrame {
     private void setupMainPage() {
         container = this.getContentPane();
         container.setLayout(null);
+		
+		Font boldFont = new Font("Arial", Font.BOLD, 18);
 
-        welcomeLabel = new JLabel("Welcome to the Food Delivery System", JLabel.CENTER);
-        welcomeLabel.setBounds(150, 20, 600, 70);
+        welcomeLabel = new JLabel("Welcome to the Food Ordering System", JLabel.CENTER);
+        welcomeLabel.setBounds(100, 20, 700, 70);
         welcomeLabel.setFont(new Font("Arial", Font.BOLD, 30));
         welcomeLabel.setForeground(Color.WHITE);
         welcomeLabel.setOpaque(true);
         welcomeLabel.setBackground(new Color(0, 0, 0, 150));
         container.add(welcomeLabel);
 
-        adminLoginButton = createButton("Admin Login", 500, 120,new Color(255, 87, 34));
+        adminLoginButton = createButton("Admin Login", 500, 130,new Color(255, 87, 34));
         adminLoginButton.addActionListener(e -> handleButtonClick("Admin Login"));
 
-        customersLoginButton = createButton("Customer Login", 500, 190, new Color(34, 193, 195));
+        customersLoginButton = createButton("Customer Login", 500, 200, new Color(34, 193, 195));
         customersLoginButton.addActionListener(e -> handleCustomersButtonClick("Customer Login"));
 	
-        foodReviewsButton = createButton("Food Reviews", 500, 260, new Color(252, 140, 3));
+        foodReviewsButton = createButton("Food Reviews", 500, 270, new Color(252, 140, 3));
 		foodReviewsButton.addActionListener(e -> handleFoodReviewButtonClick("Food Reviews"));
 		
-        riderLoginButton = createButton("Rider Login", 500, 330, new Color(83, 109, 254));
+        riderLoginButton = createButton("Rider Login", 500, 340, new Color(83, 109, 254));
 		riderLoginButton.addActionListener(e -> handleRiderLoginButtonClick("Rider Login"));
 		
 		
-        foodPolicyButton = createButton("Food Policy", 30, 480, new Color(255, 82, 82));
+        foodPolicyButton = createButton("Food Policy", 50, 460, new Color(255, 82, 82));
 
         container.add(adminLoginButton);
         container.add(customersLoginButton);
         container.add(foodReviewsButton);
         container.add(riderLoginButton);
         container.add(foodPolicyButton);
+		
+		footerLabel = new JLabel("Food Ordering System", JLabel.CENTER);
+        footerLabel.setBounds(8, 525, 870, 30);
+        footerLabel.setFont(boldFont);
+        footerLabel.setForeground(Color.WHITE);
+        footerLabel.setOpaque(true);
+        footerLabel.setBackground(new Color(0, 0, 0, 150));
+        container.add(footerLabel);
 		 
         imageLabel = new JLabel(new ImageIcon("FirstPage.png"));
         imageLabel.setBounds(100, 60, 250, 400);

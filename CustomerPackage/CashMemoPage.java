@@ -37,6 +37,7 @@ public class CashMemoPage extends JFrame {
 
         Font labelFont = new Font("Arial", Font.PLAIN, 18);
         Font buttonFont = new Font("Arial", Font.BOLD, 16);
+		Font boldFont = new Font("Arial",Font.BOLD, 18);
         Font welcomeFont = new Font("Arial", Font.BOLD, 30);
 		
 		Cursor cursor = new Cursor(Cursor.HAND_CURSOR);
@@ -94,12 +95,12 @@ public class CashMemoPage extends JFrame {
         proceedButton.addActionListener(this::handleProceed);
         container.add(proceedButton);
 
-        footerLabel = new JLabel("Food Ordering System", JLabel.CENTER);
-        footerLabel.setBounds(380, 530, 250, 30);
-        footerLabel.setFont(buttonFont);
-        footerLabel.setForeground(Color.BLACK);
+		footerLabel = new JLabel("Food Ordering System", JLabel.CENTER);
+        footerLabel.setBounds(8, 525, 870, 30);
+        footerLabel.setFont(boldFont);
+        footerLabel.setForeground(Color.WHITE);
         footerLabel.setOpaque(true);
-        footerLabel.setBackground(new Color(255, 255, 255, 150));
+        footerLabel.setBackground(new Color(0, 0, 0, 150));
         container.add(footerLabel);
 
         imageLabel = new JLabel(new ImageIcon("Mainpage.png"));

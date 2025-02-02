@@ -1,9 +1,9 @@
-package CustomerPackage;
+package ReviewPackage;
 
 import AdminPackage.*;
-import ReviewPackage.*;
-import RiderPackage.*;
-import  DashboardPackage.*;
+import CustomerPackage.*;
+import DashboardPackage.*;
+
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,7 +11,7 @@ import java.awt.event.ActionEvent;
 import java.io.*;
 import java.util.Scanner;
 
-public class CustomerLoginPage extends JFrame {
+public class ChikhenDumBiriyaniCustomerLoginPage extends JFrame {
     private Container container;
     private JLabel welcomeLabel, userLabel, passwordLabel,imageLabel, footerLabel;
     private JTextField usernameField;
@@ -20,11 +20,11 @@ public class CustomerLoginPage extends JFrame {
     private JCheckBox showPasswordCheckBox;
 
     
-public CustomerLoginPage() {
-        setupCustomerPage();
+public ChikhenDumBiriyaniCustomerLoginPage() {
+        setupChikhenDumBiriyaniCustomerLoginPage();
     }
 
-    private void setupCustomerPage() {
+    private void setupChikhenDumBiriyaniCustomerLoginPage() {
         container = getContentPane();
         container.setLayout(null);
 
@@ -54,9 +54,12 @@ public CustomerLoginPage() {
         backButton.addActionListener(this::goBack);
         container.add(backButton);	
 		
-        userLabel = new JLabel("Username:");
-	    userLabel.setBounds(250, 150, 120, 30);
+        userLabel = new JLabel(" Username:",JLabel.CENTER);
+	    userLabel.setBounds(250, 151, 120, 40);
         userLabel.setFont(boldFont);
+        userLabel.setForeground(Color.WHITE);
+        userLabel.setOpaque(true);
+        userLabel.setBackground(new Color(0, 0, 0, 150));
 		container.add(userLabel);		
 
         usernameField = new JTextField();
@@ -65,9 +68,12 @@ public CustomerLoginPage() {
         usernameField.setBackground(Color.WHITE);
         container.add(usernameField);
 
-        passwordLabel = new JLabel("Password:");
-		passwordLabel.setBounds(250, 220, 120, 30);
-		passwordLabel.setFont(boldFont);  
+        passwordLabel = new JLabel(" Password:",JLabel.CENTER);
+		passwordLabel.setBounds(250, 221, 120, 40);
+		passwordLabel.setFont(boldFont); 
+		passwordLabel.setForeground(Color.WHITE);
+        passwordLabel.setOpaque(true);
+        passwordLabel.setBackground(new Color(0, 0, 0, 150));		
 		container.add(passwordLabel);
 
         passwordField = new JPasswordField();
@@ -120,7 +126,7 @@ public CustomerLoginPage() {
         footerLabel.setBackground(new Color(0, 0, 0, 150));
         container.add(footerLabel);
 		
-		imageLabel = new JLabel(new ImageIcon("Mainpage.png"));
+		imageLabel = new JLabel(new ImageIcon("Review.png"));
         imageLabel.setBounds(0, 0, 900, 600);
         container.add(imageLabel);
     }
@@ -158,13 +164,16 @@ public CustomerLoginPage() {
 		}
 
 		JOptionPane.showMessageDialog(this, "Login Successful", "Success", JOptionPane.INFORMATION_MESSAGE, okImg);
-		CustomerFoodService page = new CustomerFoodService(username);
-		page.setTitle("Customer Food Service");
-		page.setSize(900, 600);
-		page.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		page.setLocationRelativeTo(null);
-		page.setVisible(true);
-		this.dispose();
+				
+				ChikenDumBiriyaniOrderDetails chikenDumBiriyani = new ChikenDumBiriyaniOrderDetails(username);
+				chikenDumBiriyani.setTitle("Food Order Details");
+				chikenDumBiriyani.setSize(900, 600);
+				chikenDumBiriyani.setLocationRelativeTo(null);
+				chikenDumBiriyani.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				chikenDumBiriyani.setVisible(true);
+				chikenDumBiriyani.setResizable(false);
+			
+				this.setVisible(false); 
 	
 	}else {
             String errorMessage = "<html><div style='text-align: center;'><b>Incorrect Username or Password!</b><br>Please try again.</div></html>";
@@ -188,8 +197,9 @@ public CustomerLoginPage() {
 
    
     private void openCreateAccountPage(ActionEvent e) {
-        this.setVisible(false);
-        CreateAccountPage createAccountPage = new CreateAccountPage();
+        
+		this.setVisible(false);
+        ChikhenDumBiriyaniCreateAccountPage createAccountPage = new ChikhenDumBiriyaniCreateAccountPage();
         createAccountPage.setTitle("Create Account");
         createAccountPage.setSize(900, 600);
         createAccountPage.setLocationRelativeTo(null);
@@ -200,14 +210,14 @@ public CustomerLoginPage() {
 	
 	    private void goBack(ActionEvent e) {
       
-        this.setVisible(false); 
-        ProjectMainPage mainPage = new ProjectMainPage(); 
-        mainPage.setTitle("Food Delivery System");
-        mainPage.setSize(900, 600);
-        mainPage.setLocationRelativeTo(null);
-        mainPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        mainPage.setVisible(true);
-		mainPage.setResizable(false);
+        ShowReviewForChikhenDumBiriyani frame = new ShowReviewForChikhenDumBiriyani();
+        frame.setTitle("Food Ordering sysytem");
+        frame.setSize(900, 600);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+		frame.setResizable(false);
+		this.setVisible(false); 
     }
 
 }

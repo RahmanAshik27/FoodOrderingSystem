@@ -312,15 +312,28 @@ private void readCustomerReviews() {
 	
 	private void addMoreItemAction(ActionEvent e) {
 		
-        CustomerFoodServiceOptionsPage customerFoodServiceOptionsPage = new CustomerFoodServiceOptionsPage(username);
-        customerFoodServiceOptionsPage.setTitle("Food Delivery System");
-        customerFoodServiceOptionsPage.setSize(900, 600);
-        customerFoodServiceOptionsPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        customerFoodServiceOptionsPage.setLocationRelativeTo(null);
-        customerFoodServiceOptionsPage.setVisible(true);
-        customerFoodServiceOptionsPage.setResizable(false);
-		  this.dispose();
-    }
+		ImageIcon icon = new ImageIcon("Src_ImageStore/Eating Cat.png"); 
+
+		int response = JOptionPane.showConfirmDialog(
+			this, 
+			"Are you sure you want to order more?", 
+			"Confirm Order", 
+			JOptionPane.YES_NO_OPTION, 
+			JOptionPane.QUESTION_MESSAGE, 
+			icon
+		);
+
+		if (response == JOptionPane.YES_OPTION) {
+			CustomerFoodServiceOptionsPage customerFoodServiceOptionsPage = new CustomerFoodServiceOptionsPage(username);
+			customerFoodServiceOptionsPage.setTitle("Food ordering System");
+			customerFoodServiceOptionsPage.setSize(900, 600);
+			customerFoodServiceOptionsPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			customerFoodServiceOptionsPage.setLocationRelativeTo(null);
+			customerFoodServiceOptionsPage.setVisible(true);
+			customerFoodServiceOptionsPage.setResizable(false);
+			this.dispose();
+		}
+	}
 	
 	private void proccedToMemoAction(ActionEvent e) {
            

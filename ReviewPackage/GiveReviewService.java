@@ -151,6 +151,14 @@ public class GiveReviewService extends JFrame {
         orderInfoLabel.setOpaque(true);
         orderInfoLabel.setBackground(new Color(0, 0, 0, 150));
         container.add(orderInfoLabel);
+		
+		JLabel footerLabel = new JLabel("Food Ordering System", JLabel.CENTER);
+        footerLabel.setBounds(8, 525, 870, 30);
+        footerLabel.setFont(boldFont);
+        footerLabel.setForeground(Color.WHITE);
+        footerLabel.setOpaque(true);
+        footerLabel.setBackground(new Color(0, 0, 0, 150));
+        container.add(footerLabel);
 
         JLabel backgroundLabel = new JLabel(new ImageIcon("Review.png"));
         backgroundLabel.setBounds(0, 0, 900, 600);

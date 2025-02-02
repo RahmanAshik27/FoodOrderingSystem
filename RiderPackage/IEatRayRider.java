@@ -98,8 +98,8 @@ public IEatRayRider() {
         clearButton.addActionListener(e -> clearFields());
         container.add(clearButton);
 
-        footerLabel = new JLabel("Food Ordering System", JLabel.CENTER);
-        footerLabel.setBounds(480, 480, 300, 40);
+       footerLabel = new JLabel("Food Ordering System", JLabel.CENTER);
+        footerLabel.setBounds(8, 525, 870, 30);
         footerLabel.setFont(new Font("Arial", Font.BOLD, 18));
         footerLabel.setForeground(Color.WHITE);
         footerLabel.setOpaque(true);

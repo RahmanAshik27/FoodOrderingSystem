@@ -140,6 +140,7 @@ public class TerminateJapanessRamen extends JFrame {
 
     private void goBack(ActionEvent e) {
         
+		this.setVisible(false);
 		IncomeStatementDepartmentOfFoodPage incomeStatementDepartmentOfFoodPage = new IncomeStatementDepartmentOfFoodPage();
         incomeStatementDepartmentOfFoodPage.setTitle("Income Statement Department Of FoodPage");
         incomeStatementDepartmentOfFoodPage.setSize(900, 600);
@@ -147,7 +148,7 @@ public class TerminateJapanessRamen extends JFrame {
         incomeStatementDepartmentOfFoodPage.setLocationRelativeTo(null);
         incomeStatementDepartmentOfFoodPage.setVisible(true);
         incomeStatementDepartmentOfFoodPage.setResizable(false);
-		this.dispose();
+		
     }
 
 }

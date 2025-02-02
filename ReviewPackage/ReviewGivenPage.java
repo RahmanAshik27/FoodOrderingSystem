@@ -141,6 +141,14 @@ public class ReviewGivenPage extends JFrame {
         backButton.addActionListener(this::goBack);
         container.add(backButton);	
 		
+		JLabel footerLabel = new JLabel("Food Ordering System", JLabel.CENTER);
+        footerLabel.setBounds(8, 525, 870, 30);
+        footerLabel.setFont(boldFont);
+        footerLabel.setForeground(Color.WHITE);
+        footerLabel.setOpaque(true);
+        footerLabel.setBackground(new Color(0, 0, 0, 150));
+        container.add(footerLabel);
+		
 		imageLabel = new JLabel(new ImageIcon("Reviewer is Hungry.png"));
         imageLabel.setBounds(70, 80, 250, 400);
         container.add(imageLabel);

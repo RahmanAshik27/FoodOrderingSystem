@@ -515,7 +515,7 @@ public void loadAndCountJapanessRamenQuantityAndSales() {
 
 	
 	private void toTerminateFood(ActionEvent e) {
-			
+						
 			TerminateChikhenDumBiriyani mainPage = new TerminateChikhenDumBiriyani();
 			mainPage.setTitle("Food Delivery System");
 			mainPage.setSize(300, 400);
@@ -523,19 +523,20 @@ public void loadAndCountJapanessRamenQuantityAndSales() {
 			mainPage.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 			mainPage.setVisible(true);
 			mainPage.setResizable(false);
+			
 		}
 
 
     private void goBack(ActionEvent e) {
-        
+			
+			this.setVisible(false);
 			AdminDashboard dashboard = new AdminDashboard();
 			dashboard.setTitle("Admin Dashboard");
 			dashboard.setSize(900, 600);
 			dashboard.setLocationRelativeTo(null);
 			dashboard.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			dashboard.setResizable(false);
-			dashboard.setVisible(true);
-			this.setVisible(false); 
+			dashboard.setVisible(true);			 
 			
     }
 

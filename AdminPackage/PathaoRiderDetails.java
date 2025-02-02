@@ -69,12 +69,13 @@ public class PathaoRiderDetails extends JFrame {
         container.add(createAccountButton);
 	
 		
+        Font boldFont = new Font("Arial", Font.BOLD, 18);
         footerLabel = new JLabel("Food Ordering System", JLabel.CENTER);
-        footerLabel.setBounds(600, 520, 280, 40);
-        footerLabel.setFont(new Font("Arial", Font.BOLD, 20));
-        footerLabel.setForeground(Color.BLACK);
-		footerLabel.setOpaque(true);
-        footerLabel.setBackground(new Color(255, 255, 255, 150));
+        footerLabel.setBounds(8, 525, 870, 30);
+        footerLabel.setFont(boldFont);
+        footerLabel.setForeground(Color.WHITE);
+        footerLabel.setOpaque(true);
+        footerLabel.setBackground(new Color(0, 0, 0, 150));
         container.add(footerLabel);
 		
 		imageLabel = new JLabel(new ImageIcon("RiderLogin.png"));

@@ -101,17 +101,15 @@ public AdminLoginPage() {
         clearButton.setForeground(Color.WHITE);
         clearButton.setCursor(cursor);
         clearButton.addActionListener(this:: clearFields);
-        container.add(clearButton);
-
-        footerLabel = new JLabel("Food Ordering System", JLabel.CENTER);
-        footerLabel.setBounds(480, 380, 300, 40);
+        container.add(clearButton);	
+		
+		footerLabel = new JLabel("Food Ordering System", JLabel.CENTER);
+        footerLabel.setBounds(8, 525, 870, 30);
         footerLabel.setFont(boldFont);
-        footerLabel.setForeground(Color.BLACK);
+        footerLabel.setForeground(Color.WHITE);
         footerLabel.setOpaque(true);
-        footerLabel.setBackground(new Color(255, 255, 255, 150));
+        footerLabel.setBackground(new Color(0, 0, 0, 150));
         container.add(footerLabel);
-		
-		
 
         imageLabel = new JLabel(new ImageIcon("FirstPage.png"));
         imageLabel.setBounds(100, 60, 250, 400);

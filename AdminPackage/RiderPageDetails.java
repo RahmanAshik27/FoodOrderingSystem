@@ -46,10 +46,10 @@ public class RiderPageDetails extends JFrame {
         container.add(jhinkuFoodBdButton);
         container.add(raihanExpressButton);
 
-
-        footerLabel = new JLabel("Food Ordering System", JLabel.CENTER);
-        footerLabel.setBounds(480, 480, 300, 40);
-        footerLabel.setFont(new Font("Arial", Font.BOLD, 18));
+		
+		footerLabel = new JLabel("Food Ordering System", JLabel.CENTER);
+        footerLabel.setBounds(8, 525, 870, 30);
+        footerLabel.setFont(boldFont);
         footerLabel.setForeground(Color.WHITE);
         footerLabel.setOpaque(true);
         footerLabel.setBackground(new Color(0, 0, 0, 150));

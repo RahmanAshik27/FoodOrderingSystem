@@ -1,6 +1,0 @@
-Username: arafat
-Phone: 01765365648
-Email: arafat@gmail.com
-Password: 12345
-Login Successful: arafat
-Food Item: Creammy Pasta, Quantity: 15, Price: 310.0, Total Price: 4650.0

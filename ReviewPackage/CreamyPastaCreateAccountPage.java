@@ -1,9 +1,8 @@
-package CustomerPackage;
+package ReviewPackage;
 
 import AdminPackage.*;
-import ReviewPackage.*;
-import RiderPackage.*;
-import  DashboardPackage.*;
+import CustomerPackage.*;
+import DashboardPackage.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,7 +10,7 @@ import java.awt.event.ActionEvent;
 import java.io.*;
 import java.util.Scanner;
 
-public class CreateAccountPage extends JFrame {
+public class CreamyPastaCreateAccountPage extends JFrame {
     private Container container;
     private JLabel welcomeLabel,userLabel, phoneLabel, emailLabel, passwordLabel, confirmPasswordLabel,imageLabel, manualLabel,footerLabel;
     private JTextField usernameField, phoneField, emailField;
@@ -19,12 +18,13 @@ public class CreateAccountPage extends JFrame {
     private JButton createButton, backButton;
     private JCheckBox showPasswordCheckBox, showConfirmPasswordCheckBox;
 
-public CreateAccountPage() {
-        setupCreateAccountPage();
+public CreamyPastaCreateAccountPage() {
+        setupCreamyPastaCreateAccountPage();
     }
 
-    private void setupCreateAccountPage() {
-        container = getContentPane();
+    private void setupCreamyPastaCreateAccountPage() {
+        
+		container = getContentPane();
         container.setLayout(null);
 
         Font labelFont = new Font("Arial", Font.PLAIN, 18);
@@ -43,61 +43,76 @@ public CreateAccountPage() {
         container.add(welcomeLabel);
 		
 
-		userLabel = new JLabel("Username:");
-		userLabel.setBounds(250, 120, 150, 30);
+		userLabel = new JLabel("Username:", JLabel.CENTER);
+		userLabel.setBounds(250, 126, 150, 35);
 		userLabel.setFont(boldFont); 
+		userLabel.setForeground(Color.WHITE);
+        userLabel.setOpaque(true);
+        userLabel.setBackground(new Color(0, 0, 0, 150));
 		container.add(userLabel);
 
 		usernameField = new JTextField();
-		usernameField.setBounds(420, 120, 250, 40);
+		usernameField.setBounds(420, 125, 250, 40);
 		usernameField.setFont(labelFont);
 		usernameField.setBackground(Color.WHITE);
 		container.add(usernameField);
 
 
-		phoneLabel = new JLabel("Phone Number:");
-		phoneLabel.setBounds(250, 180, 150, 30);
+		phoneLabel = new JLabel("Phone Number:", JLabel.CENTER);
+		phoneLabel.setBounds(250, 186, 150, 35);
 		phoneLabel.setFont(boldFont);
+		phoneLabel.setForeground(Color.WHITE);
+        phoneLabel.setOpaque(true);
+        phoneLabel.setBackground(new Color(0, 0, 0, 150));
 		container.add(phoneLabel);
 
 		phoneField = new JTextField();
-		phoneField.setBounds(420, 180, 250, 40);
+		phoneField.setBounds(420, 185, 250, 40);
 		phoneField.setFont(labelFont);
 		phoneField.setBackground(Color.WHITE);
 		container.add(phoneField);
 
 
-		emailLabel = new JLabel("Email Adress:");
-		emailLabel.setBounds(250, 240, 150, 30);
+		emailLabel = new JLabel("Email Adress:", JLabel.CENTER);
+		emailLabel.setBounds(250, 246, 150, 35);
 		emailLabel.setFont(boldFont);  
+		emailLabel.setForeground(Color.WHITE);
+        emailLabel.setOpaque(true);
+        emailLabel.setBackground(new Color(0, 0, 0, 150));
 		container.add(emailLabel);
 
 		emailField = new JTextField();
-		emailField.setBounds(420, 240, 250, 40);
+		emailField.setBounds(420, 245, 250, 40);
 		emailField.setFont(labelFont);
 		emailField.setBackground(Color.WHITE);
 		container.add(emailField);
 
 
-		passwordLabel = new JLabel("Password:");
-		passwordLabel.setBounds(250, 300, 150, 30);
-		passwordLabel.setFont(boldFont);  
+		passwordLabel = new JLabel("Password:", JLabel.CENTER);
+		passwordLabel.setBounds(250, 306, 150, 35);
+		passwordLabel.setFont(boldFont); 
+		passwordLabel.setForeground(Color.WHITE);
+        passwordLabel.setOpaque(true);
+        passwordLabel.setBackground(new Color(0, 0, 0, 150));		
 		container.add(passwordLabel);
 
 		passwordField = new JPasswordField();
-		passwordField.setBounds(420, 300, 250, 40);
+		passwordField.setBounds(420, 305, 250, 40);
 		passwordField.setFont(labelFont);
 		passwordField.setBackground(Color.WHITE);
 		container.add(passwordField);
 
 
-		confirmPasswordLabel = new JLabel("Confirm Password:");
-		confirmPasswordLabel.setBounds(250, 361, 190, 30);
-		confirmPasswordLabel.setFont(boldFont); 
+		confirmPasswordLabel = new JLabel("Confirm Password:", JLabel.CENTER);
+		confirmPasswordLabel.setBounds(248, 366, 170, 35);
+		confirmPasswordLabel.setFont(boldFont);
+		confirmPasswordLabel.setForeground(Color.WHITE);
+        confirmPasswordLabel.setOpaque(true);
+        confirmPasswordLabel.setBackground(new Color(0, 0, 0, 150));		
 		container.add(confirmPasswordLabel);
 
 		confirmPasswordField = new JPasswordField();
-		confirmPasswordField.setBounds(420 , 360, 250, 40);
+		confirmPasswordField.setBounds(420 , 365, 250, 40);
 		confirmPasswordField.setFont(labelFont);
 		confirmPasswordField.setBackground(Color.WHITE);
 		container.add(confirmPasswordField);
@@ -136,14 +151,16 @@ public CreateAccountPage() {
         backButton.setForeground(Color.WHITE);
         backButton.setCursor(cursor);
         backButton.addActionListener(e -> {
-            this.setVisible(false);
-            CustomerLoginPage loginPage = new CustomerLoginPage();
-            loginPage.setTitle("Customer Login");
-            loginPage.setSize(900, 600);
-            loginPage.setLocationRelativeTo(null);
-            loginPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            loginPage.setVisible(true);
-			loginPage.setResizable(false);
+				
+				this.setVisible(false); 
+				 
+				CreamyPastaCustomerLoginPage page = new CreamyPastaCustomerLoginPage();
+				page.setTitle("Customer Food Service");
+				page.setSize(900, 600);
+				page.setLocationRelativeTo(null);
+				page.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				page.setVisible(true);
+				page.setResizable(false);
         });
         container.add(backButton);
 		
@@ -155,7 +172,7 @@ public CreateAccountPage() {
         footerLabel.setBackground(new Color(0, 0, 0, 150));
         container.add(footerLabel);
 		
-		imageLabel = new JLabel(new ImageIcon("Mainpage.png"));
+		imageLabel = new JLabel(new ImageIcon("Review.png"));
         imageLabel.setBounds(0, 0, 900, 600);
         container.add(imageLabel);
     }
@@ -176,7 +193,8 @@ public CreateAccountPage() {
         }
     }
 private void handleCreateAccount(ActionEvent e) {
-    String username = usernameField.getText();
+    
+	String username = usernameField.getText();
     String phone = phoneField.getText();
     String email = emailField.getText();
     String password = new String(passwordField.getPassword());
@@ -203,10 +221,10 @@ private void handleCreateAccount(ActionEvent e) {
         try {
               File file = new File("src/AdminPackage/users.txt");
 				if (!file.getParentFile().exists()) {
-				file.getParentFile().mkdirs(); // Ensure parent directory exists
+				file.getParentFile().mkdirs(); 
 			}
 			if (!file.exists()) {
-				file.createNewFile(); // Create the file if it doesn't exist
+				file.createNewFile(); 
 			}
 
 
@@ -251,15 +269,17 @@ private void handleCreateAccount(ActionEvent e) {
                 }
 
                 JOptionPane.showMessageDialog(this, "Account Created Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE, okImg);
-                this.setVisible(false);
-
-                CustomerLoginPage loginPage = new CustomerLoginPage();
-                loginPage.setTitle("Customer Login");
-                loginPage.setSize(900, 600);
-                loginPage.setLocationRelativeTo(null);
-                loginPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                loginPage.setVisible(true);
-                loginPage.setResizable(false);
+             			 
+				this.setVisible(false); 
+				 
+				CreamyPastaCustomerLoginPage page = new CreamyPastaCustomerLoginPage();
+				page.setTitle("Customer Food Service");
+				page.setSize(900, 600);
+				page.setLocationRelativeTo(null);
+				page.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				page.setVisible(true);
+				page.setResizable(false);
+				
             } catch (IOException ex) {
                 JOptionPane.showMessageDialog(this, "Error saving data!", "Error", JOptionPane.ERROR_MESSAGE);
             }
