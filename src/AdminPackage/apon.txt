@@ -7,3 +7,7 @@ Login Successful: apon
 Food Item: Chikhen Dum Biriyani, Quantity: 1, Price: 350.0, Total Price: 350.0
 Login Successful: apon
 Food Item: Creammy Pasta, Quantity: 3, Price: 310.0, Total Price: 930.0
+Login Successful: apon
+Food Item: Chikhen Dum Biriyani, Quantity: 3, Price: 350.0, Total Price: 1050.0
+Food Item: Beef Burger, Quantity: 1, Price: 270.0, Total Price: 270.0
+Food Item: Creammy Pasta, Quantity: 2, Price: 310.0, Total Price: 620.0

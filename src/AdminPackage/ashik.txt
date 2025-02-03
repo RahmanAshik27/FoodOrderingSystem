@@ -56,3 +56,7 @@ Login Successful: ashik
 Login Successful: ashik
 Login Successful: ashik
 Login Successful: ashik
+Login Successful: ashik
+Food Item: Japaness Ramen, Quantity: 2, Price: 410.0, Total Price: 820.0
+Food Item: Beef Burger, Quantity: 3, Price: 270.0, Total Price: 810.0
+Food Item: Creammy Pasta, Quantity: 1, Price: 310.0, Total Price: 310.0

@@ -9,3 +9,4 @@ Jhinku Bro,12345,01999999999,JhinkuBro420@gmail.com
 testMan,12345,01700000000,testMan@gmail.com
 MeuMikiKitchen,12345,01626315555,MeuMikiKitchen@gmail.com
 hemel,12345,01913140066,ridoykhan1912@gmail.com
+Miki,12345,01727956433,MIKI420@gmail.com

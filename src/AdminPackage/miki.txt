@@ -1,5 +1,7 @@
-Username: miki
-Phone: 01625252525
-Email: miki@gmail.com
+Username: Miki
+Phone: 01727956433
+Email: MIKI420@gmail.com
 Password: 12345
-Login Successful: miki
+Login Successful: Miki
+Food Item: Chikhen Dum Biriyani, Quantity: 4, Price: 350.0, Total Price: 1400.0
+Food Item: Creammy Pasta, Quantity: 4, Price: 310.0, Total Price: 1240.0
