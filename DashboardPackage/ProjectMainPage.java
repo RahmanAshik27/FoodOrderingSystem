@@ -4,6 +4,7 @@ import AdminPackage.*;
 import CustomerPackage.*;
 import ReviewPackage.*;
 import RiderPackage.*;
+import FoodPolicy.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -46,6 +47,7 @@ public class ProjectMainPage extends JFrame {
 		
 		
         foodPolicyButton = createButton("Food Policy", 50, 460, new Color(255, 82, 82));
+		foodPolicyButton.addActionListener(e -> handleFoodPolicyClick("Food Policy"));
 
         container.add(adminLoginButton);
         container.add(customersLoginButton);
@@ -145,5 +147,23 @@ public class ProjectMainPage extends JFrame {
             System.out.println(buttonName + " button clicked.");
 			}
 			       
-    }	
+    }
+	
+	private void handleFoodPolicyClick(String buttonName) {
+        if (buttonName.equals("Food Policy")) {
+			
+			BusinessTradeLicense mainPage = new BusinessTradeLicense();
+			mainPage.setTitle("Food Ordering System");
+			mainPage.setSize(400, 600); 
+			mainPage.setLocationRelativeTo(null); 
+			mainPage.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+			mainPage.setVisible(true);
+			mainPage.setResizable(false);	
+		
+			} else {
+            System.out.println(buttonName + " button clicked.");
+			}
+			       
+    }
+
 }
