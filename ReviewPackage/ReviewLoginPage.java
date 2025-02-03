@@ -73,7 +73,7 @@ public class ReviewLoginPage extends JFrame {
         passwordField.setFont(labelFont);
         container.add(passwordField);
 
-        eyeButton = new JToggleButton(new ImageIcon("eye.png"));
+        eyeButton = new JToggleButton(new ImageIcon("Src_ImageStore/eye.png"));
         eyeButton.setBounds(730, 230, 50, 40);
         eyeButton.setBorder(null);
         eyeButton.setFocusPainted(false);
@@ -124,11 +124,11 @@ public class ReviewLoginPage extends JFrame {
         messageLabel.setBackground(new Color(0, 0, 0, 150));
         container.add(messageLabel);
 		
-		imageLabel = new JLabel(new ImageIcon("Thinking Cat.png"));
+		imageLabel = new JLabel(new ImageIcon("Src_ImageStore/Thinking Cat.png"));
         imageLabel.setBounds(94, 95, 250, 400);
         container.add(imageLabel);
 
-        imageLabel = new JLabel(new ImageIcon("Review.png"));
+        imageLabel = new JLabel(new ImageIcon("Src_ImageStore/Review.png"));
         imageLabel.setBounds(0, 0, 900, 600);
         container.add(imageLabel);
     }
@@ -137,8 +137,8 @@ private void handleLogin(ActionEvent e) {
     String username = usernameField.getText();
     String password = new String(passwordField.getPassword());
 
-    ImageIcon wrongImg = new ImageIcon("wrongimg2.png");
-    ImageIcon okImg = new ImageIcon("okImg.png");
+    ImageIcon wrongImg = new ImageIcon("Src_ImageStore/wrongimg2.png");
+    ImageIcon okImg = new ImageIcon("Src_ImageStore/okImg.png");
     String result = checkCredentials(username, password);
 
     if (result.equals("SUCCESS")) {

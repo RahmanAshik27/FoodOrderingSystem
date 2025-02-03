@@ -126,7 +126,7 @@ public BeefBurgerCustomerLoginPage() {
         footerLabel.setBackground(new Color(0, 0, 0, 150));
         container.add(footerLabel);
 		
-		imageLabel = new JLabel(new ImageIcon("Review.png"));
+		imageLabel = new JLabel(new ImageIcon("Src_ImageStore/Review.png"));
         imageLabel.setBounds(0, 0, 900, 600);
         container.add(imageLabel);
     }
@@ -140,8 +140,8 @@ public BeefBurgerCustomerLoginPage() {
     String username = usernameField.getText();
     String password = new String(passwordField.getPassword());
 
-    ImageIcon okImg = new ImageIcon("okImg.png");
-    ImageIcon wrongImg = new ImageIcon("wrongimg2.png");
+    ImageIcon okImg = new ImageIcon("Src_ImageStore/okImg.png");
+    ImageIcon wrongImg = new ImageIcon("Src_ImageStore/wrongimg2.png");
 
     try (Scanner scanner = new Scanner(new File("src/AdminPackage/users.txt"))) {
         boolean loginSuccessful = false;

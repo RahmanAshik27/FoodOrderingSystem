@@ -76,7 +76,7 @@ public AdminLoginPage() {
         passwordField.setBackground(Color.WHITE);
         container.add(passwordField);
 
-        eyeButton = new JToggleButton(new ImageIcon("eye.png"));
+        eyeButton = new JToggleButton(new ImageIcon("Src_ImageStore/eye.png"));
         eyeButton.setBounds(730, 240, 50, 40);
         eyeButton.setBorder(null);
         eyeButton.setFocusPainted(false);
@@ -111,11 +111,11 @@ public AdminLoginPage() {
         footerLabel.setBackground(new Color(0, 0, 0, 150));
         container.add(footerLabel);
 
-        imageLabel = new JLabel(new ImageIcon("FirstPage.png"));
+        imageLabel = new JLabel(new ImageIcon("Src_ImageStore/FirstPage.png"));
         imageLabel.setBounds(100, 60, 250, 400);
         container.add(imageLabel);
 
-        imageLabel = new JLabel(new ImageIcon("Mainpage.png"));
+        imageLabel = new JLabel(new ImageIcon("Src_ImageStore/Mainpage.png"));
         imageLabel.setBounds(0, 0, 900, 600);
         container.add(imageLabel);
     }
@@ -137,10 +137,10 @@ public AdminLoginPage() {
     private void handleLogin(ActionEvent e) {
         String username = textField.getText();
         String password = new String(passwordField.getPassword());
-		ImageIcon blankImg = new ImageIcon("FillAllbox.png");
+		ImageIcon blankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
 
-        ImageIcon okImg = new ImageIcon("okImg.png");
-        ImageIcon wrongImg = new ImageIcon("wrongimg2.png");
+        ImageIcon okImg = new ImageIcon("Src_ImageStore/okImg.png");
+        ImageIcon wrongImg = new ImageIcon("Src_ImageStore/wrongimg2.png");
 		
 		    if (username.isEmpty() || password.isEmpty()) {
 			JOptionPane.showMessageDialog(this, 

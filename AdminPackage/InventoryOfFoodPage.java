@@ -99,7 +99,7 @@ public InventoryOfFoodPage() {
         buttonOne.addActionListener(this::addChickenDumBiriyaniInventory);
         scrollablePanel.add(buttonOne);
         createFoodLabel(scrollablePanel, "Chicken Dum Biriyani", 60);
-        createFoodImageLabel(scrollablePanel, "Food Image 1", "chikenbiriyani.png", 60);
+        createFoodImageLabel(scrollablePanel, "Food Image 1", "Src_ImageStore/chikenbiriyani.png", 60);
         createQuantityLabel(scrollablePanel, 60);
 
 
@@ -113,7 +113,7 @@ public InventoryOfFoodPage() {
         buttonTwo.addActionListener(this::addBeefBurgerInventory);
         scrollablePanel.add(buttonTwo);
         createFoodLabel(scrollablePanel, "Beef Burger", 180);
-        createFoodImageLabel(scrollablePanel, "beef burger", "beef burger.png", 180);
+        createFoodImageLabel(scrollablePanel, "beef burger", "Src_ImageStore/beef burger.png", 180);
         createQuantityLabel(scrollablePanel, 180);
 
         
@@ -127,7 +127,7 @@ public InventoryOfFoodPage() {
         buttonThree.addActionListener(this::addCreammyPastaInventory);
         scrollablePanel.add(buttonThree);
         createFoodLabel(scrollablePanel, "Creammy Pasta", 300);
-        createFoodImageLabel(scrollablePanel, "Food Image 3", "pasta.png", 300);
+        createFoodImageLabel(scrollablePanel, "Food Image 3", "Src_ImageStore/pasta.png", 300);
         createQuantityLabel(scrollablePanel, 300);
 
        
@@ -141,7 +141,7 @@ public InventoryOfFoodPage() {
         buttonFour.addActionListener(this::addJapanessRamenInventory);
         scrollablePanel.add(buttonFour);
         createFoodLabel(scrollablePanel, "Japanese Ramen", 470);
-        createFoodImageLabel(scrollablePanel, "Food Image 4", "rammen.png", 470);
+        createFoodImageLabel(scrollablePanel, "Food Image 4", "Src_ImageStore/rammen.png", 470);
         createQuantityLabel(scrollablePanel, 470);
 
         
@@ -155,7 +155,7 @@ public InventoryOfFoodPage() {
         container.add(backButton);
 
        
-        backgroundImageLabel = new JLabel(new ImageIcon("Mainpage.png"));
+        backgroundImageLabel = new JLabel(new ImageIcon("Src_ImageStore/Mainpage.png"));
         backgroundImageLabel.setBounds(0, 0, 900, 600);
         container.add(backgroundImageLabel);
 

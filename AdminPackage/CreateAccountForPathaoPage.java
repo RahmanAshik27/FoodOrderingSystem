@@ -138,7 +138,7 @@ public class CreateAccountForPathaoPage extends JFrame {
         container.add(footerLabel);
         
 		container.add(backButton);
-		imageLabel = new JLabel(new ImageIcon("RiderLogin.png"));
+		imageLabel = new JLabel(new ImageIcon("Src_ImageStore/RiderLogin.png"));
         imageLabel.setBounds(0, 0, 900, 600);
         container.add(imageLabel);
     }
@@ -157,9 +157,9 @@ public class CreateAccountForPathaoPage extends JFrame {
 		String email = emailField.getText().trim();
 		String password = new String(passwordField.getPassword());
 
-		ImageIcon blankImg = new ImageIcon("FillAllbox.png");
-		ImageIcon wrongImg = new ImageIcon("wrongimg2.png");
-		ImageIcon okImg = new ImageIcon("okImg.png");
+		ImageIcon blankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
+		ImageIcon wrongImg = new ImageIcon("Src_ImageStore/wrongimg2.png");
+		ImageIcon okImg = new ImageIcon("Src_ImageStore/okImg.png");
 
 		if (username.isEmpty() || phone.isEmpty() || email.isEmpty() || password.isEmpty()) {
 			JOptionPane.showMessageDialog(this, "All fields must be filled!", "Error", JOptionPane.INFORMATION_MESSAGE, blankImg);

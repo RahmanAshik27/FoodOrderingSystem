@@ -59,7 +59,7 @@ public CustomerFoodService(String username) {
 
         button1 = new JButton();
         button1.setBounds(140, 250, 130, 130);
-        button1.setIcon(new ImageIcon("chikenbiriyani.png"));
+        button1.setIcon(new ImageIcon("Src_ImageStore/chikenbiriyani.png"));
         button1.setBorder(BorderFactory.createLineBorder(Color.WHITE, 6));
         button1.setContentAreaFilled(true);
         button1.setBackground(new Color(255, 99, 71));
@@ -78,7 +78,7 @@ public CustomerFoodService(String username) {
 
         button2 = new JButton();
         button2.setBounds(310, 250, 130, 130);
-        button2.setIcon(new ImageIcon("beef burger.png"));
+        button2.setIcon(new ImageIcon("Src_ImageStore/beef burger.png"));
         button2.setBorder(BorderFactory.createLineBorder(Color.WHITE, 6));
         button2.setContentAreaFilled(true);
         button2.setBackground(new Color(50, 205, 50));
@@ -97,7 +97,7 @@ public CustomerFoodService(String username) {
 
         button3 = new JButton();
         button3.setBounds(475, 250, 130, 130);
-        button3.setIcon(new ImageIcon("pasta.png"));
+        button3.setIcon(new ImageIcon("Src_ImageStore/pasta.png"));
         button3.setBorder(BorderFactory.createLineBorder(Color.WHITE, 6));
         button3.setContentAreaFilled(true);
         button3.setBackground(new Color(255, 165, 0));
@@ -116,7 +116,7 @@ public CustomerFoodService(String username) {
 
         button4 = new JButton();
         button4.setBounds(645, 250, 130, 130);
-        button4.setIcon(new ImageIcon("rammen.png"));
+        button4.setIcon(new ImageIcon("Src_ImageStore/rammen.png"));
         button4.setBorder(BorderFactory.createLineBorder(Color.WHITE, 6));
         button4.setContentAreaFilled(true);
         button4.setBackground(new Color(123, 104, 238));
@@ -153,7 +153,7 @@ public CustomerFoodService(String username) {
 		
 		
 
-        JLabel backgroundLabel = new JLabel(new ImageIcon("Mainpage.png"));
+        JLabel backgroundLabel = new JLabel(new ImageIcon("Src_ImageStore/Mainpage.png"));
         backgroundLabel.setBounds(0, 0, 900, 600);
         container.add(backgroundLabel);
     }

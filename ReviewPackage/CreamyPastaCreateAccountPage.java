@@ -172,7 +172,7 @@ public CreamyPastaCreateAccountPage() {
         footerLabel.setBackground(new Color(0, 0, 0, 150));
         container.add(footerLabel);
 		
-		imageLabel = new JLabel(new ImageIcon("Review.png"));
+		imageLabel = new JLabel(new ImageIcon("Src_ImageStore/Review.png"));
         imageLabel.setBounds(0, 0, 900, 600);
         container.add(imageLabel);
     }
@@ -200,9 +200,9 @@ private void handleCreateAccount(ActionEvent e) {
     String password = new String(passwordField.getPassword());
     String confirmPassword = new String(confirmPasswordField.getPassword());
 
-    ImageIcon BlankImg = new ImageIcon("FillAllbox.png");
-    ImageIcon wrongImg = new ImageIcon("wrongimg2.png");
-    ImageIcon okImg = new ImageIcon("okImg.png");
+    ImageIcon BlankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
+    ImageIcon wrongImg = new ImageIcon("Src_ImageStore/wrongimg2.png");
+    ImageIcon okImg = new ImageIcon("Src_ImageStore/okImg.png");
 
     if (username.isEmpty() || phone.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
         JOptionPane.showMessageDialog(this, "All fields must be filled!", "Error", JOptionPane.INFORMATION_MESSAGE, BlankImg);

@@ -205,20 +205,20 @@ public ReviewForCreammyPasta(String username) {
         backButton.addActionListener(this::goBack);
         container.add(backButton);
 		
-		imageLabel = new JLabel(new ImageIcon("ReviewCreammyPasta.png"));
+		imageLabel = new JLabel(new ImageIcon("Src_ImageStore/ReviewCreammyPasta.png"));
         imageLabel.setBounds(550, 80, 300, 200);
         container.add(imageLabel);
 		
         
-        JLabel backgroundLabel = new JLabel(new ImageIcon("Review.png"));
+        JLabel backgroundLabel = new JLabel(new ImageIcon("Src_ImageStore/Review.png"));
         backgroundLabel.setBounds(0, 0, 900, 600);
         container.add(backgroundLabel);
     }
 
     private void giveStar(ActionEvent e) {
 		
-		ImageIcon BlankImg = new ImageIcon("FillAllbox.png");
-		ImageIcon okImg = new ImageIcon("okImg.png");
+		ImageIcon BlankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
+		ImageIcon okImg = new ImageIcon("Src_ImageStore/okImg.png");
 		
         fixedRating = ratingSlider.getValue();
         ratingDisplayTextField.setText(String.valueOf(fixedRating)); 
@@ -234,8 +234,8 @@ public ReviewForCreammyPasta(String username) {
     private void postReview(ActionEvent e) {
         String review = reviewTextArea.getText();
         
-		ImageIcon BlankImg = new ImageIcon("FillAllbox.png");
-		ImageIcon okImg = new ImageIcon("okImg.png");
+		ImageIcon BlankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
+		ImageIcon okImg = new ImageIcon("Src_ImageStore/okImg.png");
 		
 		if (review.isEmpty()) {
 			
@@ -263,7 +263,7 @@ public ReviewForCreammyPasta(String username) {
 
     private void saveReviewToFile(String username, int rating, String review) {
         File file = new File("ReviewPackage/CustomersReviewsForCreamyPasta.txt");
-        ImageIcon BlankImg = new ImageIcon("FillAllbox.png");
+        ImageIcon BlankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
 		try (FileWriter writer = new FileWriter(file, true)) { 
             writer.write(username);
 			  writer.write(" : " + review );

@@ -63,11 +63,11 @@ public class ProjectMainPage extends JFrame {
         footerLabel.setBackground(new Color(0, 0, 0, 150));
         container.add(footerLabel);
 		 
-        imageLabel = new JLabel(new ImageIcon("FirstPage.png"));
+        imageLabel = new JLabel(new ImageIcon("Src_ImageStore/FirstPage.png"));
         imageLabel.setBounds(100, 60, 250, 400);
         container.add(imageLabel);
 
-        imageLabel = new JLabel(new ImageIcon("Mainpage.png"));
+        imageLabel = new JLabel(new ImageIcon("Src_ImageStore/Mainpage.png"));
         imageLabel.setBounds(0, 0, 900, 600);
         container.add(imageLabel);
     }

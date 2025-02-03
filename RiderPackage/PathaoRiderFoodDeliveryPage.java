@@ -125,7 +125,7 @@ public class PathaoRiderFoodDeliveryPage extends JFrame {
 		scrollPane.setBounds(25, 163, 400, 380); 
 		container.add(scrollPane);
 		
-        backgroundImageLabel = new JLabel(new ImageIcon("RiderLogin.png"));
+        backgroundImageLabel = new JLabel(new ImageIcon("Src_ImageStore/RiderLogin.png"));
         backgroundImageLabel.setBounds(0, 0, 900, 600);
         container.add(backgroundImageLabel);
 
@@ -137,7 +137,7 @@ public class PathaoRiderFoodDeliveryPage extends JFrame {
 private void loadFoodInventory(ActionEvent e) {
 		if (isFoodInventoryLoaded) {
 			
-			ImageIcon blankImg = new ImageIcon("FillAllbox.png");
+			ImageIcon blankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
 			JOptionPane.showMessageDialog(this, "Request Order Box has already been loaded.", " hello ", JOptionPane.ERROR_MESSAGE,blankImg);
 			
 			return;
@@ -214,7 +214,7 @@ private void loadFoodInventory(ActionEvent e) {
 			JOptionPane.showMessageDialog(this, "Error reading file: " + ex.getMessage());
 		}
 			
-			ImageIcon blankImg = new ImageIcon("FillAllbox.png");
+			ImageIcon blankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
 			JOptionPane.showMessageDialog(this,  "You can take maximum 3 orders. Thank you.", "Maximum Orders Reached", JOptionPane.ERROR_MESSAGE,blankImg);
 			
 			return;  
@@ -266,7 +266,7 @@ private void loadFoodInventory(ActionEvent e) {
 
 		if (isOrderAccepted) {
 		
-			ImageIcon blankImg = new ImageIcon("FillAllbox.png");
+			ImageIcon blankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
 			JOptionPane.showMessageDialog(this, "Order has already been accepted.", "Error", JOptionPane.ERROR_MESSAGE,blankImg);
 		
 		} else {
@@ -275,14 +275,14 @@ private void loadFoodInventory(ActionEvent e) {
 				orderCountLabel.setText("Orders Taken: " + riderTakenOrder);
 				isOrderAccepted = true; 
 				
-				ImageIcon approve = new ImageIcon("Approved.png");
+				ImageIcon approve = new ImageIcon("Src_ImageStore/Approved.png");
 				JOptionPane.showMessageDialog(this, "Order has been accepted.", "Congratulation", JOptionPane.ERROR_MESSAGE,approve);
 				
 				foodDeliveryOrderArea.setText("");
 				
 			} else {
 				
-				ImageIcon blankImg = new ImageIcon("FillAllbox.png");
+				ImageIcon blankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
 				JOptionPane.showMessageDialog(this, "Maximum orders have been accepted.", "Error", JOptionPane.ERROR_MESSAGE,blankImg);
 			}
 		}

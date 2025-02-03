@@ -141,7 +141,7 @@ public class ShowIEatrayDetails extends JFrame {
         backButton.addActionListener(this::goBack);
         container.add(backButton);
 		
-		imageLabel = new JLabel(new ImageIcon("RiderLogin.png"));
+		imageLabel = new JLabel(new ImageIcon("Src_ImageStore/RiderLogin.png"));
         imageLabel.setBounds(0, 0, 900, 600);
         container.add(imageLabel);
 		
@@ -175,9 +175,9 @@ public class ShowIEatrayDetails extends JFrame {
 
     private void searchRider(ActionEvent e) {
 		
-		ImageIcon blankImg = new ImageIcon("FillAllbox.png");
-		ImageIcon wrongImg = new ImageIcon("wrongimg2.png");
-		ImageIcon okImg = new ImageIcon("okImg.png");
+		ImageIcon blankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
+		ImageIcon wrongImg = new ImageIcon("Src_ImageStore/wrongimg2.png");
+		ImageIcon okImg = new ImageIcon("Src_ImageStore/okImg.png");
 		
         String searchQuery = searchField.getText().trim();
         if (searchQuery.isEmpty()) {
@@ -207,9 +207,9 @@ public class ShowIEatrayDetails extends JFrame {
 	
 	
 	private void terminateRider(ActionEvent e) {
-    ImageIcon blankImg = new ImageIcon("FillAllbox.png");
-    ImageIcon wrongImg = new ImageIcon("wrongimg2.png");
-    ImageIcon okImg = new ImageIcon("okImg.png");
+    ImageIcon blankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
+    ImageIcon wrongImg = new ImageIcon("Src_ImageStore/wrongimg2.png");
+    ImageIcon okImg = new ImageIcon("Src_ImageStore/okImg.png");
 
     List<String> riders = new ArrayList<>();
 
@@ -263,8 +263,8 @@ private void deleteRider(String username) {
     List<String> updatedRiders = new ArrayList<>();
     boolean found = false;
 
-    ImageIcon wrongImg = new ImageIcon("wrongimg2.png");
-    ImageIcon okImg = new ImageIcon("okImg.png");
+    ImageIcon wrongImg = new ImageIcon("Src_ImageStore/wrongimg2.png");
+    ImageIcon okImg = new ImageIcon("Src_ImageStore/okImg.png");
 
     try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
         String line;

@@ -7,3 +7,7 @@ Food Item: Creammy Pasta, Quantity: 10, Price: 310.0, Total Price: 3100.0
 Food Item: Creammy Pasta, Quantity: 7, Price: 310.0, Total Price: 2170.0
 Food Item: Creammy Pasta, Quantity: 9, Price: 310.0, Total Price: 2790.0
 Food Item: Chikhen Dum Biriyani, Quantity: 9, Price: 350.0, Total Price: 3150.0
+Login Successful: hemel
+Food Item: Chikhen Dum Biriyani, Quantity: 2, Price: 350.0, Total Price: 700.0
+Food Item: Beef Burger, Quantity: 1, Price: 270.0, Total Price: 270.0
+Food Item: Creammy Pasta, Quantity: 3, Price: 310.0, Total Price: 930.0

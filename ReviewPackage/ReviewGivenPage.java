@@ -82,7 +82,7 @@ public class ReviewGivenPage extends JFrame {
 		buttonOne.addActionListener(this::orderChickenBiriyani);
 		scrollablePanel.add(buttonOne);	
 		createFoodLabel(scrollablePanel, "Chicken Dum Biriyani", 60);
-		createFoodImageLabel(scrollablePanel, "Food Image 1", "chikenbiriyani.png", 60);
+		createFoodImageLabel(scrollablePanel, "Food Image 1", "Src_ImageStore/chikenbiriyani.png", 60);
 		
 		buttonTwo = new JButton(buttonMessage);
 		buttonTwo.setBounds(370, 192, 100, 75);
@@ -94,7 +94,7 @@ public class ReviewGivenPage extends JFrame {
 		buttonTwo.addActionListener(this::orderBeefBurger);
 		scrollablePanel.add(buttonTwo);	
 		createFoodLabel(scrollablePanel, "Beef Burger", 180);
-        createFoodImageLabel(scrollablePanel, "beef burger", "beef burger.png", 180);
+        createFoodImageLabel(scrollablePanel, "beef burger", "Src_ImageStore/beef burger.png", 180);
       		
 		buttonThree = new JButton(buttonMessage);
 		buttonThree.setBounds(370, 312, 100, 75);
@@ -106,7 +106,7 @@ public class ReviewGivenPage extends JFrame {
 		buttonThree.addActionListener(this::orderCreamyPasta);
 		scrollablePanel.add(buttonThree);	
 		createFoodLabel(scrollablePanel, "Creammy Pasta ", 300);
-        createFoodImageLabel(scrollablePanel, "Food Image 3", "pasta.png", 300);
+        createFoodImageLabel(scrollablePanel, "Food Image 3", "Src_ImageStore/pasta.png", 300);
        
 		buttonFour = new JButton(buttonMessage);
 		buttonFour.setBounds(370, 482, 100, 75);
@@ -118,7 +118,7 @@ public class ReviewGivenPage extends JFrame {
 		buttonFour.addActionListener(this::orderRamen);
 		scrollablePanel.add(buttonFour);	
 		createFoodLabel(scrollablePanel, "Japaness Ramen", 470);
-        createFoodImageLabel(scrollablePanel, "Food Image 4", "rammen.png", 470);
+        createFoodImageLabel(scrollablePanel, "Food Image 4", "Src_ImageStore/rammen.png", 470);
 
         JScrollPane scrollPane = new JScrollPane(scrollablePanel, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.setBounds(350, 110, 500, 410);
@@ -149,11 +149,11 @@ public class ReviewGivenPage extends JFrame {
         footerLabel.setBackground(new Color(0, 0, 0, 150));
         container.add(footerLabel);
 		
-		imageLabel = new JLabel(new ImageIcon("Reviewer is Hungry.png"));
+		imageLabel = new JLabel(new ImageIcon("Src_ImageStore/Reviewer is Hungry.png"));
         imageLabel.setBounds(70, 80, 250, 400);
         container.add(imageLabel);
 		
-        backgroundImageLabel = new JLabel(new ImageIcon("Review.png"));
+        backgroundImageLabel = new JLabel(new ImageIcon("Src_ImageStore/Review.png"));
         backgroundImageLabel.setBounds(0, 0, 900, 600);
         container.add(backgroundImageLabel);
     }
@@ -179,8 +179,8 @@ private boolean isFoodOrderedByUser(String foodItem) {
 private void orderChickenBiriyani(ActionEvent e) {
     String foodItem = "Chikhen Dum Biriyani"; 
 	
-	ImageIcon BlankImg = new ImageIcon("FillAllbox.png");
-    ImageIcon okImg = new ImageIcon("okImg.png");
+	ImageIcon BlankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
+    ImageIcon okImg = new ImageIcon("Src_ImageStore/okImg.png");
 	
     if (isFoodOrderedByUser(foodItem)) {
         JOptionPane.showMessageDialog(this, "You can give a review for " + foodItem, "Review", JOptionPane.INFORMATION_MESSAGE,okImg);
@@ -202,8 +202,8 @@ private void orderChickenBiriyani(ActionEvent e) {
     private void orderBeefBurger(ActionEvent e) {
          String foodItem = "Beef Burger"; 
 	
-		ImageIcon BlankImg = new ImageIcon("FillAllbox.png");
-		ImageIcon okImg = new ImageIcon("okImg.png");
+		ImageIcon BlankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
+		ImageIcon okImg = new ImageIcon("Src_ImageStore/okImg.png");
 	
 		if (isFoodOrderedByUser(foodItem)) {
 			JOptionPane.showMessageDialog(this, "You can give a review for " + foodItem, "Review", JOptionPane.INFORMATION_MESSAGE,okImg);
@@ -225,8 +225,8 @@ private void orderChickenBiriyani(ActionEvent e) {
     private void orderCreamyPasta(ActionEvent e) {
         String foodItem = "Creammy Pasta"; 
 	
-		ImageIcon BlankImg = new ImageIcon("FillAllbox.png");
-		ImageIcon okImg = new ImageIcon("okImg.png");
+		ImageIcon BlankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
+		ImageIcon okImg = new ImageIcon("Src_ImageStore/okImg.png");
 	
 		if (isFoodOrderedByUser(foodItem)) {
 			JOptionPane.showMessageDialog(this, "You can give a review for " + foodItem, "Review", JOptionPane.INFORMATION_MESSAGE,okImg);
@@ -248,8 +248,8 @@ private void orderChickenBiriyani(ActionEvent e) {
     private void orderRamen(ActionEvent e) {
         String foodItem = "Japaness Ramen"; 
 	
-		ImageIcon BlankImg = new ImageIcon("FillAllbox.png");
-		ImageIcon okImg = new ImageIcon("okImg.png");
+		ImageIcon BlankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
+		ImageIcon okImg = new ImageIcon("Src_ImageStore/okImg.png");
 	
 		if (isFoodOrderedByUser(foodItem)) {
 			JOptionPane.showMessageDialog(this, "You can give a review for " + foodItem, "Review", JOptionPane.INFORMATION_MESSAGE,okImg);

@@ -101,11 +101,11 @@ public class ReviewsFoodPage extends JFrame {
         footerLabel.setBackground(new Color(0, 0, 0, 150));
         container.add(footerLabel);
 		
-		imageLabel = new JLabel(new ImageIcon("Reviewer is Hungry.png"));
+		imageLabel = new JLabel(new ImageIcon("Src_ImageStore/Reviewer is Hungry.png"));
         imageLabel.setBounds(100, 60, 250, 400);
         container.add(imageLabel);
 		
-        backgroundImageLabel = new JLabel(new ImageIcon("Review.png"));
+        backgroundImageLabel = new JLabel(new ImageIcon("Src_ImageStore/Review.png"));
         backgroundImageLabel.setBounds(0, 0, 900, 600);
         container.add(backgroundImageLabel);
     }

@@ -60,7 +60,7 @@ public class ResturentCertificate extends JFrame {
         backButton.addActionListener(this::goBack);
         container.add(backButton);
 		
-		imageLabel = new JLabel(new ImageIcon("ResturentCertificate.png"));
+		imageLabel = new JLabel(new ImageIcon("Src_ImageStore/ResturentCertificate.png"));
         imageLabel.setBounds(5, 0, 600, 400);
         container.add(imageLabel);
 

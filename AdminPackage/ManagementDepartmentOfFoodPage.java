@@ -104,7 +104,7 @@ public class ManagementDepartmentOfFoodPage extends JFrame {
         buttonOne.addActionListener(this::addChickenDumBiriyaniInventory);
         scrollablePanel.add(buttonOne);
         createFoodLabel(scrollablePanel, "Chicken Dum Biriyani", 60);
-        createFoodImageLabel(scrollablePanel, "Food Image 1", "chikenbiriyani.png", 60);
+        createFoodImageLabel(scrollablePanel, "Food Image 1", "Src_ImageStore/chikenbiriyani.png", 60);
         createQuantityLabel(scrollablePanel, 60);
 
 
@@ -118,7 +118,7 @@ public class ManagementDepartmentOfFoodPage extends JFrame {
         buttonTwo.addActionListener(this::addBeefBurgerInventory);
         scrollablePanel.add(buttonTwo);
         createFoodLabel(scrollablePanel, "Beef Burger", 180);
-        createFoodImageLabel(scrollablePanel, "beef burger", "beef burger.png", 180);
+        createFoodImageLabel(scrollablePanel, "beef burger", "Src_ImageStore/beef burger.png", 180);
         createQuantityLabel(scrollablePanel, 180);
 
         
@@ -132,7 +132,7 @@ public class ManagementDepartmentOfFoodPage extends JFrame {
         buttonThree.addActionListener(this::addCreammyPastaInventory);
         scrollablePanel.add(buttonThree);
         createFoodLabel(scrollablePanel, "Creammy Pasta", 300);
-        createFoodImageLabel(scrollablePanel, "Food Image 3", "pasta.png", 300);
+        createFoodImageLabel(scrollablePanel, "Food Image 3", "Src_ImageStore/pasta.png", 300);
         createQuantityLabel(scrollablePanel, 300);
 
        
@@ -146,7 +146,7 @@ public class ManagementDepartmentOfFoodPage extends JFrame {
         buttonFour.addActionListener(this::addJapanessRamenInventory);
         scrollablePanel.add(buttonFour);
         createFoodLabel(scrollablePanel, "Japaness Ramen", 470);
-        createFoodImageLabel(scrollablePanel, "Food Image 4", "rammen.png", 470);
+        createFoodImageLabel(scrollablePanel, "Food Image 4", "Src_ImageStore/rammen.png", 470);
         createQuantityLabel(scrollablePanel, 470);
 
         
@@ -196,7 +196,7 @@ public class ManagementDepartmentOfFoodPage extends JFrame {
 		scrollPane.setBounds(30, 132, 200, 300); 
 		container.add(scrollPane);
 		
-        backgroundImageLabel = new JLabel(new ImageIcon("Mainpage.png"));
+        backgroundImageLabel = new JLabel(new ImageIcon("Src_ImageStore/Mainpage.png"));
         backgroundImageLabel.setBounds(0, 0, 900, 600);
         container.add(backgroundImageLabel);
 
@@ -206,9 +206,9 @@ public class ManagementDepartmentOfFoodPage extends JFrame {
 	private void onRequestBoardButtonClicked(ActionEvent e) {
     File file = new File("src/AdminPackage/addRequest.txt");
 	
-	ImageIcon blankImg = new ImageIcon("FillAllbox.png");
-	ImageIcon wrongImg = new ImageIcon("wrongimg2.png");
-	ImageIcon okImg = new ImageIcon("okImg.png");
+	ImageIcon blankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
+	ImageIcon wrongImg = new ImageIcon("Src_ImageStore/wrongimg2.png");
+	ImageIcon okImg = new ImageIcon("Src_ImageStore/okImg.png");
     
     if (file.exists()) {
 		
@@ -323,9 +323,9 @@ private void loadFoodInventory(ActionEvent e) {
 
 private void addChickenDumBiriyaniInventory(ActionEvent e) {
     try {
-		ImageIcon blankImg = new ImageIcon("FillAllbox.png");
-		ImageIcon wrongImg = new ImageIcon("wrongimg2.png");
-		ImageIcon okImg = new ImageIcon("okImg.png");
+		ImageIcon blankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
+		ImageIcon wrongImg = new ImageIcon("Src_ImageStore/wrongimg2.png");
+		ImageIcon okImg = new ImageIcon("Src_ImageStore/okImg.png");
 		
         int currentQuantity = Integer.parseInt(ChikhenDumBiriyani.getText());
 
@@ -368,9 +368,9 @@ private void addChickenDumBiriyaniInventory(ActionEvent e) {
 
 private void addBeefBurgerInventory(ActionEvent e) {
     try {
-		ImageIcon blankImg = new ImageIcon("FillAllbox.png");
-		ImageIcon wrongImg = new ImageIcon("wrongimg2.png");
-		ImageIcon okImg = new ImageIcon("okImg.png");
+		ImageIcon blankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
+		ImageIcon wrongImg = new ImageIcon("Src_ImageStore/wrongimg2.png");
+		ImageIcon okImg = new ImageIcon("Src_ImageStore/okImg.png");
 		
         int currentQuantity = Integer.parseInt(BeefBurger.getText());
 
@@ -413,9 +413,9 @@ private void addBeefBurgerInventory(ActionEvent e) {
 
 private void addCreammyPastaInventory(ActionEvent e) {
     try {
-		ImageIcon blankImg = new ImageIcon("FillAllbox.png");
-		ImageIcon wrongImg = new ImageIcon("wrongimg2.png");
-		ImageIcon okImg = new ImageIcon("okImg.png");
+		ImageIcon blankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
+		ImageIcon wrongImg = new ImageIcon("Src_ImageStore/wrongimg2.png");
+		ImageIcon okImg = new ImageIcon("Src_ImageStore/okImg.png");
 		
         int currentQuantity = Integer.parseInt(CreammyPasta.getText());
 
@@ -461,9 +461,9 @@ private void addCreammyPastaInventory(ActionEvent e) {
 private void addJapanessRamenInventory(ActionEvent e) {
     try {
 		
-		ImageIcon blankImg = new ImageIcon("FillAllbox.png");
-		ImageIcon wrongImg = new ImageIcon("wrongimg2.png");
-		ImageIcon okImg = new ImageIcon("okImg.png");
+		ImageIcon blankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
+		ImageIcon wrongImg = new ImageIcon("Src_ImageStore/wrongimg2.png");
+		ImageIcon okImg = new ImageIcon("Src_ImageStore/okImg.png");
 		
         int currentQuantity = Integer.parseInt(JapanessRamen.getText());
 

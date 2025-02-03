@@ -279,11 +279,11 @@ private void saveFoodInventoryToFile() {
 		
 		
 
-		imageLabel = new JLabel(new ImageIcon("Japaness Ramen img.png"));
+		imageLabel = new JLabel(new ImageIcon("Src_ImageStore/Japaness Ramen img.png"));
         imageLabel.setBounds(50, 95, 380, 270);
         container.add(imageLabel);
 
-		backgroundImageLabel = new JLabel(new ImageIcon("Mainpage.png"));
+		backgroundImageLabel = new JLabel(new ImageIcon("Src_ImageStore/Mainpage.png"));
         backgroundImageLabel.setBounds(0, 0, 900, 600);
         container.add(backgroundImageLabel);
     }
@@ -353,7 +353,7 @@ private void readCustomerReviews() {
             itemCount++; 
             itemCountLabel.setText("Items in Order: " + itemCount);
         } else {
-			ImageIcon BlankImg = new ImageIcon("FillAllbox.png");
+			ImageIcon BlankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
 			
             JOptionPane.showMessageDialog(this, "Not enough " + selectedFood + " available. Please reduce the quantity.", "Error", JOptionPane.ERROR_MESSAGE, BlankImg);
         }
@@ -364,7 +364,7 @@ private void readCustomerReviews() {
             itemCount--; 
             itemCountLabel.setText("Items in Order: " + itemCount);
         } else {
-			ImageIcon BlankImg = new ImageIcon("FillAllbox.png");
+			ImageIcon BlankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
             JOptionPane.showMessageDialog(this, "Cannot remove more items than currently in order.", "Error", JOptionPane.ERROR_MESSAGE, BlankImg);
         }
     }
@@ -395,20 +395,36 @@ private void readCustomerReviews() {
 	}
 	
 	private void proccedToMemoAction(ActionEvent e) {
-        ImageIcon BlankImg = new ImageIcon("FillAllbox.png");
-		if(orderConfirm==null){
-			JOptionPane.showMessageDialog(this, "Please Confirm Your Order.", "Error", JOptionPane.WARNING_MESSAGE, BlankImg);
-		}else{
-			CashMemoPage cashMemoPage = new CashMemoPage(username);
-			cashMemoPage.setTitle("Cash Memo Page");
-			cashMemoPage.setSize(900, 600);
-			cashMemoPage.setLocationRelativeTo(null);
-			cashMemoPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			cashMemoPage.setVisible(true);
-			cashMemoPage.setResizable(false);
-			this.dispose();
-		}
+    ImageIcon BlankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
+    
+    
+    if (orderConfirm == null) {
+        JOptionPane.showMessageDialog(this, "Please Confirm Your Order.", "Error", JOptionPane.WARNING_MESSAGE, BlankImg);
+    } else {
+       
+        int response = JOptionPane.showConfirmDialog(
+            this, 
+            "Are you sure you want to order more?", 
+            "Confirm Order", 
+            JOptionPane.YES_NO_OPTION, 
+            JOptionPane.QUESTION_MESSAGE, 
+            BlankImg
+        );
+        
+        
+        if (response == JOptionPane.YES_OPTION) {
+            CashMemoPage cashMemoPage = new CashMemoPage(username);
+            cashMemoPage.setTitle("Cash Memo Page");
+            cashMemoPage.setSize(900, 600);
+            cashMemoPage.setLocationRelativeTo(null);
+            cashMemoPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            cashMemoPage.setVisible(true);
+            cashMemoPage.setResizable(false);
+            this.dispose();
+        }
     }
+}
+
 
     private void addQuantityAction(ActionEvent e) {
         int quantity = (int) quantitySpinner.getValue();
@@ -417,10 +433,10 @@ private void readCustomerReviews() {
             itemCountLabel.setText("Items in Order: " + itemCount);
             quantitySpinner.setValue(0); 
         } else if (quantity == 0) {
-			ImageIcon BlankImg = new ImageIcon("FillAllbox.png");
+			ImageIcon BlankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
             JOptionPane.showMessageDialog(this, "Please select a valid quantity.", "Error", JOptionPane.WARNING_MESSAGE, BlankImg);
         } else {
-			ImageIcon BlankImg = new ImageIcon("FillAllbox.png");
+			ImageIcon BlankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
             JOptionPane.showMessageDialog(this, "Not enough " + selectedFood + " available. Please reduce the quantity.", "Error", JOptionPane.ERROR_MESSAGE, BlankImg);
         }
     }
@@ -438,7 +454,7 @@ private void readCustomerReviews() {
 
         availableFoodLabel.setText("Available Food: " + selectedFood + " - " + availableQuantity + " Available");
 
-        ImageIcon okImg = new ImageIcon("okImg.png");
+        ImageIcon okImg = new ImageIcon("Src_ImageStore/okImg.png");
         JOptionPane.showMessageDialog(this, "Order placed successfully!", "Success", JOptionPane.INFORMATION_MESSAGE, okImg);
 
         availableFoodLabel.setOpaque(true);
@@ -446,7 +462,7 @@ private void readCustomerReviews() {
         availableFoodLabel.setForeground(Color.BLACK);
     } else {
     
-        ImageIcon BlankImg = new ImageIcon("FillAllbox.png");
+        ImageIcon BlankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
         JOptionPane.showMessageDialog(this, "Please add items to your order.", "Error", JOptionPane.ERROR_MESSAGE, BlankImg);
     }
 	

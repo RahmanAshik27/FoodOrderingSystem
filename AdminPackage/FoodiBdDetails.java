@@ -78,7 +78,7 @@ public class FoodiBdDetails extends JFrame {
         footerLabel.setBackground(new Color(0, 0, 0, 150));
         container.add(footerLabel);
 		
-		 imageLabel = new JLabel(new ImageIcon("RiderLogin.png"));
+		 imageLabel = new JLabel(new ImageIcon("Src_ImageStore/RiderLogin.png"));
         imageLabel.setBounds(0, 0, 900, 600);
         container.add(imageLabel);
     }

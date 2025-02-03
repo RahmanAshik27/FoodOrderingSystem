@@ -5,3 +5,5 @@ Password: 12345
 Login Successful: apon
 Login Successful: apon
 Food Item: Chikhen Dum Biriyani, Quantity: 1, Price: 350.0, Total Price: 350.0
+Login Successful: apon
+Food Item: Creammy Pasta, Quantity: 3, Price: 310.0, Total Price: 930.0

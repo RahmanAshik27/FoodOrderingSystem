@@ -88,7 +88,7 @@ public AddJapanessRamen() {
         backButton.addActionListener(this::goBack);
         container.add(backButton);
 
-        imageLabel = new JLabel(new ImageIcon("Japaness Ramen img.png"));
+        imageLabel = new JLabel(new ImageIcon("Src_ImageStore/Japaness Ramen img.png"));
         imageLabel.setBounds(0, 0, 300, 200);
         container.add(imageLabel);
     }
@@ -104,7 +104,7 @@ public AddJapanessRamen() {
     String quantity = textField.getText();
 
     if (quantity.isEmpty()) {
-        ImageIcon BlankImg = new ImageIcon("FillAllbox.png");
+        ImageIcon BlankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
         JOptionPane.showMessageDialog(this, "Please add a quantity before confirming.", "Error", JOptionPane.ERROR_MESSAGE, BlankImg);
         return;
     }
@@ -147,13 +147,13 @@ public AddJapanessRamen() {
         writer.write(fileContent.toString());
         writer.close();
 
-        ImageIcon okImg = new ImageIcon("okImg.png");
+        ImageIcon okImg = new ImageIcon("Src_ImageStore/okImg.png");
         JOptionPane.showMessageDialog(this, "Inventory update message sent to Management Department", "We will update it soon", JOptionPane.INFORMATION_MESSAGE, okImg);
 
          this.setVisible(false);
 
     } catch (IOException ex) {
-        ImageIcon BlankImg = new ImageIcon("FillAllbox.png");
+        ImageIcon BlankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
         JOptionPane.showMessageDialog(this, "Error writing to file: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE, BlankImg);
     }
 }

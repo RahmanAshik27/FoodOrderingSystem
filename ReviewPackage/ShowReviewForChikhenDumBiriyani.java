@@ -160,11 +160,11 @@ public ShowReviewForChikhenDumBiriyani() {
         backButton.addActionListener(this::goBack);
         container.add(backButton);
 
-        imageLabel = new JLabel(new ImageIcon("ReviewDumBiriyani.png"));
+        imageLabel = new JLabel(new ImageIcon("Src_ImageStore/ReviewDumBiriyani.png"));
         imageLabel.setBounds(550, 80, 300, 200);
         container.add(imageLabel);
 
-        JLabel backgroundLabel = new JLabel(new ImageIcon("Review.png"));
+        JLabel backgroundLabel = new JLabel(new ImageIcon("Src_ImageStore/Review.png"));
         backgroundLabel.setBounds(0, 0, 900, 600);
         container.add(backgroundLabel);
     }

@@ -60,7 +60,7 @@ public class BusinessTradeLicense extends JFrame {
         backButton.addActionListener(this::goBack);
         container.add(backButton);
 		
-		imageLabel = new JLabel(new ImageIcon("FirstCertificate.png"));
+		imageLabel = new JLabel(new ImageIcon("Src_ImageStore/FirstCertificate.png"));
         imageLabel.setBounds(5, 15, 380, 485);
         container.add(imageLabel);
 

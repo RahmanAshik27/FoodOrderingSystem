@@ -121,7 +121,7 @@ public class RiderLoginPage extends JFrame {
         backButton.addActionListener(this::goBack);
         container.add(backButton);
        
-        backgroundImageIcon = new ImageIcon("RiderLogin.png");
+        backgroundImageIcon = new ImageIcon("Src_ImageStore/RiderLogin.png");
         imageLabel = new JLabel(backgroundImageIcon);
         imageLabel.setBounds(0, 0, 900, 600);
         container.add(imageLabel);

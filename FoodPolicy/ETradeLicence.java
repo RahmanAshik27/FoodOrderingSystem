@@ -60,7 +60,7 @@ public class ETradeLicence extends JFrame {
         backButton.addActionListener(this::goBack);
         container.add(backButton);
 		
-		imageLabel = new JLabel(new ImageIcon("E-Trade_Licence.png"));
+		imageLabel = new JLabel(new ImageIcon("Src_ImageStore/E-Trade_Licence.png"));
         imageLabel.setBounds(5, 15, 380, 485);
         container.add(imageLabel);
 

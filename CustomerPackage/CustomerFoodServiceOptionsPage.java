@@ -69,19 +69,19 @@ public CustomerFoodServiceOptionsPage(String username) {
 
 		createFoodItemButton(scrollablePanel, 1, buttonMessage, 60,new Color(255, 99, 71));
         createFoodLabel(scrollablePanel, "Chicken Dum Biriyani", 60);
-        createFoodImageLabel(scrollablePanel, "Food Image 1", "chikenbiriyani.png", 60);
+        createFoodImageLabel(scrollablePanel, "Food Image 1", "Src_ImageStore/chikenbiriyani.png", 60);
 
         createFoodItemButton(scrollablePanel, 2, buttonMessage, 180,new Color(60, 179, 113));
         createFoodLabel(scrollablePanel, "Beef Burger", 180);
-        createFoodImageLabel(scrollablePanel, "beef burger", "beef burger.png", 180);
+        createFoodImageLabel(scrollablePanel, "beef burger", "Src_ImageStore/beef burger.png", 180);
 
         createFoodItemButton(scrollablePanel, 3, buttonMessage, 300,new Color(50, 150, 255));
         createFoodLabel(scrollablePanel, "Creammy Pasta ", 300);
-        createFoodImageLabel(scrollablePanel, "Food Image 3", "pasta.png", 300);
+        createFoodImageLabel(scrollablePanel, "Food Image 3", "Src_ImageStore/pasta.png", 300);
 
         createFoodItemButton(scrollablePanel, 4, buttonMessage, 470,new Color(255, 99, 71));
         createFoodLabel(scrollablePanel, "Japaness Ramen", 470);
-        createFoodImageLabel(scrollablePanel, "Food Image 4", "rammen.png", 470);
+        createFoodImageLabel(scrollablePanel, "Food Image 4", "Src_ImageStore/rammen.png", 470);
 
         JScrollPane scrollPane = new JScrollPane(scrollablePanel, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.setBounds(200, 130, 500, 410);
@@ -104,7 +104,7 @@ public CustomerFoodServiceOptionsPage(String username) {
         backButton.addActionListener(this::goBack);
         container.add(backButton);	
 
-        JLabel backgroundImageLabel = new JLabel(new ImageIcon("Mainpage.png"));
+        JLabel backgroundImageLabel = new JLabel(new ImageIcon("Src_ImageStore/Mainpage.png"));
         backgroundImageLabel.setBounds(0, 0, 900, 600);
         container.add(backgroundImageLabel);
     }

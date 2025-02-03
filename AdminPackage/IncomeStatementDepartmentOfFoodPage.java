@@ -125,7 +125,7 @@ public class IncomeStatementDepartmentOfFoodPage extends JFrame {
 		
 
         createFoodLabel(scrollablePanel, "Chicken Dum Biriyani", 70);
-        createFoodImageLabel(scrollablePanel, "Food Image 1", "chikenbiriyani.png", 60);
+        createFoodImageLabel(scrollablePanel, "Food Image 1", "Src_ImageStore/chikenbiriyani.png", 60);
         
 		sellQuantitychickenDumBiriyaniLabel = new JLabel();
 		sellQuantitychickenDumBiriyaniLabel.setBounds(350, 95, 100, 50); 
@@ -149,7 +149,7 @@ public class IncomeStatementDepartmentOfFoodPage extends JFrame {
 		
 
         createFoodLabel(scrollablePanel, "Beef Burger", 180);
-        createFoodImageLabel(scrollablePanel, "beef burger", "beef burger.png", 180);
+        createFoodImageLabel(scrollablePanel, "beef burger", "Src_ImageStore/beef burger.png", 180);
         
 		sellQuantityBeefBurgerLabel = new JLabel();
 		sellQuantityBeefBurgerLabel.setBounds(350, 205, 100, 50); 
@@ -173,7 +173,7 @@ public class IncomeStatementDepartmentOfFoodPage extends JFrame {
 
 
         createFoodLabel(scrollablePanel, "Creammy Pasta", 300);
-        createFoodImageLabel(scrollablePanel, "Food Image 3", "pasta.png", 300);
+        createFoodImageLabel(scrollablePanel, "Food Image 3", "Src_ImageStore/pasta.png", 300);
         
 		sellQuantityCreammyPastaLabel = new JLabel();
 		sellQuantityCreammyPastaLabel.setBounds(350, 325, 100, 50); 
@@ -198,7 +198,7 @@ public class IncomeStatementDepartmentOfFoodPage extends JFrame {
 	
       
         createFoodLabel(scrollablePanel, "Japanese Ramen", 483);
-        createFoodImageLabel(scrollablePanel, "Food Image 4", "rammen.png", 470);
+        createFoodImageLabel(scrollablePanel, "Food Image 4", "Src_ImageStore/rammen.png", 470);
         
 		sellQuantityJapaneseRamenLabel = new JLabel();
 		sellQuantityJapaneseRamenLabel.setBounds(350, 510, 100, 50); 
@@ -270,7 +270,7 @@ public class IncomeStatementDepartmentOfFoodPage extends JFrame {
 		scrollPane.setBounds(10, 153, 267, 300); 
 		container.add(scrollPane);
 		
-        backgroundImageLabel = new JLabel(new ImageIcon("Mainpage.png"));
+        backgroundImageLabel = new JLabel(new ImageIcon("Src_ImageStore/Mainpage.png"));
         backgroundImageLabel.setBounds(0, 0, 900, 600);
         container.add(backgroundImageLabel);
 

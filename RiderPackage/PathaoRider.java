@@ -72,7 +72,7 @@ public class PathaoRider extends JFrame {
         passwordField.setBackground(Color.WHITE);
         container.add(passwordField);
 
-        eyeButton = new JToggleButton(new ImageIcon("eye.png"));
+        eyeButton = new JToggleButton(new ImageIcon("Src_ImageStore/eye.png"));
         eyeButton.setBounds(415, 240, 50, 40);
         eyeButton.setBorder(null);
         eyeButton.setFocusPainted(false);
@@ -106,7 +106,7 @@ public class PathaoRider extends JFrame {
         footerLabel.setBackground(new Color(0, 0, 0, 150));
         container.add(footerLabel);
 		
-		 backgroundImageIcon = new ImageIcon("RiderLogin.png");
+		 backgroundImageIcon = new ImageIcon("Src_ImageStore/RiderLogin.png");
         imageLabel = new JLabel(backgroundImageIcon);
         imageLabel.setBounds(0, 0, 900, 600);
         container.add(imageLabel);;
@@ -130,9 +130,9 @@ public class PathaoRider extends JFrame {
     String username = textField.getText();
     String password = new String(passwordField.getPassword());
 
-    ImageIcon okImg = new ImageIcon("okImg.png");
-    ImageIcon wrongImg = new ImageIcon("wrongimg2.png");
-    ImageIcon blankImg = new ImageIcon("FillAllbox.png"); 
+    ImageIcon okImg = new ImageIcon("Src_ImageStore/okImg.png");
+    ImageIcon wrongImg = new ImageIcon("Src_ImageStore/wrongimg2.png");
+    ImageIcon blankImg = new ImageIcon("Src_ImageStore/FillAllbox.png"); 
 
     if (username.isEmpty() || password.isEmpty()) {
         JOptionPane.showMessageDialog(this, 

@@ -103,7 +103,7 @@ public class CashMemoPage extends JFrame {
         footerLabel.setBackground(new Color(0, 0, 0, 150));
         container.add(footerLabel);
 
-        imageLabel = new JLabel(new ImageIcon("Mainpage.png"));
+        imageLabel = new JLabel(new ImageIcon("Src_ImageStore/Mainpage.png"));
         imageLabel.setBounds(0, 0, 900, 600);
         container.add(imageLabel);
     }
@@ -203,7 +203,7 @@ public class CashMemoPage extends JFrame {
 
             if (otp.equals("12345")) {
                 
-				ImageIcon okImg = new ImageIcon("okImg.png");
+				ImageIcon okImg = new ImageIcon("Src_ImageStore/okImg.png");
 				
 				JOptionPane.showMessageDialog(
                         
@@ -219,7 +219,7 @@ public class CashMemoPage extends JFrame {
                 memoBuilder.append("-------------------------------------------------------------\n");
                 saveMemoToFile(memoBuilder.toString());
             } else {
-				ImageIcon blankImg = new ImageIcon("FillAllbox.png");
+				ImageIcon blankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
                 JOptionPane.showMessageDialog(
                         this,
                         "Invalid OTP! Payment failed. Please try again.",
@@ -252,7 +252,7 @@ public class CashMemoPage extends JFrame {
 
 		
 		if (riderChoice != null) {
-		    ImageIcon okImg = new ImageIcon("okImg.png");
+		    ImageIcon okImg = new ImageIcon("Src_ImageStore/okImg.png");
 			
 			JOptionPane.showMessageDialog(this, "You selected: " + String.valueOf(riderChoice) + " Done", 
                               "Selection", JOptionPane.ERROR_MESSAGE, okImg);
@@ -268,7 +268,7 @@ public class CashMemoPage extends JFrame {
 	
 private void handleProceed(ActionEvent e) {
    
-		ImageIcon blankImg = new ImageIcon("FillAllbox.png");
+		ImageIcon blankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
 	
     if (riderChoice == null || riderChoice.isEmpty()) {
      
@@ -316,7 +316,7 @@ private void handleProceed(ActionEvent e) {
         writer.write(memoTextArea.getText());
         writer.close();
 
-		ImageIcon okImg = new ImageIcon("okImg.png");
+		ImageIcon okImg = new ImageIcon("Src_ImageStore/okImg.png");
 		JOptionPane.showMessageDialog(this, "Order successfull ", "Error", JOptionPane.ERROR_MESSAGE,okImg);
     } catch (IOException ex) {
         JOptionPane.showMessageDialog(this, "Error saving to file: " + ex.getMessage());
@@ -342,8 +342,8 @@ private void loadOrdersFromFile() {
         StringBuilder memoBuilder = new StringBuilder();
         boolean foundLastLogin = false;
 
-        // Read the file to find the last "Login Successful:"
-        List<String> tempOrderLines = new ArrayList<>(); // Temporary storage for orders in a block
+       
+        List<String> tempOrderLines = new ArrayList<>(); 
         while ((line = reader.readLine()) != null) {
             if (line.startsWith("Username:")) {
                 username = line.split(":")[1].trim();
@@ -355,26 +355,26 @@ private void loadOrdersFromFile() {
                 email = line.split(":")[1].trim();
             }
             if (line.startsWith("Login Successful:")) {
-                foundLastLogin = true; // Mark that a "Login Successful:" block has started
-                tempOrderLines.clear(); // Reset temp storage for the new block
+                foundLastLogin = true; 
+                tempOrderLines.clear(); 
             } else if (foundLastLogin && line.startsWith("Food Item:")) {
                 tempOrderLines.add(line);
             }
         }
 
-        // Use the orders from the last block
+       
         if (!tempOrderLines.isEmpty()) {
             orderLines.addAll(tempOrderLines);
         }
 
         reader.close();
 
-        // Build the cash memo with the extracted data
+        
         if (!orderLines.isEmpty()) {
             appendCashMemo(memoBuilder, username, phone, email, orderLines);
         }
 
-        // Update the text area with the formatted memo
+        
         memoTextArea.setText(memoBuilder.toString());
         memoTextArea.setCaretPosition(memoTextArea.getDocument().getLength());
 
@@ -426,7 +426,7 @@ private void appendCashMemo(StringBuilder memoBuilder, String username, String p
     memoBuilder.append("       Visit Again at Food Ordering System\n");
     memoBuilder.append("-------------------------------------------------------------\n");
 
-    // Optionally save to a file
+   
     saveMemoToFile(memoBuilder.toString());
 }
 

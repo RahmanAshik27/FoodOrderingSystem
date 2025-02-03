@@ -81,7 +81,7 @@ public class TerminateBeefBurger extends JFrame {
         backButton.addActionListener(this::goBack);
         container.add(backButton);
 
-        imageLabel = new JLabel(new ImageIcon("BigBeefBurger.png"));
+        imageLabel = new JLabel(new ImageIcon("Src_ImageStore/BigBeefBurger.png"));
         imageLabel.setBounds(0, 0, 300, 200);
         container.add(imageLabel);
     }
@@ -112,8 +112,8 @@ public class TerminateBeefBurger extends JFrame {
     }
 	
 	private void wannaTerminateThisFood(ActionEvent e) {
-    ImageIcon blankImg = new ImageIcon("FillAllbox.png");
-	ImageIcon okImg = new ImageIcon("okImg.png");
+    ImageIcon blankImg = new ImageIcon("Src_ImageStore/FillAllbox.png");
+	ImageIcon okImg = new ImageIcon("Src_ImageStore/okImg.png");
 			int choice = JOptionPane.showConfirmDialog(
 				this,
 				"Are you sure? You want to terminate this food.",

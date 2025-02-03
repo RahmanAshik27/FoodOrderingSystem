@@ -1,4 +1,4 @@
-Chikhen Dum Biriyani,52,350
-Beef Burger,58,270
-Creammy Pasta,33,310
-Japaness Ramen,79,410
+Chikhen Dum Biriyani,50,350
+Beef Burger,57,270
+Creammy Pasta,27,310
+Japaness Ramen,87,410
